@@ -1,0 +1,17 @@
+[project]
+name = "now-index-korea"
+version = "0.1.0"
+description = "A Korean stock market NOW index starter project."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Liam Son" }
+]
+dependencies = [
+  "pandas>=2.2.0",
+  "numpy>=1.26.0"
+]
+
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
