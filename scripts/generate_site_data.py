@@ -4,6 +4,13 @@ import csv
 import json
 from pathlib import Path
 
+TICKER_NAME_MAP = {
+    "005930": "Samsung Electronics",
+    "000660": "SK Hynix",
+    "035420": "Naver",
+    "051910": "LG Energy Solution",
+}
+
 
 def load_csv_rows(csv_path: Path) -> list[dict[str, str]]:
     with csv_path.open(encoding="utf-8") as handle:
@@ -52,7 +59,7 @@ def extract_rankings(rows: list[dict[str, str]], headers: list[str]) -> list[dic
             rankings.append(
                 {
                     "ticker": ticker,
-                    "name": ticker,
+                    "name": TICKER_NAME_MAP.get(ticker, ticker),
                     "price": float(value),
                 }
             )
