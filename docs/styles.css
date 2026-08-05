@@ -172,6 +172,45 @@ button:hover,
   transform: translateY(-1px);
 }
 
+.ranking-section {
+  margin-top: 32px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.ranking-table th,
+.ranking-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.ranking-table thead {
+  background: #f8fafc;
+}
+
+.ranking-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.ranking-table th {
+  font-weight: 700;
+  color: #334155;
+}
+
+.ranking-table td {
+  color: #475569;
+}
+
 footer {
   margin-top: 38px;
   text-align: center;
