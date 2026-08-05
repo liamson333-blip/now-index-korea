@@ -3,25 +3,25 @@
   "rankings": [
     {
       "ticker": "000660",
-      "name": "000660",
+      "name": "SK Hynix",
       "price": 1686000.0,
       "score": 2.7725
     },
     {
       "ticker": "051910",
-      "name": "051910",
+      "name": "LG Energy Solution",
       "price": 263000.0,
       "score": 0.4325
     },
     {
       "ticker": "005930",
-      "name": "005930",
+      "name": "Samsung Electronics",
       "price": 250500.0,
       "score": 0.4119
     },
     {
       "ticker": "035420",
-      "name": "035420",
+      "name": "Naver",
       "price": 233000.0,
       "score": 0.3831
     }
