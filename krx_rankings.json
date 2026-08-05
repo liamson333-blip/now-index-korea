@@ -1,29 +1,29 @@
 {
-  "index_value": 520000,
+  "index_value": 1569424.25,
   "rankings": [
     {
-      "ticker": "051910",
-      "name": "LG Energy Solution",
-      "price": 950000,
-      "score": 1.83
-    },
-    {
       "ticker": "005930",
-      "name": "Samsung Electronics",
-      "price": 700000,
-      "score": 1.35
-    },
-    {
-      "ticker": "035420",
-      "name": "Naver",
-      "price": 310000,
-      "score": 0.60
+      "name": "005930",
+      "price": 5018734.0,
+      "score": 3.1978
     },
     {
       "ticker": "000660",
-      "name": "SK Hynix",
-      "price": 120000,
-      "score": 0.23
+      "name": "000660",
+      "price": 877461.0,
+      "score": 0.5591
+    },
+    {
+      "ticker": "035420",
+      "name": "035420",
+      "price": 352184.0,
+      "score": 0.2244
+    },
+    {
+      "ticker": "051910",
+      "name": "051910",
+      "price": 29318.0,
+      "score": 0.0187
     }
   ]
 }
