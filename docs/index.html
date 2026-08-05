@@ -9,41 +9,61 @@
   <body>
     <div class="page">
       <header class="hero">
-        <h1>NOW Index Korea</h1>
-        <p>A lightweight Korean stock market index landing page with sample data and live preview.</p>
-        <a class="button" href="https://github.com/liamson333-blip/now-index-korea" target="_blank" rel="noopener">View GitHub Repo</a>
+        <div class="hero-content">
+          <div>
+            <span class="eyebrow">NOW Index Korea</span>
+            <h1>Transparent Korean market indexing for KRX stocks</h1>
+            <p>Explore a lightweight index starter page with sample KRX data, live preview, and open-source methodology.</p>
+            <div class="hero-actions">
+              <a class="button" href="https://github.com/liamson333-blip/now-index-korea" target="_blank" rel="noopener">View GitHub Repo</a>
+              <a class="button button-secondary" href="https://liamson333-blip.github.io/now-index-korea/" target="_blank" rel="noopener">Open Live Site</a>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <p class="panel-label">Sample index preview</p>
+            <div class="metric panel-metric">
+              <span id="indexValue">—</span>
+              <p>NOW-style index value</p>
+            </div>
+            <button id="refreshButton">Refresh preview</button>
+          </div>
+        </div>
       </header>
 
-      <section class="content">
-        <h2>Live Sample Index</h2>
-        <p>This page computes a sample index value for KRX tickers using local price data.</p>
+      <section class="content grid">
+        <article>
+          <h2>About the project</h2>
+          <p>This starter repository is built to collect, normalize, and analyze Korean market data with a NOW-style index approach. The site demonstrates an open-source landing page for the project.</p>
+          <ul>
+            <li>Sample data pipeline using KRX ticker fetches</li>
+            <li>Simple index computation in Python</li>
+            <li>GitHub Pages site for live publishing</li>
+          </ul>
+        </article>
+        <article>
+          <h2>How it works</h2>
+          <p>The live preview uses hardcoded sample prices to show how an index metric might be displayed. Actual KRX data is supported through the repository Python package and scripts.</p>
+          <ul>
+            <li><code>scripts/fetch_krx_data.py</code> downloads KRX stock history</li>
+            <li><code>src/now_index_korea/index.py</code> computes the index</li>
+            <li><code>notebooks/krx_analysis_template.ipynb</code> is ready for analysis</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="content card-grid">
         <div class="card">
-          <div class="metric">
-            <span id="indexValue">—</span>
-            <p>NOW-style index value</p>
-          </div>
-          <div class="meta">
-            <p>Tickers: 005930, 000660</p>
-            <p>Method: simple average of closing prices</p>
-          </div>
-          <button id="refreshButton">Refresh preview</button>
+          <h3>Data source</h3>
+          <p>KRX stocks pulled via Yahoo Finance using ticker suffix <code>.KS</code>. The repository supports sample data and real-world downloads.</p>
         </div>
-      </section>
-
-      <section class="content">
-        <h2>How to use</h2>
-        <ul>
-          <li>Run <code>python scripts/fetch_krx_data.py</code> to download Korean market data.</li>
-          <li>Open <code>notebooks/krx_analysis_template.ipynb</code> to analyze KRX results.</li>
-          <li>Compute a custom index with <code>src/now_index_korea/index.py</code>.</li>
-        </ul>
-      </section>
-
-      <section class="content">
-        <h2>Deployment</h2>
-        <p>This site is configured for GitHub Pages from the repository <code>docs/</code> folder.</p>
-        <p>Live site URL:</p>
-        <p><a href="https://liamson333-blip.github.io/now-index-korea/" target="_blank" rel="noopener">https://liamson333-blip.github.io/now-index-korea/</a></p>
+        <div class="card">
+          <h3>Open source</h3>
+          <p>Everything is available in the GitHub repo, with CI tests and site deployment included.</p>
+        </div>
+        <div class="card">
+          <h3>Reference</h3>
+          <p>Inspired by <a href="https://github.com/Liam-Son/NOW-index" target="_blank" rel="noopener">Liam Son's NOW-index</a>.</p>
+        </div>
       </section>
 
       <footer>
