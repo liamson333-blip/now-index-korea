@@ -51,6 +51,23 @@ function updateIndex() {
   renderRankings();
 }
 
+function renderRankings(stocks) {
+  const body = document.getElementById('rankingBody');
+  body.innerHTML = stocks
+    .map(
+      (stock, index) =>
+        `<tr><td>${index + 1}</td><td>${stock.ticker}</td><td>${stock.name}</td><td>${formatValue(stock.price)}</td><td>${formatScore(stock.score)}</td></tr>`,
+    )
+    .join('');
+}
+
+function updateIndex(stocks) {
+  const indexValue = computeIndex(stocks.map((stock) => stock.price));
+  const indexElement = document.getElementById('indexValue');
+  indexElement.textContent = formatValue(indexValue);
+  renderRankings(getRankings(stocks));
+}
+
 async function loadSiteData() {
   try {
     const response = await fetch('krx_rankings.json');
@@ -58,8 +75,6 @@ async function loadSiteData() {
       throw new Error(`Unable to fetch site data: ${response.statusText}`);
     }
     const data = await response.json();
-    const indexElement = document.getElementById('indexValue');
-    indexElement.textContent = formatValue(data.index_value);
     const body = document.getElementById('rankingBody');
     body.innerHTML = data.rankings
       .map(
@@ -67,9 +82,14 @@ async function loadSiteData() {
           `<tr><td>${index + 1}</td><td>${stock.ticker}</td><td>${stock.name}</td><td>${formatValue(stock.price)}</td><td>${formatScore(stock.score)}</td></tr>`,
       )
       .join('');
+    const indexElement = document.getElementById('indexValue');
+    indexElement.textContent = formatValue(data.index_value);
   } catch (error) {
+    renderRankings(sampleStocks);
     const body = document.getElementById('rankingBody');
-    body.innerHTML = `<tr><td colspan="5">${error.message}</td></tr>`;
+    const messageRow = document.createElement('tr');
+    messageRow.innerHTML = `<td colspan="5">Using sample ranking data: ${error.message}</td>`;
+    body.prepend(messageRow);
   }
 }
 

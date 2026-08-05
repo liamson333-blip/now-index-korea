@@ -34,6 +34,8 @@ python scripts/fetch_krx_data.py
 python scripts/generate_site_data.py
 ```
 
+If the site data file is missing, the page will display fallback sample rankings until `docs/krx_rankings.json` is refreshed.
+
 ## Next steps
 
 - Add real Korean market data sources
