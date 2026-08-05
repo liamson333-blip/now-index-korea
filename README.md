@@ -39,6 +39,12 @@ python scripts/fetch_krx_data.py
 - Implement a proper index weighting method
 - Use `notebooks/krx_analysis_template.ipynb` for analysis and visualization
 
+## Reference
+
+This project is inspired by and references the original work at:
+
+https://github.com/Liam-Son/NOW-index
+
 ## Live website
 
 A static site is available from the repository `docs/` folder and can be deployed to GitHub Pages.
