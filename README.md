@@ -27,10 +27,11 @@ pip install -r requirements.txt
 python scripts/run_sample.py
 ```
 
-3. Fetch real Korean market data from KRX tickers:
+3. Fetch real Korean market data from KRX tickers and generate site rankings:
 
 ```powershell
 python scripts/fetch_krx_data.py
+python scripts/generate_site_data.py
 ```
 
 ## Next steps
