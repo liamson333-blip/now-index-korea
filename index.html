@@ -150,6 +150,121 @@
         <div id="pagination" class="pagination" aria-label="Pagination"></div>
       </section>
 
+      <section class="content methodology" aria-label="NOW score methodology">
+        <div class="method-head">
+          <div>
+            <h2>NOW score methodology</h2>
+            <p>
+              A Wall Street–grade composite built from six independent factor engines. Each engine
+              answers a distinct question about a stock; the engines are weighted and combined into
+              a single, transparent NOW score.
+            </p>
+          </div>
+          <div class="method-metrics">
+            <div class="method-metric">
+              <span class="method-metric-label">Universe</span>
+              <strong id="methodUniverse">—</strong>
+            </div>
+            <div class="method-metric">
+              <span class="method-metric-label">Avg price</span>
+              <strong id="methodAvg">—</strong>
+            </div>
+            <div class="method-metric">
+              <span class="method-metric-label">Index value</span>
+              <strong id="methodIndex">—</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-formula">
+          <span class="method-formula-label">Composite NOW score</span>
+          <code>
+            NOW = 0.25·Valuation + 0.20·Momentum + 0.20·Quality + 0.15·Risk + 0.10·Macro + 0.10·Sentiment
+          </code>
+        </div>
+
+        <div class="engine-grid">
+          <article class="engine-card">
+            <div class="engine-top">
+              <span class="engine-weight">25%</span>
+              <h3>1 · Valuation</h3>
+            </div>
+            <p class="engine-question">Is this asset cheap relative to its history and peers?</p>
+            <div class="engine-chips">
+              <span>Forward P/E</span><span>EV/EBITDA</span><span>FCF Yield</span>
+              <span>P/B</span><span>EV/Sales</span><span>Dividend Yield</span>
+            </div>
+          </article>
+
+          <article class="engine-card">
+            <div class="engine-top">
+              <span class="engine-weight">20%</span>
+              <h3>2 · Momentum</h3>
+            </div>
+            <p class="engine-question">Is the market rewarding this asset?</p>
+            <div class="engine-chips">
+              <span>3M Momentum</span><span>6M Momentum</span><span>12M Momentum</span>
+              <span>Rel. Strength</span><span>52W High Dist.</span><span>Trend Persistence</span>
+            </div>
+          </article>
+
+          <article class="engine-card">
+            <div class="engine-top">
+              <span class="engine-weight">20%</span>
+              <h3>3 · Quality</h3>
+            </div>
+            <p class="engine-question">Is this a fundamentally strong business?</p>
+            <div class="engine-chips">
+              <span>ROE</span><span>ROIC</span><span>Gross Margin</span>
+              <span>Op. Margin</span><span>FCF Margin</span><span>Debt Coverage</span>
+            </div>
+          </article>
+
+          <article class="engine-card">
+            <div class="engine-top">
+              <span class="engine-weight">15%</span>
+              <h3>4 · Risk</h3>
+            </div>
+            <p class="engine-question">How risky is this investment?</p>
+            <div class="engine-chips">
+              <span>Volatility</span><span>Beta</span><span>Max Drawdown</span>
+              <span>Downside Dev.</span><span>Liquidity</span><span>Credit Risk</span>
+            </div>
+          </article>
+
+          <article class="engine-card">
+            <div class="engine-top">
+              <span class="engine-weight">10%</span>
+              <h3>5 · Macro</h3>
+            </div>
+            <p class="engine-question">Is the macro environment supportive?</p>
+            <div class="engine-chips">
+              <span>Real Rates</span><span>Inflation</span><span>PMI</span>
+              <span>Yield Curve</span><span>Credit Spreads</span><span>VIX · DXY</span>
+            </div>
+          </article>
+
+          <article class="engine-card">
+            <div class="engine-top">
+              <span class="engine-weight">10%</span>
+              <h3>6 · Sentiment</h3>
+            </div>
+            <p class="engine-question">Is the market overly optimistic or pessimistic?</p>
+            <div class="engine-chips">
+              <span>Fear &amp; Greed</span><span>Put/Call Ratio</span><span>VIX Percentile</span>
+              <span>Insider Buying</span><span>Fund Flows</span><span>Short Interest</span>
+            </div>
+          </article>
+        </div>
+
+        <aside class="method-note">
+          <strong>Note on live data.</strong> The current preview score is derived from live price
+          momentum. The full six-engine composite requires additional feeds — historical prices,
+          financial statements, and macro/sentiment data — which will be wired into the factor
+          engines in a future release.
+        </aside>
+      </section>
+
       <section class="content grid">
         <article>
           <h2>About the project</h2>
@@ -210,6 +325,6 @@
         <p class="footer-note">Data is for demonstration purposes and not investment advice.</p>
       </footer>
     </div>
-<script src="app.js?cache=5"></script>
+<script src="app.js?cache=6"></script>
   </body>
 </html>

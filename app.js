@@ -136,6 +136,22 @@ function renderStats(data) {
   document.getElementById('statAvg').textContent = formatValue(avg);
 
   document.getElementById('statDate').textContent = formatDate(data.date);
+
+  // Methodology dashboard metrics
+  const universeEl = document.getElementById('methodUniverse');
+  if (universeEl) {
+    universeEl.textContent = new Intl.NumberFormat('ko-KR').format(
+      data.universe_size || rankings.length,
+    );
+  }
+  const avgEl = document.getElementById('methodAvg');
+  if (avgEl) {
+    avgEl.textContent = formatValue(avg);
+  }
+  const indexEl = document.getElementById('methodIndex');
+  if (indexEl) {
+    indexEl.textContent = formatValue(data.index_value);
+  }
 }
 
 function setLoading(isLoading) {
