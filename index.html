@@ -3,7 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NOW Index Korea</title>
+    <title>NOW Index Korea — Transparent KRX Market Index</title>
+    <meta
+      name="description"
+      content="NOW Index Korea is an open-source, transparent Korean stock market index. Explore live KRX rankings computed with a lightweight NOW-style methodology."
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="canonical" href="https://liamson333-blip.github.io/now-index-korea/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NOW Index Korea" />
+    <meta
+      property="og:description"
+      content="Transparent Korean market indexing for KRX stocks. Open-source methodology and live rankings."
+    />
+    <meta property="og:url" content="https://liamson333-blip.github.io/now-index-korea/" />
+    <meta property="og:site_name" content="NOW Index Korea" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="NOW Index Korea" />
+    <meta
+      name="twitter:description"
+      content="Transparent Korean market indexing for KRX stocks. Open-source methodology and live rankings."
+    />
+
+    <!-- Favicon (inline SVG) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230f172a'/%3E%3Cpath d='M28 66 L46 46 L58 56 L74 34' stroke='%233b82f6' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='74' cy='34' r='6' fill='%2393c5fd'/%3E%3C/svg%3E"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,63 +51,128 @@
         <div class="hero-content">
           <div>
             <span class="eyebrow">NOW Index Korea</span>
-            <h1>Transparent Korean market indexing for KRX stocks</h1>
-            <p>Explore a lightweight index starter page with sample KRX data, live preview, and open-source methodology.</p>
+            <h1>Transparent Korean market indexing for <span class="accent">KRX stocks</span></h1>
+            <p>
+              Explore a lightweight, open-source index built from KRX stock data with a clear,
+              reproducible methodology. Live rankings, transparent scores, and a live preview.
+            </p>
             <div class="hero-actions">
-              <a class="button" href="https://github.com/liamson333-blip/now-index-korea" target="_blank" rel="noopener">View GitHub Repo</a>
-              <a class="button button-secondary" href="https://liamson333-blip.github.io/now-index-korea/" target="_blank" rel="noopener">Open Live Site</a>
+              <a class="button" href="https://github.com/liamson333-blip/now-index-korea" target="_blank" rel="noopener">
+                View GitHub Repo
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://liamson333-blip.github.io/now-index-korea/"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Live Site
+              </a>
             </div>
           </div>
-          <div class="hero-panel">
-            <p class="panel-label">Sample index preview</p>
+          <div class="hero-panel" role="region" aria-label="Index preview">
+            <p class="panel-label">Now-style index value</p>
             <div class="metric panel-metric">
-              <span id="indexValue">—</span>
-              <p>NOW-style index value</p>
+              <span id="indexValue" aria-live="polite">—</span>
+              <p id="indexMeta" class="panel-meta">Loading market data…</p>
             </div>
-            <button id="refreshButton">Refresh preview</button>
+            <button id="refreshButton" aria-label="Refresh index preview">
+              <span class="btn-label">Refresh preview</span>
+              <span class="spinner" id="refreshSpinner" hidden></span>
+            </button>
           </div>
         </div>
       </header>
 
+      <section class="content stats-section" aria-label="Market summary">
+        <div class="stat-card">
+          <span class="stat-label">Stocks tracked</span>
+          <strong id="statCount">—</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Top performer</span>
+          <strong id="statTop" class="stat-top">—</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Average price</span>
+          <strong id="statAvg">—</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Data updated</span>
+          <strong id="statDate">—</strong>
+        </div>
+      </section>
+
       <section class="content ranking-section">
-        <h2>Korean stocks ranked by NOW index score</h2>
-        <p>Live rankings are generated from KRX data and updated from the site data feed.</p>
+        <div class="section-head">
+          <div>
+            <h2>Korean stocks ranked by NOW index score</h2>
+            <p>Live rankings are generated from KRX data and updated from the site data feed.</p>
+          </div>
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search ticker or name…"
+              aria-label="Search stocks"
+            />
+          </div>
+        </div>
+
+        <div id="errorBanner" class="error-banner" role="alert" hidden></div>
+
         <div class="table-wrap">
           <table class="ranking-table">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Ticker</th>
-                <th>Name</th>
-                <th>Price (KRW)</th>
-                <th>NOW score</th>
+                <th scope="col">#</th>
+                <th scope="col">Ticker</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price (KRW)</th>
+                <th scope="col">Change</th>
+                <th scope="col">NOW score</th>
               </tr>
             </thead>
             <tbody id="rankingBody">
-              <tr>
-                <td colspan="5">Loading rankings...</td>
+              <tr id="loadingRow">
+                <td colspan="6">
+                  <div class="loading">
+                    <span class="spinner spinner-lg"></span>
+                    <span>Loading rankings…</span>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
+<p id="resultCount" class="result-count" hidden></p>
+        <div id="pagination" class="pagination" aria-label="Pagination"></div>
       </section>
 
       <section class="content grid">
         <article>
           <h2>About the project</h2>
-          <p>This starter repository is built to collect, normalize, and analyze Korean market data with a NOW-style index approach. The site demonstrates an open-source landing page for the project.</p>
-          <ul>
-            <li>Sample data pipeline using KRX ticker fetches</li>
-            <li>Simple index computation in Python</li>
+          <p>
+            This repository collects, normalizes, and analyzes Korean market data using a
+            NOW-style index approach. The site demonstrates an open-source landing page for the
+            project.
+          </p>
+<ul>
+            <li>Full KOSPI &amp; KOSDAQ coverage crawled from NAVER Finance</li>
+            <li>Simple, transparent NOW index computation in Python</li>
             <li>GitHub Pages site for live publishing</li>
           </ul>
         </article>
         <article>
           <h2>How it works</h2>
-          <p>The live preview uses hardcoded sample prices to show how an index metric might be displayed. Actual KRX data is supported through the repository Python package and scripts.</p>
+          <p>
+            Every KOSPI and KOSDAQ stock is fetched from NAVER Finance, then ranked by a NOW score
+            computed as price divided by the average price across the full universe.
+          </p>
           <ul>
-            <li><code>scripts/fetch_krx_data.py</code> downloads KRX stock history</li>
-            <li><code>src/now_index_korea/index.py</code> computes the index</li>
+<li><code>scripts/fetch_naver_data.py</code> crawls all KRX stocks</li>
+            <li><code>scripts/generate_site_data.py</code> computes the NOW index for the full universe</li>
             <li><code>notebooks/krx_analysis_template.ipynb</code> is ready for analysis</li>
           </ul>
         </article>
@@ -77,22 +181,35 @@
       <section class="content card-grid">
         <div class="card">
           <h3>Data source</h3>
-          <p>KRX stocks pulled via Yahoo Finance using ticker suffix <code>.KS</code>. The repository supports sample data and real-world downloads.</p>
+<p>
+            All KOSPI and KOSDAQ stocks are crawled from NAVER Finance. The repository includes a
+            Python crawler (<code>fetch_naver_data.py</code>) and a PowerShell fallback for
+            systems without Python.
+          </p>
         </div>
         <div class="card">
           <h3>Open source</h3>
-          <p>Everything is available in the GitHub repo, with CI tests and site deployment included.</p>
+          <p>
+            Everything is available in the GitHub repo, with CI tests and site deployment
+            included.
+          </p>
         </div>
         <div class="card">
           <h3>Reference</h3>
-          <p>Inspired by <a href="https://github.com/Liam-Son/NOW-index" target="_blank" rel="noopener">Liam Son's NOW-index</a>.</p>
+          <p>
+            Inspired by
+            <a href="https://github.com/Liam-Son/NOW-index" target="_blank" rel="noopener"
+              >Liam Son's NOW-index</a
+            >.
+          </p>
         </div>
       </section>
 
       <footer>
         <p>NOW Index Korea • Open source Korean market index starter project</p>
+        <p class="footer-note">Data is for demonstration purposes and not investment advice.</p>
       </footer>
     </div>
-    <script src="app.js?cache=3"></script>
+<script src="app.js?cache=5"></script>
   </body>
 </html>
