@@ -51,7 +51,29 @@ function updateIndex() {
   renderRankings();
 }
 
+async function loadSiteData() {
+  try {
+    const response = await fetch('krx_rankings.json');
+    if (!response.ok) {
+      throw new Error(`Unable to fetch site data: ${response.statusText}`);
+    }
+    const data = await response.json();
+    const indexElement = document.getElementById('indexValue');
+    indexElement.textContent = formatValue(data.index_value);
+    const body = document.getElementById('rankingBody');
+    body.innerHTML = data.rankings
+      .map(
+        (stock, index) =>
+          `<tr><td>${index + 1}</td><td>${stock.ticker}</td><td>${stock.name}</td><td>${formatValue(stock.price)}</td><td>${formatScore(stock.score)}</td></tr>`,
+      )
+      .join('');
+  } catch (error) {
+    const body = document.getElementById('rankingBody');
+    body.innerHTML = `<tr><td colspan="5">${error.message}</td></tr>`;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('refreshButton').addEventListener('click', updateIndex);
-  updateIndex();
+  document.getElementById('refreshButton').addEventListener('click', loadSiteData);
+  loadSiteData();
 });
