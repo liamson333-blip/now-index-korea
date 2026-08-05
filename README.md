@@ -27,11 +27,25 @@ pip install -r requirements.txt
 python scripts/run_sample.py
 ```
 
+3. Fetch real Korean market data from KRX tickers:
+
+```powershell
+python scripts/fetch_krx_data.py
+```
+
 ## Next steps
 
 - Add real Korean market data sources
 - Implement a proper index weighting method
-- Add notebooks for analysis and visualization
+- Use `notebooks/krx_analysis_template.ipynb` for analysis and visualization
+
+## Live website
+
+A static site is available from the repository `docs/` folder and can be deployed to GitHub Pages.
+
+Once deployed, the site should be visible at:
+
+https://liamson333-blip.github.io/now-index-korea/
 
 ## Continuous integration
 
