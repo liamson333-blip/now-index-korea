@@ -31,13 +31,19 @@ def extract_rankings(rows: list[dict[str, str]], headers: list[str]) -> list[dic
         rankings = []
         for ticker in tickers:
             close_field = None
-            if f"{ticker}.Adj Close" in headers:
-                close_field = f"{ticker}.Adj Close"
-            elif f"{ticker}.Close" in headers:
-                close_field = f"{ticker}.Close"
-            else:
+            for candidate in [
+                f"{ticker}.KS_Adj Close",
+                f"{ticker}.KS_Close",
+                f"{ticker}.Adj Close",
+                f"{ticker}.Close",
+            ]:
+                if candidate in headers:
+                    close_field = candidate
+                    break
+            if close_field is None:
                 candidates = [h for h in headers if h.startswith(f"{ticker}.")]
-                close_field = candidates[-1] if candidates else None
+                # Use the last numeric field for the ticker if a close field is not found.
+                close_field = next((h for h in reversed(candidates) if any(s in h for s in ["Close", "Adj Close", "Close", "Adj"])), None)
             if close_field is None:
                 continue
             value = last_row.get(close_field)

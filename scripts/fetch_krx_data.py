@@ -1,6 +1,16 @@
+import sys
 from argparse import ArgumentParser
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from now_index_korea.data import fetch_krx_stock_data
+
+
+def normalize_ticker(ticker: str) -> str:
+    ticker = ticker.strip()
+    if ticker.isdigit() and len(ticker) <= 6:
+        return ticker.zfill(6)
+    return ticker
 
 
 def parse_args() -> ArgumentParser:
@@ -23,7 +33,7 @@ def parse_args() -> ArgumentParser:
 def main() -> None:
     parser = parse_args()
     args = parser.parse_args()
-    tickers = [ticker.strip() for ticker in args.tickers.split(",") if ticker.strip()]
+    tickers = [normalize_ticker(ticker) for ticker in args.tickers.split(",") if ticker.strip()]
     path = fetch_krx_stock_data(
         tickers,
         period=args.period,

@@ -33,24 +33,6 @@ function getRankings(stocks) {
     .sort((a, b) => b.score - a.score);
 }
 
-function renderRankings() {
-  const rankings = getRankings(sampleStocks);
-  const body = document.getElementById('rankingBody');
-  body.innerHTML = rankings
-    .map(
-      (stock, index) =>
-        `<tr><td>${index + 1}</td><td>${stock.ticker}</td><td>${stock.name}</td><td>${formatValue(stock.price)}</td><td>${formatScore(stock.score)}</td></tr>`,
-    )
-    .join('');
-}
-
-function updateIndex() {
-  const indexValue = computeIndex(sampleStocks.map((stock) => stock.price));
-  const indexElement = document.getElementById('indexValue');
-  indexElement.textContent = formatValue(indexValue);
-  renderRankings();
-}
-
 function renderRankings(stocks) {
   const body = document.getElementById('rankingBody');
   body.innerHTML = stocks
@@ -61,31 +43,21 @@ function renderRankings(stocks) {
     .join('');
 }
 
-function updateIndex(stocks) {
-  const indexValue = computeIndex(stocks.map((stock) => stock.price));
-  const indexElement = document.getElementById('indexValue');
-  indexElement.textContent = formatValue(indexValue);
-  renderRankings(getRankings(stocks));
-}
-
 async function loadSiteData() {
   try {
-    const response = await fetch('krx_rankings.json');
+    const response = await fetch(`krx_rankings.json?cache=${Date.now()}`, { cache: 'reload' });
     if (!response.ok) {
       throw new Error(`Unable to fetch site data: ${response.statusText}`);
     }
     const data = await response.json();
-    const body = document.getElementById('rankingBody');
-    body.innerHTML = data.rankings
-      .map(
-        (stock, index) =>
-          `<tr><td>${index + 1}</td><td>${stock.ticker}</td><td>${stock.name}</td><td>${formatValue(stock.price)}</td><td>${formatScore(stock.score)}</td></tr>`,
-      )
-      .join('');
     const indexElement = document.getElementById('indexValue');
     indexElement.textContent = formatValue(data.index_value);
+    renderRankings(data.rankings);
   } catch (error) {
-    renderRankings(sampleStocks);
+    const fallbackRankings = getRankings(sampleStocks);
+    const indexElement = document.getElementById('indexValue');
+    indexElement.textContent = formatValue(computeIndex(sampleStocks.map((stock) => stock.price)));
+    renderRankings(fallbackRankings);
     const body = document.getElementById('rankingBody');
     const messageRow = document.createElement('tr');
     messageRow.innerHTML = `<td colspan="5">Using sample ranking data: ${error.message}</td>`;
