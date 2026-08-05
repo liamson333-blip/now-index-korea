@@ -1,0 +1,29 @@
+{
+  "index_value": 520000,
+  "rankings": [
+    {
+      "ticker": "051910",
+      "name": "LG Energy Solution",
+      "price": 950000,
+      "score": 1.83
+    },
+    {
+      "ticker": "005930",
+      "name": "Samsung Electronics",
+      "price": 700000,
+      "score": 1.35
+    },
+    {
+      "ticker": "035420",
+      "name": "Naver",
+      "price": 310000,
+      "score": 0.60
+    },
+    {
+      "ticker": "000660",
+      "name": "SK Hynix",
+      "price": 120000,
+      "score": 0.23
+    }
+  ]
+}
