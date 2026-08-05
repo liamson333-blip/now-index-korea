@@ -60,6 +60,10 @@ function changeSymbol(value) {
   return '•';
 }
 
+function naverUrl(ticker) {
+  return `https://finance.naver.com/item/main.naver?code=${ticker}`;
+}
+
 function renderRankings(stocks, filtered = false) {
   const body = document.getElementById('rankingBody');
   const loadingRow = document.getElementById('loadingRow');
@@ -76,15 +80,16 @@ function renderRankings(stocks, filtered = false) {
   const start = (currentPage - 1) * PAGE_SIZE;
   const pageStocks = stocks.slice(start, start + PAGE_SIZE);
 
-  // The rank number should reflect the full filtered list position.
+// The rank number should reflect the full filtered list position.
   body.innerHTML = pageStocks
     .map((stock, index) => {
       const rank = start + index + 1;
+      const url = naverUrl(stock.ticker);
       return `
         <tr>
           <td><span class="rank-badge ${rank <= 3 ? 'top' : ''}">${rank}</span></td>
-          <td class="ticker-cell">${stock.ticker}</td>
-          <td class="name-cell">${stock.name}</td>
+          <td class="ticker-cell"><a class="naver-link" href="${url}" target="_blank" rel="noopener">${stock.ticker}</a></td>
+          <td class="name-cell"><a class="naver-link" href="${url}" target="_blank" rel="noopener">${stock.name}</a></td>
           <td class="price-cell">${formatValue(stock.price)}</td>
           <td class="change-cell ${changeClass(stock.change_pct)}">
             ${changeSymbol(stock.change_pct)} ${stock.change_pct != null ? stock.change_pct.toFixed(2) + '%' : '—'}
