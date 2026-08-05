@@ -1,81 +1,51 @@
+"""
+Generate the live site data (docs/krx_rankings.json) from NAVER stock data.
+
+The NOW score for each stock is computed as its price divided by the average
+price across the full universe. Only the top 10 stocks by score are published
+to the live site.
+
+Usage:
+    python scripts/generate_site_data.py
+"""
+
 from __future__ import annotations
 
 import csv
 import json
+from datetime import datetime
 from pathlib import Path
 
-TICKER_NAME_MAP = {
-    "005930": "Samsung Electronics",
-    "000660": "SK Hynix",
-    "035420": "Naver",
-    "051910": "LG Energy Solution",
-}
+TOP_N = 10
 
 
 def load_csv_rows(csv_path: Path) -> list[dict[str, str]]:
-    with csv_path.open(encoding="utf-8") as handle:
+    with csv_path.open(encoding="utf-8-sig") as handle:
         reader = csv.DictReader(handle)
         return [row for row in reader]
 
 
-def extract_rankings(rows: list[dict[str, str]], headers: list[str]) -> list[dict[str, object]]:
+def extract_rankings(rows: list[dict[str, str]]) -> list[dict[str, object]]:
     if not rows:
         raise ValueError("CSV file contains no rows")
 
-    if "ticker" in headers and "price" in headers:
-        return [
+    rankings = []
+    for row in rows:
+        ticker = row.get("ticker", "").strip()
+        name = row.get("name", ticker)
+        price = float(row.get("price") or 0)
+        change_pct = float(row.get("change_pct") or 0)
+        if not ticker or price <= 0:
+            continue
+        rankings.append(
             {
-                "ticker": row["ticker"],
-                "name": row.get("name", row["ticker"]),
-                "price": float(row["price"]),
+                "ticker": ticker,
+                "name": name,
+                "price": price,
+                "change_pct": change_pct,
             }
-            for row in rows
-        ]
-
-    if any("." in header for header in headers if header != "Date"):
-        last_row = rows[-1]
-        tickers = sorted({header.split(".")[0] for header in headers if header != "Date"})
-        rankings = []
-        for ticker in tickers:
-            close_field = None
-            for candidate in [
-                f"{ticker}.KS_Adj Close",
-                f"{ticker}.KS_Close",
-                f"{ticker}.Adj Close",
-                f"{ticker}.Close",
-            ]:
-                if candidate in headers:
-                    close_field = candidate
-                    break
-            if close_field is None:
-                candidates = [h for h in headers if h.startswith(f"{ticker}.")]
-                # Use the last numeric field for the ticker if a close field is not found.
-                close_field = next((h for h in reversed(candidates) if any(s in h for s in ["Close", "Adj Close", "Close", "Adj"])), None)
-            if close_field is None:
-                continue
-            value = last_row.get(close_field)
-            if value is None or value == "":
-                continue
-            rankings.append(
-                {
-                    "ticker": ticker,
-                    "name": TICKER_NAME_MAP.get(ticker, ticker),
-                    "price": float(value),
-                }
-            )
-        return rankings
-
-    if "Close" in headers:
-        last_row = rows[-1]
-        return [
-            {
-                "ticker": "KRX",
-                "name": "KRX Composite",
-                "price": float(last_row["Close"]),
-            }
-        ]
-
-    raise ValueError("Unable to extract pricing data from CSV headers")
+        )
+    return rankings
 
 
 def compute_index_value(rankings: list[dict[str, object]]) -> float:
@@ -103,18 +73,27 @@ def write_site_data(output_path: Path, data: dict[str, object]) -> None:
 
 
 def main() -> None:
-    csv_path = Path("data/krx_stock_data.csv")
+    csv_path = Path("data/naver_stock_data.csv")
     output_path = Path("docs/krx_rankings.json")
+    if not csv_path.exists():
+        raise FileNotFoundError(
+            f"{csv_path} not found. Run `python scripts/fetch_naver_data.py` first."
+        )
+
     rows = load_csv_rows(csv_path)
-    headers = list(rows[0].keys()) if rows else []
-    rankings = extract_rankings(rows, headers)
+    rankings = extract_rankings(rows)
     ranked = sorted(add_scores(rankings), key=lambda item: item["score"], reverse=True)
+    top_10 = ranked[:TOP_N]
+
     data = {
         "index_value": compute_index_value(rankings),
-        "rankings": ranked,
+        "date": datetime.now().strftime("%Y-%m-%d"),
+        "universe_size": len(rankings),
+        "rankings": top_10,
     }
     write_site_data(output_path, data)
-    print(f"Wrote live site rankings to {output_path}")
+    print(f"Wrote top {len(top_10)} rankings to {output_path}")
+    print(f"Universe size: {len(rankings)} stocks")
 
 
 if __name__ == "__main__":

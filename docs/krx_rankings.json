@@ -1,29 +1,77 @@
-{
-  "index_value": 608125.0,
-  "rankings": [
-    {
-      "ticker": "000660",
-      "name": "SK Hynix",
-      "price": 1686000.0,
-      "score": 2.7725
-    },
-    {
-      "ticker": "051910",
-      "name": "LG Energy Solution",
-      "price": 263000.0,
-      "score": 0.4325
-    },
-    {
-      "ticker": "005930",
-      "name": "Samsung Electronics",
-      "price": 250500.0,
-      "score": 0.4119
-    },
-    {
-      "ticker": "035420",
-      "name": "Naver",
-      "price": 233000.0,
-      "score": 0.3831
-    }
-  ]
+﻿{
+    "index_value":  0,
+    "date":  "2026-08-05",
+    "universe_size":  4295,
+    "rankings":  [
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     },
+                     {
+                         "ticker":  null,
+                         "name":  null,
+                         "price":  null,
+                         "change_pct":  null,
+                         "score":  Infinity
+                     }
+                 ]
 }

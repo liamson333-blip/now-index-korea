@@ -13,32 +13,42 @@ A starter repository for building a Korean stock market NOW index.
 - `src/` for Python package code
 - `tests/` for validation
 
-## Usage
+## Data pipeline
 
-1. Install dependencies:
+The live site is powered by a real data pipeline that crawls **all KOSPI and KOSDAQ stocks** from NAVER Finance:
+
+1. **Crawl** — `scripts/fetch_naver_data.py` fetches every KOSPI/KOSDAQ stock (price + daily change) from NAVER's public API.
+2. **Compute** — the NOW score for each stock is `price / average_price` across the full universe.
+3. **Publish** — `scripts/generate_site_data.py` writes the **top 10** stocks by NOW score to `docs/krx_rankings.json`.
+
+### Reproduce the data
+
+Install dependencies:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-2. Run the sample index calculation:
+Then crawl and generate:
 
 ```powershell
-python scripts/run_sample.py
+python scripts/fetch_naver_data.py
+python scripts/generate_site_data.py
 ```
 
-3. Fetch real Korean market data from KRX tickers and generate site rankings:
+### No Python? Use the PowerShell crawler
+
+On machines without Python (e.g. Windows only), a PowerShell fallback performs the same crawl, computes the NOW score for all 4,000+ stocks, and writes the top 10 to the site data file:
 
 ```powershell
-python scripts/fetch_krx_data.py
-python scripts/generate_site_data.py
+Set-ExecutionPolicy -Scope Process Bypass -Force
+.\scripts\crawl_and_generate.ps1
 ```
 
 If the site data file is missing, the page will display fallback sample rankings until `docs/krx_rankings.json` is refreshed.
 
 ## Next steps
 
-- Add real Korean market data sources
 - Implement a proper index weighting method
 - Use `notebooks/krx_analysis_template.ipynb` for analysis and visualization
 
