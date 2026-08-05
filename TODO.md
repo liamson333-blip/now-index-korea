@@ -17,4 +17,13 @@
 - [x] Generate top-10 JSON via NAVER crawl → `docs/krx_rankings.json` (4,295 stocks)
 - [x] Update `docs/index.html` to describe NAVER data pipeline
 - [x] Update `README.md` with pipeline & usage docs
+## Full-universe display (all KOSPI/KOSDAQ stocks)
+
+- [x] Regenerate `docs/krx_rankings.json` with the full 4,295-stock universe (index_value 27963, no nulls/Infinity)
+- [x] Update `docs/app.js` to render the full universe with pagination (50 per page) and cross-page search
+- [x] Update `docs/styles.css` with pagination component styles
+- [x] Update `docs/index.html` with pagination element, universe_size stats, and remove top-10 wording
+- [x] Update `scripts/generate_site_data.py` to publish the full ranked universe
+- [x] Update `README.md` to reflect full-universe publishing
+
 - [ ] Push changes to GitHub to update live site (with user confirmation)

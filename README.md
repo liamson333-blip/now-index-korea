@@ -19,7 +19,7 @@ The live site is powered by a real data pipeline that crawls **all KOSPI and KOS
 
 1. **Crawl** — `scripts/fetch_naver_data.py` fetches every KOSPI/KOSDAQ stock (price + daily change) from NAVER's public API.
 2. **Compute** — the NOW score for each stock is `price / average_price` across the full universe.
-3. **Publish** — `scripts/generate_site_data.py` writes the **top 10** stocks by NOW score to `docs/krx_rankings.json`.
+3. **Publish** — `scripts/generate_site_data.py` writes the **full universe** of stocks (all 4,000+), ranked by NOW score, to `docs/krx_rankings.json`.
 
 ### Reproduce the data
 
@@ -38,7 +38,7 @@ python scripts/generate_site_data.py
 
 ### No Python? Use the PowerShell crawler
 
-On machines without Python (e.g. Windows only), a PowerShell fallback performs the same crawl, computes the NOW score for all 4,000+ stocks, and writes the top 10 to the site data file:
+On machines without Python (e.g. Windows only), a PowerShell fallback performs the same crawl, computes the NOW score for all 4,000+ stocks, and writes the full ranked universe to the site data file:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass -Force

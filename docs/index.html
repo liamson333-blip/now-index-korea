@@ -146,7 +146,8 @@
             </tbody>
           </table>
         </div>
-        <p id="resultCount" class="result-count" hidden></p>
+<p id="resultCount" class="result-count" hidden></p>
+        <div id="pagination" class="pagination" aria-label="Pagination"></div>
       </section>
 
       <section class="content grid">
@@ -170,8 +171,8 @@
             computed as price divided by the average price across the full universe.
           </p>
           <ul>
-            <li><code>scripts/fetch_naver_data.py</code> crawls all KRX stocks</li>
-            <li><code>scripts/generate_site_data.py</code> computes the top-10 NOW index</li>
+<li><code>scripts/fetch_naver_data.py</code> crawls all KRX stocks</li>
+            <li><code>scripts/generate_site_data.py</code> computes the NOW index for the full universe</li>
             <li><code>notebooks/krx_analysis_template.ipynb</code> is ready for analysis</li>
           </ul>
         </article>
@@ -209,6 +210,6 @@
         <p class="footer-note">Data is for demonstration purposes and not investment advice.</p>
       </footer>
     </div>
-    <script src="app.js?cache=4"></script>
+<script src="app.js?cache=5"></script>
   </body>
 </html>

@@ -5,8 +5,11 @@ const sampleStocks = [
   { ticker: '051910', name: 'LG Energy Solution', price: 950000, change_pct: 0.5 },
 ];
 
+const PAGE_SIZE = 50;
+
 let currentRankings = [];
 let currentData = null;
+let currentPage = 1;
 
 function computeIndex(prices) {
   return prices.reduce((sum, value) => sum + value, 0) / prices.length;
@@ -39,14 +42,10 @@ function formatDate(dateStr) {
   });
 }
 
+// Rankings are already pre-computed in the JSON (sorted by score desc).
+// We keep markers so search still works across the full universe.
 function getRankings(stocks) {
-  const averagePrice = computeIndex(stocks.map((stock) => stock.price));
-  return stocks
-    .map((stock) => ({
-      ...stock,
-      score: computeScore(stock.price, averagePrice),
-    }))
-    .sort((a, b) => b.score - a.score);
+  return stocks;
 }
 
 function changeClass(value) {
@@ -71,11 +70,19 @@ function renderRankings(stocks, filtered = false) {
     return;
   }
 
-  body.innerHTML = stocks
-    .map(
-      (stock, index) => `
+  const total = stocks.length;
+  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  if (currentPage > totalPages) currentPage = totalPages;
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const pageStocks = stocks.slice(start, start + PAGE_SIZE);
+
+  // The rank number should reflect the full filtered list position.
+  body.innerHTML = pageStocks
+    .map((stock, index) => {
+      const rank = start + index + 1;
+      return `
         <tr>
-          <td><span class="rank-badge ${index < 3 ? 'top' : ''}">${index + 1}</span></td>
+          <td><span class="rank-badge ${rank <= 3 ? 'top' : ''}">${rank}</span></td>
           <td class="ticker-cell">${stock.ticker}</td>
           <td class="name-cell">${stock.name}</td>
           <td class="price-cell">${formatValue(stock.price)}</td>
@@ -83,28 +90,49 @@ function renderRankings(stocks, filtered = false) {
             ${changeSymbol(stock.change_pct)} ${stock.change_pct != null ? stock.change_pct.toFixed(2) + '%' : '—'}
           </td>
           <td class="score-cell">${formatScore(stock.score)}</td>
-        </tr>`,
-    )
+        </tr>`;
+    })
     .join('');
 
   const resultCount = document.getElementById('resultCount');
-  if (filtered) {
+  if (filtered || total > PAGE_SIZE) {
     resultCount.hidden = false;
-    resultCount.textContent = `Showing ${stocks.length} of ${currentRankings.length} stocks`;
+    resultCount.textContent = `Showing ${start + 1}–${Math.min(start + PAGE_SIZE, total)} of ${total} stocks`;
   } else {
     resultCount.hidden = true;
   }
+
+  renderPagination(totalPages, total);
+}
+
+function renderPagination(totalPages, total) {
+  const container = document.getElementById('pagination');
+  if (!container) return;
+  if (totalPages <= 1) {
+    container.innerHTML = '';
+    return;
+  }
+  let html = '';
+  html += `<button ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}" class="page-btn">‹ Prev</button>`;
+
+  const startPage = Math.max(1, currentPage - 2);
+  const endPage = Math.min(totalPages, startPage + 4);
+  for (let p = startPage; p <= endPage; p++) {
+    html += `<button data-page="${p}" class="page-btn ${p === currentPage ? 'active' : ''}">${p}</button>`;
+  }
+  html += `<button ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}" class="page-btn">Next ›</button>`;
+  container.innerHTML = html;
 }
 
 function renderStats(data) {
   const rankings = data.rankings;
-  document.getElementById('statCount').textContent = rankings.length;
+  document.getElementById('statCount').textContent = data.universe_size || rankings.length;
 
-  const top = rankings.reduce((max, stock) => (stock.score > max.score ? stock : max), rankings[0]);
+  const top = rankings[0];
   const topEl = document.getElementById('statTop');
   topEl.textContent = top ? top.name : '—';
 
-  const avg = computeIndex(rankings.map((stock) => stock.price));
+  const avg = data.index_value || computeIndex(rankings.map((stock) => stock.price));
   document.getElementById('statAvg').textContent = formatValue(avg);
 
   document.getElementById('statDate').textContent = formatDate(data.date);
@@ -145,6 +173,7 @@ function applyFilter() {
     (stock) =>
       stock.name.toLowerCase().includes(query) || stock.ticker.toLowerCase().includes(query),
   );
+  currentPage = 1;
   renderRankings(filtered, true);
 }
 
@@ -158,7 +187,10 @@ async function loadSiteData() {
     }
     const data = await response.json();
     currentData = data;
-    currentRankings = getRankings(data.rankings);
+
+    // Rankings come pre-sorted by score desc. Filter out any entries missing a ticker.
+    currentRankings = (data.rankings || []).filter((s) => s && s.ticker);
+    currentPage = 1;
 
     const indexElement = document.getElementById('indexValue');
     indexElement.textContent = formatValue(data.index_value);
@@ -173,11 +205,16 @@ async function loadSiteData() {
     }
   } catch (error) {
     // Fallback to sample data
-    const fallbackRankings = getRankings(sampleStocks);
+    const fallbackRankings = getRankings(sampleStocks.map((stock) => ({
+      ...stock,
+      score: computeScore(stock.price, computeIndex(sampleStocks.map((s) => s.price))),
+    })));
     currentRankings = fallbackRankings;
+    currentPage = 1;
     currentData = {
       index_value: computeIndex(sampleStocks.map((stock) => stock.price)),
       rankings: fallbackRankings,
+      universe_size: fallbackRankings.length,
       date: null,
     };
 
@@ -196,5 +233,16 @@ async function loadSiteData() {
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('refreshButton').addEventListener('click', loadSiteData);
   document.getElementById('searchInput').addEventListener('input', applyFilter);
+  document.getElementById('pagination').addEventListener('click', (event) => {
+    const btn = event.target.closest('.page-btn');
+    if (!btn || btn.disabled) return;
+    currentPage = parseInt(btn.dataset.page, 10);
+    const query = document.getElementById('searchInput').value.trim();
+    if (query) {
+      applyFilter();
+    } else {
+      renderRankings(currentRankings);
+    }
+  });
   loadSiteData();
 });

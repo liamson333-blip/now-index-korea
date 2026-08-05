@@ -2,8 +2,8 @@
 Generate the live site data (docs/krx_rankings.json) from NAVER stock data.
 
 The NOW score for each stock is computed as its price divided by the average
-price across the full universe. Only the top 10 stocks by score are published
-to the live site.
+price across the full universe. Every KOSPI and KOSDAQ stock is published to
+the live site so the frontend can search and rank the entire universe.
 
 Usage:
     python scripts/generate_site_data.py
@@ -15,8 +15,6 @@ import csv
 import json
 from datetime import datetime
 from pathlib import Path
-
-TOP_N = 10
 
 
 def load_csv_rows(csv_path: Path) -> list[dict[str, str]]:
@@ -83,16 +81,15 @@ def main() -> None:
     rows = load_csv_rows(csv_path)
     rankings = extract_rankings(rows)
     ranked = sorted(add_scores(rankings), key=lambda item: item["score"], reverse=True)
-    top_10 = ranked[:TOP_N]
 
     data = {
         "index_value": compute_index_value(rankings),
         "date": datetime.now().strftime("%Y-%m-%d"),
         "universe_size": len(rankings),
-        "rankings": top_10,
+        "rankings": ranked,
     }
     write_site_data(output_path, data)
-    print(f"Wrote top {len(top_10)} rankings to {output_path}")
+    print(f"Wrote {len(ranked)} rankings to {output_path}")
     print(f"Universe size: {len(rankings)} stocks")
 
 
