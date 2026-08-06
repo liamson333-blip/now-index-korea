@@ -269,8 +269,14 @@ button:focus-visible,
 .stats-section {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   padding: 24px;
+}
+
+.stat-source {
+  color: #0891b2;
+  font-size: 1rem;
+  word-break: break-word;
 }
 
 .stat-card {

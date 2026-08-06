@@ -84,7 +84,7 @@
         </div>
       </header>
 
-      <section class="content stats-section" aria-label="Market summary">
+<section class="content stats-section" aria-label="Market summary">
         <div class="stat-card">
           <span class="stat-label">Stocks tracked</span>
           <strong id="statCount">—</strong>
@@ -96,6 +96,10 @@
         <div class="stat-card">
           <span class="stat-label">Average price</span>
           <strong id="statAvg">—</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Data source</span>
+          <strong id="statSource" class="stat-source">—</strong>
         </div>
         <div class="stat-card">
           <span class="stat-label">Data updated</span>
@@ -184,15 +188,14 @@
         </div>
 
         <div class="engine-grid">
-          <article class="engine-card">
+<article class="engine-card">
             <div class="engine-top">
               <span class="engine-weight">25%</span>
               <h3>1 · Valuation</h3>
             </div>
-            <p class="engine-question">Is this asset cheap relative to its history and peers?</p>
+            <p class="engine-question">Is this asset cheap relative to its peers?</p>
             <div class="engine-chips">
-              <span>Forward P/E</span><span>EV/EBITDA</span><span>FCF Yield</span>
-              <span>P/B</span><span>EV/Sales</span><span>Dividend Yield</span>
+              <span>P/E ratio</span><span>P/B ratio</span><span>Dividend yield</span>
             </div>
           </article>
 
@@ -203,8 +206,8 @@
             </div>
             <p class="engine-question">Is the market rewarding this asset?</p>
             <div class="engine-chips">
-              <span>3M Momentum</span><span>6M Momentum</span><span>12M Momentum</span>
-              <span>Rel. Strength</span><span>52W High Dist.</span><span>Trend Persistence</span>
+              <span>1M return</span><span>3M return</span><span>6M return</span>
+              <span>52W high distance</span>
             </div>
           </article>
 
@@ -215,8 +218,7 @@
             </div>
             <p class="engine-question">Is this a fundamentally strong business?</p>
             <div class="engine-chips">
-              <span>ROE</span><span>ROIC</span><span>Gross Margin</span>
-              <span>Op. Margin</span><span>FCF Margin</span><span>Debt Coverage</span>
+              <span>EPS</span><span>BPS</span><span>Dividend yield</span>
             </div>
           </article>
 
@@ -227,8 +229,7 @@
             </div>
             <p class="engine-question">How risky is this investment?</p>
             <div class="engine-chips">
-              <span>Volatility</span><span>Beta</span><span>Max Drawdown</span>
-              <span>Downside Dev.</span><span>Liquidity</span><span>Credit Risk</span>
+              <span>Volatility</span><span>Max drawdown</span>
             </div>
           </article>
 
@@ -237,10 +238,9 @@
               <span class="engine-weight">10%</span>
               <h3>5 · Macro</h3>
             </div>
-            <p class="engine-question">Is the macro environment supportive?</p>
+            <p class="engine-question">Is the ownership base supportive?</p>
             <div class="engine-chips">
-              <span>Real Rates</span><span>Inflation</span><span>PMI</span>
-              <span>Yield Curve</span><span>Credit Spreads</span><span>VIX · DXY</span>
+              <span>Foreign ownership rate</span>
             </div>
           </article>
 
@@ -249,10 +249,9 @@
               <span class="engine-weight">10%</span>
               <h3>6 · Sentiment</h3>
             </div>
-            <p class="engine-question">Is the market overly optimistic or pessimistic?</p>
+            <p class="engine-question">What do analysts expect?</p>
             <div class="engine-chips">
-              <span>Fear &amp; Greed</span><span>Put/Call Ratio</span><span>VIX Percentile</span>
-              <span>Insider Buying</span><span>Fund Flows</span><span>Short Interest</span>
+              <span>Consensus rating</span><span>Target-price upside</span>
             </div>
           </article>
         </div>
@@ -261,9 +260,9 @@
           <strong>Live composite.</strong> The NOW score is computed from the six factor engines
           across the full KOSPI/KOSDAQ universe. Each engine returns a 0–100 percentile rank and
           the engines are weighted (0.25·Valuation + 0.20·Momentum + 0.20·Quality + 0.15·Risk +
-          0.10·Macro + 0.10·Sentiment) into a single 0–100 composite. Engines without complete
-          data (e.g. Momentum/Risk until historical price feeds are added) use a neutral 50
-          default so the composite remains robust.
+          0.10·Macro + 0.10·Sentiment) into a single 0–100 composite. Engines whose historical
+          price feed is unavailable (Momentum, Risk) currently use a neutral 50 default so the
+          composite remains robust; these become active once the chart feed is added.
         </aside>
       </section>
 

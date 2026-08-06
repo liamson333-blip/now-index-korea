@@ -167,7 +167,13 @@ function renderStats(data) {
   const avg = data.index_value || computeIndex(rankings.map((stock) => stock.price));
   document.getElementById('statAvg').textContent = formatValue(avg);
 
-  document.getElementById('statDate').textContent = formatDate(data.date);
+document.getElementById('statDate').textContent = formatDate(data.date);
+
+  const sourceEl = document.getElementById('statSource');
+  if (sourceEl) {
+    const source = (data.source || 'naver').replace(/_|\.json/gi, ' ').trim();
+    sourceEl.textContent = source ? `NAVER · ${source}` : 'NAVER';
+  }
 
   // Methodology dashboard metrics
   const universeEl = document.getElementById('methodUniverse');
@@ -270,9 +276,13 @@ async function loadSiteData() {
     indexElement.textContent = formatValue(currentData.index_value);
     document.getElementById('indexMeta').textContent = 'Using sample data';
 
-    renderStats(currentData);
+renderStats(currentData);
     renderRankings(fallbackRankings);
-    showError(`⚠ Sample data in use: ${error.message}`);
+    showError(
+      `⚠ Live data could not be loaded (${error.message}). ` +
+        `Showing 4 sample stocks for preview only — this is NOT the full KOSPI/KOSDAQ universe. ` +
+        `Refresh to retry.`,
+    );
   } finally {
     setLoading(false);
   }
