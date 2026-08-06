@@ -28,7 +28,8 @@ function formatValue(value) {
 }
 
 function formatScore(value) {
-  return value.toFixed(2);
+  if (value == null || isNaN(value)) return '—';
+  return Number(value).toFixed(2);
 }
 
 function formatDate(dateStr) {
@@ -64,6 +65,29 @@ function naverUrl(ticker) {
   return `https://finance.naver.com/item/main.naver?code=${ticker}`;
 }
 
+const ENGINE_LABELS = {
+  valuation: 'Valuation',
+  momentum: 'Momentum',
+  quality: 'Quality',
+  risk: 'Risk',
+  macro: 'Macro',
+  sentiment: 'Sentiment',
+};
+
+function engineBreakdown(stock) {
+  const engineScores = stock && stock.engine_scores;
+  if (!engineScores || typeof engineScores !== 'object') return '';
+  const rows = Object.keys(ENGINE_LABELS)
+    .filter((key) => engineScores[key] != null)
+    .map(
+      (key) =>
+        `<div class="engine-row"><span>${ENGINE_LABELS[key]}</span><b>${formatScore(engineScores[key])}</b></div>`,
+    )
+    .join('');
+  if (!rows) return '';
+  return `<span class="engine-tooltip"><span class="engine-dot" title="Engine breakdown">i</span><span class="engine-tooltip-box">${rows}</span></span>`;
+}
+
 function renderRankings(stocks, filtered = false) {
   const body = document.getElementById('rankingBody');
   const loadingRow = document.getElementById('loadingRow');
@@ -94,7 +118,10 @@ function renderRankings(stocks, filtered = false) {
           <td class="change-cell ${changeClass(stock.change_pct)}">
             ${changeSymbol(stock.change_pct)} ${stock.change_pct != null ? stock.change_pct.toFixed(2) + '%' : '—'}
           </td>
-          <td class="score-cell">${formatScore(stock.score)}</td>
+          <td class="score-cell">
+            <span class="score-value">${formatScore(stock.score)}</span>
+            ${engineBreakdown(stock)}
+          </td>
         </tr>`;
     })
     .join('');

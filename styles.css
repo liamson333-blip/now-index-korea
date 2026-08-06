@@ -490,6 +490,61 @@ th.change-col {
   color: var(--blue-dark);
 }
 
+/* ---------- Engine tooltip (score breakdown) ---------- */
+.engine-tooltip {
+  position: relative;
+  display: inline-flex;
+  margin-left: 6px;
+  cursor: help;
+}
+
+.engine-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.engine-tooltip-box {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  z-index: 10;
+  min-width: 140px;
+  background: var(--navy);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.engine-tooltip:hover .engine-tooltip-box,
+.engine-tooltip:focus-within .engine-tooltip-box {
+  display: block;
+}
+
+.engine-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 3px 0;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+}
+
+.engine-row b {
+  color: #e2e8f0;
+  font-weight: 700;
+}
+
 .loading {
   display: inline-flex;
   align-items: center;

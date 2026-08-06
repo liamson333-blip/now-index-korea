@@ -131,7 +131,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Price (KRW)</th>
                 <th scope="col">Change</th>
-                <th scope="col">NOW score</th>
+                <th scope="col">NOW score (0–100)</th>
               </tr>
             </thead>
             <tbody id="rankingBody">
@@ -257,11 +257,13 @@
           </article>
         </div>
 
-        <aside class="method-note">
-          <strong>Note on live data.</strong> The current preview score is derived from live price
-          momentum. The full six-engine composite requires additional feeds — historical prices,
-          financial statements, and macro/sentiment data — which will be wired into the factor
-          engines in a future release.
+<aside class="method-note">
+          <strong>Live composite.</strong> The NOW score is computed from the six factor engines
+          across the full KOSPI/KOSDAQ universe. Each engine returns a 0–100 percentile rank and
+          the engines are weighted (0.25·Valuation + 0.20·Momentum + 0.20·Quality + 0.15·Risk +
+          0.10·Macro + 0.10·Sentiment) into a single 0–100 composite. Engines without complete
+          data (e.g. Momentum/Risk until historical price feeds are added) use a neutral 50
+          default so the composite remains robust.
         </aside>
       </section>
 
@@ -282,12 +284,13 @@
         <article>
           <h2>How it works</h2>
           <p>
-            Every KOSPI and KOSDAQ stock is fetched from NAVER Finance, then ranked by a NOW score
-            computed as price divided by the average price across the full universe.
+            Every KOSPI and KOSDAQ stock is fetched from NAVER Finance with its fundamentals
+            (PER, PBR, EPS, dividend yield, foreign ownership, analyst targets), then scored by
+            the six-factor NOW composite and ranked across the full universe.
           </p>
           <ul>
-<li><code>scripts/fetch_naver_data.py</code> crawls all KRX stocks</li>
-            <li><code>scripts/generate_site_data.py</code> computes the NOW index for the full universe</li>
+<li><code>scripts/fetch_full_data.py</code> crawls &amp; enriches all KRX stocks</li>
+            <li><code>scripts/generate_site_data.py</code> computes the multi-factor NOW score</li>
             <li><code>notebooks/krx_analysis_template.ipynb</code> is ready for analysis</li>
           </ul>
         </article>
@@ -325,6 +328,6 @@
         <p class="footer-note">Data is for demonstration purposes and not investment advice.</p>
       </footer>
     </div>
-<script src="app.js?cache=7"></script>
+    <script src="app.js?cache=9"></script>
   </body>
 </html>
