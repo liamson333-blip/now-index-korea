@@ -16,7 +16,11 @@
 - [x] **CSV export** of the currently filtered/sorted view
 - [x] **First/last page** navigation buttons
 - [x] Bump app.js cache to 11 to force browser refresh
-- [x] Commit + push to `origin/main` (commit f100ee2)
+- [x] Commit + push to `origin/main` (commits f100ee2, b5a455d)
+- [x] **VERIFIED LIVE**: GitHub Pages now serving `app.js?cache=11` with all features
+  - JSON: 4,295 stocks, `market`, `market_cap`, `engine_scores` all present
+  - Page: `marketFilter`, `exportBtn`, `pageSize`, `kospiCount`, `data-sort`, `market_cap` all confirmed live
+- [x] Repo clean: `main...origin/main` in sync, no untracked files
 
 ## Notes
 - Live site: https://liamson333-blip.github.io/now-index-korea/
