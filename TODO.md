@@ -9,4 +9,4 @@
 - [x] 6. Add scoring engine tests to CI test suite
 - [x] 7. Trim live JSON payload (display fields only) — already in `generate_site_data.py`
 - [x] Verify tests pass (11 passed)
-- [ ] Push changes to GitHub to update live site
+- [x] Push changes to GitHub to update live site (commit b726200)
