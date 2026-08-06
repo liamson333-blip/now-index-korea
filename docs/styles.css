@@ -410,6 +410,90 @@ button:focus-visible,
   background: #fff;
 }
 
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.market-summary {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dist-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+
+.dist-chip b {
+  font-weight: 800;
+}
+
+.kospi-chip {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.kosdaq-chip {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.page-size {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  background: var(--bg-soft);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.page-size:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.export-btn {
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.export-btn:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
 .error-banner {
   margin-top: 18px;
   padding: 14px 18px;
@@ -522,6 +606,56 @@ button:focus-visible,
 th.price-col,
 th.change-col {
   text-align: right;
+}
+
+/* Sortable headers */
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: 26px;
+  transition: color 0.15s ease;
+}
+
+th.sortable:hover {
+  color: var(--blue-deeper);
+}
+
+th.sortable::after {
+  content: '⇅';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  opacity: 0.4;
+}
+
+th.sortable.sorted-asc::after {
+  content: '▲';
+  opacity: 1;
+  color: var(--blue-deeper);
+}
+
+th.sortable.sorted-desc::after {
+  content: '▼';
+  opacity: 1;
+  color: var(--blue-deeper);
+}
+
+th.score-col {
+  text-align: right;
+}
+
+.market-cell {
+  white-space: nowrap;
+}
+
+.cap-cell {
+  text-align: right;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
 }
 
 .change-cell {

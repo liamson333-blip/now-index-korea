@@ -1,11 +1,19 @@
-const PAGE_SIZE = 50;
+const DEFAULT_PAGE_SIZE = 50;
 
 let currentRankings = [];
 let currentData = null;
 let currentPage = 1;
+let PAGE_SIZE = DEFAULT_PAGE_SIZE;
+let sortKey = 'score';
+let sortDir = 'desc';
 
 const currencyFormatter = new Intl.NumberFormat('ko-KR', {
   maximumFractionDigits: 0,
+});
+
+const compactFormatter = new Intl.NumberFormat('en-US', {
+  notation: 'compact',
+  maximumFractionDigits: 1,
 });
 
 function computeIndex(prices) {
@@ -19,6 +27,11 @@ function formatValue(value) {
 function formatScore(value) {
   if (value == null || isNaN(value)) return '—';
   return Number(value).toFixed(2);
+}
+
+function formatCompact(value) {
+  if (value == null || isNaN(value)) return '—';
+  return compactFormatter.format(Number(value));
 }
 
 function formatDate(dateStr) {
@@ -65,7 +78,6 @@ const ENGINE_LABELS = {
 
 function marketBadge(stock) {
   const market = stock && stock.market;
-  const name = (stock && stock.name) || '';
   if (market) {
     return `<span class="market-badge ${market === 'KOSDAQ' ? 'kosdaq' : 'kospi'}">${market}</span> `;
   }
@@ -89,23 +101,37 @@ function engineBreakdown(stock) {
   return `<span class="engine-tooltip"><span class="engine-dot" title="Engine breakdown">i</span><span class="engine-tooltip-box">${rows}</span></span>`;
 }
 
+function sortedCopy(list) {
+  const dir = sortDir === 'asc' ? 1 : -1;
+  return list.slice().sort((a, b) => {
+    let va = a[sortKey];
+    let vb = b[sortKey];
+    if (va == null) va = sortKey === 'score' ? 0 : -Infinity;
+    if (vb == null) vb = sortKey === 'score' ? 0 : -Infinity;
+    if (sortKey === 'name' || sortKey === 'ticker' || sortKey === 'market') {
+      return dir * String(va).localeCompare(String(vb));
+    }
+    return dir * (Number(va) - Number(vb));
+  });
+}
+
 function renderRankings(stocks, filtered = false) {
   const body = document.getElementById('rankingBody');
   const loadingRow = document.getElementById('loadingRow');
   if (loadingRow) loadingRow.remove();
 
   if (!stocks.length) {
-    body.innerHTML = `<tr><td colspan="6" class="empty-state">No stocks match your search.</td></tr>`;
+    body.innerHTML = `<tr><td colspan="8" class="empty-state">No stocks match your search.</td></tr>`;
     return;
   }
 
-  const total = stocks.length;
+  const sorted = sortedCopy(stocks);
+  const total = sorted.length;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
   if (currentPage > totalPages) currentPage = totalPages;
   const start = (currentPage - 1) * PAGE_SIZE;
-  const pageStocks = stocks.slice(start, start + PAGE_SIZE);
+  const pageStocks = sorted.slice(start, start + PAGE_SIZE);
 
-// The rank number should reflect the full filtered list position.
   body.innerHTML = pageStocks
     .map((stock, index) => {
       const rank = start + index + 1;
@@ -114,11 +140,13 @@ function renderRankings(stocks, filtered = false) {
         <tr>
           <td><span class="rank-badge ${rank <= 3 ? 'top' : ''}">${rank}</span></td>
           <td class="ticker-cell"><a class="naver-link" href="${url}" target="_blank" rel="noopener">${stock.ticker}</a></td>
-<td class="name-cell">${marketBadge(stock)}<a class="naver-link" href="${url}" target="_blank" rel="noopener">${stock.name}</a></td>
+          <td class="name-cell"><a class="naver-link" href="${url}" target="_blank" rel="noopener">${stock.name || stock.ticker}</a></td>
+          <td class="market-cell">${marketBadge(stock)}</td>
           <td class="price-cell">${formatValue(stock.price)}</td>
           <td class="change-cell ${changeClass(stock.change_pct)}">
             ${changeSymbol(stock.change_pct)} ${stock.change_pct != null ? stock.change_pct.toFixed(2) + '%' : '—'}
           </td>
+          <td class="cap-cell">${formatCompact(stock.market_cap)}</td>
           <td class="score-cell">
             <span class="score-value">${formatScore(stock.score)}</span>
             ${engineBreakdown(stock)}
@@ -146,6 +174,7 @@ function renderPagination(totalPages, total) {
     return;
   }
   let html = '';
+  html += `<button ${currentPage === 1 ? 'disabled' : ''} data-page="1" class="page-btn" aria-label="First page">«</button>`;
   html += `<button ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}" class="page-btn">‹ Prev</button>`;
 
   const startPage = Math.max(1, currentPage - 2);
@@ -154,6 +183,7 @@ function renderPagination(totalPages, total) {
     html += `<button data-page="${p}" class="page-btn ${p === currentPage ? 'active' : ''}">${p}</button>`;
   }
   html += `<button ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}" class="page-btn">Next ›</button>`;
+  html += `<button ${currentPage === totalPages ? 'disabled' : ''} data-page="${totalPages}" class="page-btn" aria-label="Last page">»</button>`;
   container.innerHTML = html;
 }
 
@@ -168,7 +198,7 @@ function renderStats(data) {
   const avg = data.index_value || computeIndex(rankings.map((stock) => stock.price));
   document.getElementById('statAvg').textContent = formatValue(avg);
 
-document.getElementById('statDate').textContent = formatDate(data.date);
+  document.getElementById('statDate').textContent = formatDate(data.date);
 
   const sourceEl = document.getElementById('statSource');
   if (sourceEl) {
@@ -191,6 +221,22 @@ document.getElementById('statDate').textContent = formatDate(data.date);
   if (indexEl) {
     indexEl.textContent = formatValue(data.index_value);
   }
+
+  renderMarketDistribution(rankings);
+}
+
+function renderMarketDistribution(rankings) {
+  const kospiEl = document.getElementById('kospiCount');
+  const kosdaqEl = document.getElementById('kosdaqCount');
+  if (!kospiEl || !kosdaqEl) return;
+  let kospi = 0;
+  let kosdaq = 0;
+  rankings.forEach((s) => {
+    if (s.market === 'KOSPI') kospi++;
+    else if (s.market === 'KOSDAQ') kosdaq++;
+  });
+  kospiEl.textContent = new Intl.NumberFormat('ko-KR').format(kospi);
+  kosdaqEl.textContent = new Intl.NumberFormat('ko-KR').format(kosdaq);
 }
 
 function setLoading(isLoading) {
@@ -243,6 +289,69 @@ function applyFilter() {
   renderRankings(filtered, !!(query || (market && market !== 'all')));
 }
 
+function renderCurrent() {
+  const query = document.getElementById('searchInput').value.trim();
+  const market = document.getElementById('marketFilter').value;
+  if (query || (market && market !== 'all')) {
+    applyFilter();
+  } else {
+    renderRankings(currentRankings);
+  }
+}
+
+function exportCSV() {
+  const rows = sortedCopy(getFilteredRankings());
+  if (!rows.length) return;
+  const header = [
+    'rank',
+    'ticker',
+    'name',
+    'market',
+    'price',
+    'change_pct',
+    'market_cap',
+    'score',
+    'valuation',
+    'momentum',
+    'quality',
+    'risk',
+    'macro',
+    'sentiment',
+  ];
+  const lines = [header.join(',')];
+  rows.forEach((s, i) => {
+    const es = s.engine_scores || {};
+    const esc = (v) => `"${String(v == null ? '' : v).replace(/"/g, '""')}"`;
+    lines.push(
+      [
+        i + 1,
+        esc(s.ticker),
+        esc(s.name),
+        s.market || '',
+        s.price,
+        s.change_pct,
+        s.market_cap || '',
+        s.score,
+        es.valuation ?? '',
+        es.momentum ?? '',
+        es.quality ?? '',
+        es.risk ?? '',
+        es.macro ?? '',
+        es.sentiment ?? '',
+      ].join(','),
+    );
+  });
+  const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `now-index-korea_${currentData && currentData.date ? currentData.date : 'export'}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 async function loadSiteData() {
   hideError();
   setLoading(true);
@@ -263,13 +372,8 @@ async function loadSiteData() {
     document.getElementById('indexMeta').textContent = `As of ${formatDate(data.date)}`;
 
     renderStats(data);
-    const query = document.getElementById('searchInput').value.trim();
-    if (query) {
-      applyFilter();
-    } else {
-      renderRankings(currentRankings);
-    }
-} catch (error) {
+    renderCurrent();
+  } catch (error) {
     // Do NOT silently fall back to fake sample data. Show a clear empty state
     // so it is obvious the live feed is unavailable.
     currentRankings = [];
@@ -284,7 +388,7 @@ async function loadSiteData() {
     const loadingRow = document.getElementById('loadingRow');
     if (loadingRow) loadingRow.remove();
     body.innerHTML =
-      `<tr><td colspan="6" class="empty-state">` +
+      `<tr><td colspan="8" class="empty-state">` +
       `⚠ Live market data could not be loaded (${error.message}). ` +
       `Please refresh to retry.</td></tr>`;
 
@@ -302,21 +406,45 @@ async function loadSiteData() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-document.getElementById('refreshButton').addEventListener('click', loadSiteData);
+  document.getElementById('refreshButton').addEventListener('click', loadSiteData);
   document.getElementById('searchInput').addEventListener('input', applyFilter);
   const marketFilter = document.getElementById('marketFilter');
   if (marketFilter) marketFilter.addEventListener('change', applyFilter);
+  const pageSize = document.getElementById('pageSize');
+  if (pageSize) {
+    pageSize.addEventListener('change', () => {
+      PAGE_SIZE = parseInt(pageSize.value, 10) || DEFAULT_PAGE_SIZE;
+      currentPage = 1;
+      renderCurrent();
+    });
+  }
+  const exportBtn = document.getElementById('exportBtn');
+  if (exportBtn) exportBtn.addEventListener('click', exportCSV);
+
+  // Sortable headers
+  document.querySelectorAll('th.sortable').forEach((th) => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      if (sortKey === key) {
+        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortKey = key;
+        sortDir = key === 'name' || key === 'ticker' || key === 'market' ? 'asc' : 'desc';
+      }
+      document.querySelectorAll('th.sortable').forEach((t) => {
+        t.classList.remove('sorted-asc', 'sorted-desc');
+      });
+      th.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+      renderCurrent();
+    });
+  });
+
   document.getElementById('pagination').addEventListener('click', (event) => {
     const btn = event.target.closest('.page-btn');
     if (!btn || btn.disabled) return;
     currentPage = parseInt(btn.dataset.page, 10);
-    const query = document.getElementById('searchInput').value.trim();
-    const market = document.getElementById('marketFilter').value;
-    if (query || (market && market !== 'all')) {
-      applyFilter();
-    } else {
-      renderRankings(currentRankings);
-    }
+    renderCurrent();
   });
+
   loadSiteData();
 });
