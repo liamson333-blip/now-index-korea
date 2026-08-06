@@ -15,5 +15,5 @@ composite NOW score instead of the old `price / average_price` method.
 - [x] Update `docs/index.html` methodology note + bump cache version
 - [x] Regenerate `docs/krx_rankings.json` with real fundamentals once crawl completes
 - [x] Verify generated JSON locally (top score 74.93 DL, bottom 22.81, source full_stock_data.json)
-- [ ] Commit and push to GitHub Pages (with user confirmation)
+- [x] Commit and push to GitHub Pages (commit f4c8f3c pushed to origin/main)
 
