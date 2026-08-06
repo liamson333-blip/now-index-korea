@@ -49,7 +49,7 @@ Set-ExecutionPolicy -Scope Process Bypass -Force
 
 > **Note:** The PowerShell crawler is a **legacy fallback** that uses the simple `price / average_price` scoring and does not run the full multi-factor enrichment. For the complete methodology, use the Python pipeline (`fetch_full_data.py` → `generate_site_data.py`).
 
-If the site data file is missing, the page will display a clear "live data unavailable" banner with 4 sample stocks for preview only — not the real universe.
+If the site data file is missing, the page shows a clear "live data unavailable" banner and an empty state — it never falls back to fake sample stocks.
 
 ## Next steps
 

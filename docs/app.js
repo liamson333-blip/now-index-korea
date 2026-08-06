@@ -1,27 +1,16 @@
-const sampleStocks = [
-  { ticker: '005930', name: 'Samsung Electronics', price: 700000, change_pct: 1.25 },
-  { ticker: '000660', name: 'SK Hynix', price: 120000, change_pct: -0.85 },
-  { ticker: '035420', name: 'Naver', price: 310000, change_pct: 2.4 },
-  { ticker: '051910', name: 'LG Energy Solution', price: 950000, change_pct: 0.5 },
-];
-
 const PAGE_SIZE = 50;
 
 let currentRankings = [];
 let currentData = null;
 let currentPage = 1;
 
-function computeIndex(prices) {
-  return prices.reduce((sum, value) => sum + value, 0) / prices.length;
-}
-
-function computeScore(price, average) {
-  return price / average;
-}
-
 const currencyFormatter = new Intl.NumberFormat('ko-KR', {
   maximumFractionDigits: 0,
 });
+
+function computeIndex(prices) {
+  return prices.reduce((sum, value) => sum + value, 0) / prices.length;
+}
 
 function formatValue(value) {
   return currencyFormatter.format(value);
@@ -74,6 +63,18 @@ const ENGINE_LABELS = {
   sentiment: 'Sentiment',
 };
 
+function marketBadge(stock) {
+  const market = stock && stock.market;
+  const name = (stock && stock.name) || '';
+  if (market) {
+    return `<span class="market-badge ${market === 'KOSDAQ' ? 'kosdaq' : 'kospi'}">${market}</span> `;
+  }
+  // Heuristic fallback: KOSDAQ tickers often start with 0/1/2/3/4, KOSPI with 0/1/2/3/5/6/7.
+  const t = (stock && stock.ticker) || '';
+  const isKosdaq = /^[0-4]/.test(t);
+  return `<span class="market-badge ${isKosdaq ? 'kosdaq' : 'kospi'}">${isKosdaq ? 'KOSDAQ' : 'KOSPI'}</span> `;
+}
+
 function engineBreakdown(stock) {
   const engineScores = stock && stock.engine_scores;
   if (!engineScores || typeof engineScores !== 'object') return '';
@@ -113,7 +114,7 @@ function renderRankings(stocks, filtered = false) {
         <tr>
           <td><span class="rank-badge ${rank <= 3 ? 'top' : ''}">${rank}</span></td>
           <td class="ticker-cell"><a class="naver-link" href="${url}" target="_blank" rel="noopener">${stock.ticker}</a></td>
-          <td class="name-cell"><a class="naver-link" href="${url}" target="_blank" rel="noopener">${stock.name}</a></td>
+<td class="name-cell">${marketBadge(stock)}<a class="naver-link" href="${url}" target="_blank" rel="noopener">${stock.name}</a></td>
           <td class="price-cell">${formatValue(stock.price)}</td>
           <td class="change-cell ${changeClass(stock.change_pct)}">
             ${changeSymbol(stock.change_pct)} ${stock.change_pct != null ? stock.change_pct.toFixed(2) + '%' : '—'}
@@ -217,18 +218,29 @@ function hideError() {
   banner.hidden = true;
 }
 
-function applyFilter() {
+function getFilteredRankings() {
   const query = document.getElementById('searchInput').value.trim().toLowerCase();
-  if (!query) {
-    renderRankings(currentRankings, false);
-    return;
+  const market = document.getElementById('marketFilter').value;
+  let list = currentRankings;
+  if (market && market !== 'all') {
+    list = list.filter((stock) => stock.market === market);
   }
-  const filtered = currentRankings.filter(
-    (stock) =>
-      stock.name.toLowerCase().includes(query) || stock.ticker.toLowerCase().includes(query),
-  );
+  if (query) {
+    list = list.filter(
+      (stock) =>
+        (stock.name || '').toLowerCase().includes(query) ||
+        (stock.ticker || '').toLowerCase().includes(query),
+    );
+  }
+  return list;
+}
+
+function applyFilter() {
+  const query = document.getElementById('searchInput').value.trim();
+  const market = document.getElementById('marketFilter').value;
+  const filtered = getFilteredRankings();
   currentPage = 1;
-  renderRankings(filtered, true);
+  renderRankings(filtered, !!(query || (market && market !== 'all')));
 }
 
 async function loadSiteData() {
@@ -257,31 +269,32 @@ async function loadSiteData() {
     } else {
       renderRankings(currentRankings);
     }
-  } catch (error) {
-    // Fallback to sample data
-    const fallbackRankings = getRankings(sampleStocks.map((stock) => ({
-      ...stock,
-      score: computeScore(stock.price, computeIndex(sampleStocks.map((s) => s.price))),
-    })));
-    currentRankings = fallbackRankings;
+} catch (error) {
+    // Do NOT silently fall back to fake sample data. Show a clear empty state
+    // so it is obvious the live feed is unavailable.
+    currentRankings = [];
     currentPage = 1;
-    currentData = {
-      index_value: computeIndex(sampleStocks.map((stock) => stock.price)),
-      rankings: fallbackRankings,
-      universe_size: fallbackRankings.length,
-      date: null,
-    };
+    currentData = null;
 
     const indexElement = document.getElementById('indexValue');
-    indexElement.textContent = formatValue(currentData.index_value);
-    document.getElementById('indexMeta').textContent = 'Using sample data';
+    indexElement.textContent = '—';
+    document.getElementById('indexMeta').textContent = 'Live data unavailable';
 
-renderStats(currentData);
-    renderRankings(fallbackRankings);
+    const body = document.getElementById('rankingBody');
+    const loadingRow = document.getElementById('loadingRow');
+    if (loadingRow) loadingRow.remove();
+    body.innerHTML =
+      `<tr><td colspan="6" class="empty-state">` +
+      `⚠ Live market data could not be loaded (${error.message}). ` +
+      `Please refresh to retry.</td></tr>`;
+
+    const pagination = document.getElementById('pagination');
+    if (pagination) pagination.innerHTML = '';
+    const resultCount = document.getElementById('resultCount');
+    if (resultCount) resultCount.hidden = true;
+
     showError(
-      `⚠ Live data could not be loaded (${error.message}). ` +
-        `Showing 4 sample stocks for preview only — this is NOT the full KOSPI/KOSDAQ universe. ` +
-        `Refresh to retry.`,
+      `⚠ Live data could not be loaded (${error.message}). Refresh to retry.`,
     );
   } finally {
     setLoading(false);
@@ -289,14 +302,17 @@ renderStats(currentData);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('refreshButton').addEventListener('click', loadSiteData);
+document.getElementById('refreshButton').addEventListener('click', loadSiteData);
   document.getElementById('searchInput').addEventListener('input', applyFilter);
+  const marketFilter = document.getElementById('marketFilter');
+  if (marketFilter) marketFilter.addEventListener('change', applyFilter);
   document.getElementById('pagination').addEventListener('click', (event) => {
     const btn = event.target.closest('.page-btn');
     if (!btn || btn.disabled) return;
     currentPage = parseInt(btn.dataset.page, 10);
     const query = document.getElementById('searchInput').value.trim();
-    if (query) {
+    const market = document.getElementById('marketFilter').value;
+    if (query || (market && market !== 'all')) {
       applyFilter();
     } else {
       renderRankings(currentRankings);

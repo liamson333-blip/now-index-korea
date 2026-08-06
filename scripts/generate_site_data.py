@@ -86,6 +86,8 @@ def normalize_full_stocks(stocks: list[dict]) -> list[dict]:
             "name": s.get("name", ticker),
             "price": price,
             "change_pct": _f(s.get("change_pct")) or 0.0,
+            "market": s.get("market", ""),
+            "market_cap": _f(s.get("market_cap")),
             "per": _f(s.get("per")),
             "eps": _f(s.get("eps")),
             "pbr": _f(s.get("pbr")),
@@ -121,6 +123,8 @@ def add_scores(rankings: list[dict[str, object]]) -> list[dict[str, object]]:
             "name": stock["name"],
             "price": stock["price"],
             "change_pct": stock["change_pct"],
+            "market": stock.get("market", ""),
+            "market_cap": stock.get("market_cap"),
             "engine_scores": stock.get("engine_scores", {}),
             "score": stock.get("score", 0),
         }
@@ -180,4 +184,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

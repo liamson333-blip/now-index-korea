@@ -113,14 +113,21 @@
             <h2>Korean stocks ranked by NOW index score</h2>
             <p>Live rankings are generated from KRX data and updated from the site data feed.</p>
           </div>
-          <div class="search-box">
-            <span class="search-icon" aria-hidden="true">⌕</span>
-            <input
-              id="searchInput"
-              type="search"
-              placeholder="Search ticker or name…"
-              aria-label="Search stocks"
-            />
+<div class="filter-bar">
+            <div class="search-box">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search ticker or name…"
+                aria-label="Search stocks"
+              />
+            </div>
+            <select id="marketFilter" class="market-filter" aria-label="Filter by market">
+              <option value="all">All markets</option>
+              <option value="KOSPI">KOSPI</option>
+              <option value="KOSDAQ">KOSDAQ</option>
+            </select>
           </div>
         </div>
 
@@ -327,6 +334,6 @@
         <p class="footer-note">Data is for demonstration purposes and not investment advice.</p>
       </footer>
     </div>
-    <script src="app.js?cache=9"></script>
+<script src="app.js?cache=10"></script>
   </body>
 </html>
