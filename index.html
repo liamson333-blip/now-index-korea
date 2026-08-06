@@ -131,6 +131,24 @@
           </div>
         </div>
 
+        <div class="table-toolbar">
+          <div class="market-summary" aria-label="Market distribution">
+            <span class="dist-chip kospi-chip">KOSPI <b id="kospiCount">—</b></span>
+            <span class="dist-chip kosdaq-chip">KOSDAQ <b id="kosdaqCount">—</b></span>
+          </div>
+          <div class="toolbar-actions">
+            <select id="pageSize" class="page-size" aria-label="Rows per page">
+              <option value="25">25 / page</option>
+              <option value="50" selected>50 / page</option>
+              <option value="100">100 / page</option>
+              <option value="250">250 / page</option>
+            </select>
+            <button id="exportBtn" class="export-btn" aria-label="Export to CSV">
+              ↓ Export CSV
+            </button>
+          </div>
+        </div>
+
         <div id="errorBanner" class="error-banner" role="alert" hidden></div>
 
         <div class="table-wrap">
@@ -140,14 +158,16 @@
                 <th scope="col">#</th>
                 <th scope="col">Ticker</th>
                 <th scope="col">Name</th>
-                <th scope="col">Price (KRW)</th>
-                <th scope="col">Change</th>
-                <th scope="col">NOW score (0–100)</th>
+                <th scope="col">Market</th>
+                <th scope="col" class="sortable price-col" data-sort="price">Price (KRW)</th>
+                <th scope="col" class="sortable change-col" data-sort="change_pct">Change</th>
+                <th scope="col" class="sortable" data-sort="market_cap">Mkt Cap</th>
+                <th scope="col" class="sortable score-col" data-sort="score">NOW score (0–100)</th>
               </tr>
             </thead>
             <tbody id="rankingBody">
               <tr id="loadingRow">
-                <td colspan="6">
+                <td colspan="8">
                   <div class="loading">
                     <span class="spinner spinner-lg"></span>
                     <span>Loading rankings…</span>
@@ -334,6 +354,6 @@
         <p class="footer-note">Data is for demonstration purposes and not investment advice.</p>
       </footer>
     </div>
-<script src="app.js?cache=10"></script>
+<script src="app.js?cache=11"></script>
   </body>
 </html>
