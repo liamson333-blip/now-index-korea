@@ -1,29 +1,19 @@
-# Website Improvement Plan
+# Deploy Multi-Factor NOW Score to Live Site
 
-- [x] Analyze current website structure
-- [x] Get user approval on improvement plan
-- [x] Update `docs/index.html` with enhanced structure (meta tags, favicon, stats, search, improved table)
-- [x] Update `docs/styles.css` with polished styling (fonts, animations, badges, responsive)
-- [x] Update `docs/app.js` with enhanced functionality (search, stats, loading/error states)
-- [x] Update `docs/krx_rankings.json` with richer data (change_pct, date)
-- [x] Test locally by opening the site in a browser
+## Objective
+Wire the existing 6-engine multi-factor scoring system (`scripts/scoring.py`) into the
+data pipeline and deploy it to the live GitHub Pages site so the rankings reflect the new
+composite NOW score instead of the old `price / average_price` method.
 
-## NAVER Data Pipeline (real data)
+## Steps
+- [x] Wire multi-factor scoring into `scripts/generate_site_data.py`
+- [x] Fix `scripts/scoring.py` per-stock engine indexing bug (list vs scalar)
+- [x] Generate enriched full-universe data (`data/full_stock_data.json`) via `fetch_full_data.py`
+- [x] Verify generator writes full universe (4295) with engine_scores (fallback CSV: neutral 50)
+- [x] Update `docs/app.js` to display new scores and engine breakdown
+- [x] Add engine tooltip CSS to `docs/styles.css`
+- [x] Update `docs/index.html` methodology note + bump cache version
+- [x] Regenerate `docs/krx_rankings.json` with real fundamentals once crawl completes
+- [x] Verify generated JSON locally (top score 74.93 DL, bottom 22.81, source full_stock_data.json)
+- [ ] Commit and push to GitHub Pages (with user confirmation)
 
-- [x] Verify NAVER API endpoints & required fields
-- [x] Create `scripts/fetch_naver_data.py` (Python crawler for all KOSPI/KOSDAQ)
-- [x] Create `scripts/crawl_and_generate.ps1` (PowerShell fallback crawler)
-- [x] Update `scripts/generate_site_data.py` (compute NOW scores, top 10)
-- [x] Generate top-10 JSON via NAVER crawl → `docs/krx_rankings.json` (4,295 stocks)
-- [x] Update `docs/index.html` to describe NAVER data pipeline
-- [x] Update `README.md` with pipeline & usage docs
-## Full-universe display (all KOSPI/KOSDAQ stocks)
-
-- [x] Regenerate `docs/krx_rankings.json` with the full 4,295-stock universe (index_value 27963, no nulls/Infinity)
-- [x] Update `docs/app.js` to render the full universe with pagination (50 per page) and cross-page search
-- [x] Update `docs/styles.css` with pagination component styles
-- [x] Update `docs/index.html` with pagination element, universe_size stats, and remove top-10 wording
-- [x] Update `scripts/generate_site_data.py` to publish the full ranked universe
-- [x] Update `README.md` to reflect full-universe publishing
-
-- [ ] Push changes to GitHub to update live site (with user confirmation)
