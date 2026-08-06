@@ -2,9 +2,15 @@
 .SYNOPSIS
     Crawl all KOSPI/KOSDAQ stocks from NAVER and generate docs/krx_rankings.json
 .DESCRIPTION
+    LEGACY FALLBACK (Windows without Python).
     Fetches ALL stocks from KOSPI and KOSDAQ via NAVER's mobile API,
-    computes NOW score (price/avg_price), and outputs top 10 to the site data file.
-    This is a Windows PowerShell fallback for systems without Python.
+    computes a simple NOW score (price/avg_price), and writes the full ranked
+    universe to the site data file.
+
+    NOTE: This does NOT run the full multi-factor scoring engine
+    (scripts/scoring.py). For the complete methodology use the Python pipeline:
+        python scripts/fetch_full_data.py
+        python scripts/generate_site_data.py
 #>
 
 $ErrorActionPreference = "Continue"
@@ -70,12 +76,10 @@ $ranked = $valid |
         @{ N="score"; E={ [math]::Round($_.price / $avgPrice, 4) } } |
     Sort-Object score -Descending
 
-$top = $ranked | Select-Object -First 10
-
-# Build top 10 as clean output
-$top10 = [System.Collections.ArrayList]::new()
-foreach ($s in $top) {
-    $null = $top10.Add([PSCustomObject]@{
+# Build the FULL ranked universe (not just top 10) for the live site.
+$output = [System.Collections.ArrayList]::new()
+foreach ($s in $ranked) {
+    $null = $output.Add([PSCustomObject]@{
         ticker     = $s.ticker
         name       = $s.name
         price      = $s.price
@@ -88,7 +92,8 @@ $siteData = [PSCustomObject]@{
     index_value   = [math]::Round($avgPrice, 0)
     date          = (Get-Date -Format "yyyy-MM-dd")
     universe_size = $validCount
-    rankings      = $top10
+    source        = "naver_stock_data (legacy PowerShell fallback)"
+    rankings      = $output
 }
 
 $json = $siteData | ConvertTo-Json -Depth 5
@@ -96,8 +101,8 @@ Write-Host "`nGenerated JSON:"
 Write-Host $json
 
 $json | Set-Content -Path "docs/krx_rankings.json" -Encoding UTF8
-Write-Host "`nWrote to docs/krx_rankings.json"
+Write-Host "`nWrote $($output.Count) rankings to docs/krx_rankings.json"
 
-# Also echo the top 10 for verification
+# Echo the top 10 for quick verification
 Write-Host "`n=== TOP 10 STOCKS BY NOW SCORE ==="
-$top10 | Format-Table ticker, name, @{N="price";E={$_.price.ToString("N0")}}, change_pct, score -AutoSize
+$output | Select-Object -First 10 | Format-Table ticker, name, @{N="price";E={$_.price.ToString("N0")}}, change_pct, score -AutoSize

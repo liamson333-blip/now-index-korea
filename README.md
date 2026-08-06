@@ -15,11 +15,11 @@ A starter repository for building a Korean stock market NOW index.
 
 ## Data pipeline
 
-The live site is powered by a real data pipeline that crawls **all KOSPI and KOSDAQ stocks** from NAVER Finance:
+The live site is powered by a real data pipeline that crawls **all KOSPI and KOSDAQ stocks** from NAVER Finance and scores them with a Wall Street-grade, six-factor composite:
 
-1. **Crawl** — `scripts/fetch_naver_data.py` fetches every KOSPI/KOSDAQ stock (price + daily change) from NAVER's public API.
-2. **Compute** — the NOW score for each stock is `price / average_price` across the full universe.
-3. **Publish** — `scripts/generate_site_data.py` writes the **full universe** of stocks (all 4,000+), ranked by NOW score, to `docs/krx_rankings.json`.
+1. **Crawl** — `scripts/fetch_full_data.py` fetches every KOSPI/KOSDAQ stock (price, change, market cap) plus per-stock fundamentals (PER, EPS, PBR, BPS, dividend yield, foreign ownership, analyst consensus & target) and daily price history for momentum/volatility.
+2. **Score** — `scripts/scoring.py` computes a multi-factor NOW score for each stock. Each engine returns a 0–100 percentile rank across the universe, combined as `NOW = 0.25·Valuation + 0.20·Momentum + 0.20·Quality + 0.15·Risk + 0.10·Macro + 0.10·Sentiment`.
+3. **Publish** — `scripts/generate_site_data.py` writes the **full sorted universe** (all 4,000+ stocks) to `docs/krx_rankings.json`, so the frontend can search, filter, and paginate through every KOSPI/KOSDAQ stock.
 
 ### Reproduce the data
 
@@ -32,20 +32,24 @@ pip install -r requirements.txt
 Then crawl and generate:
 
 ```powershell
-python scripts/fetch_naver_data.py
+python scripts/fetch_full_data.py          # full 4,000+ stock enrichment (takes a while)
 python scripts/generate_site_data.py
 ```
 
+If `data/full_stock_data.json` is unavailable, `generate_site_data.py` automatically falls back to the simpler price-based crawl from `data/naver_stock_data.csv` (produced by `scripts/fetch_naver_data.py`).
+
 ### No Python? Use the PowerShell crawler
 
-On machines without Python (e.g. Windows only), a PowerShell fallback performs the same crawl, computes the NOW score for all 4,000+ stocks, and writes the full ranked universe to the site data file:
+On machines without Python (e.g. Windows only), `scripts/fetch_naver_data.ps1` performs a basic crawl and `scripts/crawl_and_generate.ps1` computes the NOW score for all 4,000+ stocks and writes the full ranked universe to the site data file:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass -Force
 .\scripts\crawl_and_generate.ps1
 ```
 
-If the site data file is missing, the page will display fallback sample rankings until `docs/krx_rankings.json` is refreshed.
+> **Note:** The PowerShell crawler is a **legacy fallback** that uses the simple `price / average_price` scoring and does not run the full multi-factor enrichment. For the complete methodology, use the Python pipeline (`fetch_full_data.py` → `generate_site_data.py`).
+
+If the site data file is missing, the page will display a clear "live data unavailable" banner with 4 sample stocks for preview only — not the real universe.
 
 ## Next steps
 
