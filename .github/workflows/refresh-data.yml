@@ -1,0 +1,62 @@
+name: Refresh KRX Data
+
+on:
+  schedule:
+    # Every 5 minutes (fast price refresh)
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: krx-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Ensure enriched dataset exists
+        run: |
+          if [ ! -f data/full_stock_data.json ]; then
+            echo "Enriched dataset missing — running full crawl (fundamentals)."
+            python scripts/fetch_full_data.py
+          fi
+
+      - name: Refresh live prices (fast)
+        run: python scripts/refresh_prices.py
+
+      - name: Generate site rankings
+        run: python scripts/generate_site_data.py
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push fresh data
+        run: |
+          if git diff --quiet docs/krx_rankings.json data/full_stock_data.json; then
+            echo "No price changes — skipping commit."
+          else
+            git add docs/krx_rankings.json data/full_stock_data.json
+            git commit -m "Auto-refresh KRX prices ($(TZ='Asia/Seoul' date '+%Y-%m-%d %H:%M KST'))"
+            git push origin main
+            echo "Pushed fresh rankings to main."
+          fi

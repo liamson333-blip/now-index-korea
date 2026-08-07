@@ -73,3 +73,20 @@ https://liamson333-blip.github.io/now-index-korea/
 ## Continuous integration
 
 A GitHub Actions workflow has been added to run tests on push and pull requests to `main`.
+
+## Automatic data refresh (every 5 minutes)
+
+The live site data is kept fresh automatically via scheduled GitHub Actions workflows, so you never have to manually re-run the pipeline:
+
+1. **`refresh-data.yml` — runs every 5 minutes.**
+   - Pulls the latest **prices and daily change** for every KOSPI/KOSDAQ stock from NAVER (`scripts/refresh_prices.py`).
+   - Recomputes the NOW scores and regenerates `docs/krx_rankings.json` (`scripts/generate_site_data.py`).
+   - If prices changed, it auto-commits and pushes to `main`, which triggers the Pages deploy — so the live site updates within minutes.
+
+2. **`full-enrich.yml` — runs daily (07:20 KST).**
+   - Refreshes **fundamentals** (PER, EPS, PBR, dividend yield, foreign ownership, analyst targets) and daily price history for momentum/volatility (`scripts/fetch_full_data.py`).
+   - Fundamentals change slowly, so a daily refresh is enough; prices still update every 5 minutes in between.
+
+Because the site is served from GitHub Pages (the `gh-pages` branch, built from `docs/`), every successful push to `main` is automatically deployed. The result is a live site whose prices/scores stay current without any manual work.
+
+> **Note:** GitHub Actions cron schedules have a minimum interval of 5 minutes. In practice, scheduled runs may occasionally be delayed by GitHub's scheduler (typically by a few minutes) during periods of high load. The data is therefore refreshed "around every 5 minutes" during trading hours rather than on a guaranteed exact 5-minute clock.

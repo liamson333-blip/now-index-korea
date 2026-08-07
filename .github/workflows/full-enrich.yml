@@ -1,0 +1,55 @@
+name: Full Fundamental Enrichment
+
+on:
+  schedule:
+    # Refresh fundamentals daily (fundamentals don't change every 5 minutes)
+    - cron: "20 22 * * *"   # 22:20 UTC = 07:20 KST (before market open)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: krx-enrich
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Full crawl (fundamentals + charts)
+        run: python scripts/fetch_full_data.py
+
+      - name: Generate site rankings
+        run: python scripts/generate_site_data.py
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push refreshed fundamentals
+        run: |
+          if git diff --quiet docs/krx_rankings.json data/full_stock_data.json; then
+            echo "No changes — skipping commit."
+          else
+            git add docs/krx_rankings.json data/full_stock_data.json
+            git commit -m "Daily fundamental enrichment ($(TZ='Asia/Seoul' date '+%Y-%m-%d'))"
+            git push origin main
+            echo "Pushed refreshed fundamentals to main."
+          fi
