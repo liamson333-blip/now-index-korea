@@ -22,6 +22,14 @@
   - Page: `marketFilter`, `exportBtn`, `pageSize`, `kospiCount`, `data-sort`, `market_cap` all confirmed live
 - [x] Repo clean: `main...origin/main` in sync, no untracked files
 
+## Auto data refresh (every 5 minutes)
+- [x] Create `scripts/refresh_prices.py` (fast market-list price refresh, preserves fundamentals)
+- [x] Create `.github/workflows/refresh-data.yml` (cron every 5 min, refresh prices + regenerate rankings, auto-commit+push)
+- [x] Create `.github/workflows/full-enrich.yml` (daily 07:20 KST fundamental enrichment)
+- [x] Verify full pipeline locally (date 2026-08-07, 4,295 stocks, top DL우 74.93)
+- [x] Update README with auto-refresh docs
+- [x] Commit `89c6a50` + push to `origin/main` (workflows now active)
+
 ## Notes
 - Live site: https://liamson333-blip.github.io/now-index-korea/
 - GitHub Pages auto-deploys from `docs/` on push to `main`
