@@ -1,5 +1,5 @@
 {
-  "index_value": 28363.03604651163,
+  "index_value": 28364.028372093024,
   "date": "2026-08-25",
   "universe_size": 4300,
   "source": "full_stock_data.json",
@@ -1701,7 +1701,7 @@
       "price": 2500.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 58987332500.0,
+      "market_cap": 62064882500.0,
       "engine_scores": {
         "valuation": 99.93,
         "momentum": 50.0,
@@ -11425,7 +11425,7 @@
       "price": 498000.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 45184826334000.0,
+      "market_cap": 44730651330000.0,
       "engine_scores": {
         "valuation": 37.48,
         "momentum": 50.0,
@@ -14703,10 +14703,10 @@
     {
       "ticker": "001465",
       "name": "BYC우",
-      "price": 26950.0,
+      "price": 27000.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 58046257500.0,
+      "market_cap": 58153950000.0,
       "engine_scores": {
         "valuation": 52.0,
         "momentum": 50.0,
@@ -21642,7 +21642,7 @@
       "price": 106795.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 24813818250000.0,
+      "market_cap": 24749741250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21659,7 +21659,7 @@
       "price": 26355.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 20365826250000.0,
+      "market_cap": 20400087750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21676,7 +21676,7 @@
       "price": 179030.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 11314696000000.0,
+      "market_cap": 11334389300000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21693,7 +21693,7 @@
       "price": 106940.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10084442000000.0,
+      "market_cap": 10004237000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21710,7 +21710,7 @@
       "price": 23955.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10032354000000.0,
+      "market_cap": 10059902250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21727,7 +21727,7 @@
       "price": 35105.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 9446755500000.0,
+      "market_cap": 9480105250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21744,7 +21744,7 @@
       "price": 26765.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 9240616250000.0,
+      "market_cap": 9262028250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21761,7 +21761,7 @@
       "price": 105330.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 8206049640000.0,
+      "market_cap": 8165181600000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21778,7 +21778,7 @@
       "price": 38655.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 7630497000000.0,
+      "market_cap": 7601505750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21795,7 +21795,7 @@
       "price": 1075620.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 6597207708000.0,
+      "market_cap": 6572145762000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21812,7 +21812,7 @@
       "price": 20230.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 5723067000000.0,
+      "market_cap": 5702837000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21829,7 +21829,7 @@
       "price": 105550.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 5868580000000.0,
+      "market_cap": 5594150000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21846,7 +21846,7 @@
       "price": 41880.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 5678928000000.0,
+      "market_cap": 5657988000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21863,7 +21863,7 @@
       "price": 17270.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 5589435500000.0,
+      "market_cap": 5564394000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21880,7 +21880,7 @@
       "price": 124915.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 5533734500000.0,
+      "market_cap": 5490014250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21897,7 +21897,7 @@
       "price": 14300.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 4978545000000.0,
+      "market_cap": 5050045000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21914,7 +21914,7 @@
       "price": 107520.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 4419072000000.0,
+      "market_cap": 4397568000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21948,7 +21948,7 @@
       "price": 15430.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 4363604000000.0,
+      "market_cap": 4375176500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21965,7 +21965,7 @@
       "price": 13315.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 4089036500000.0,
+      "market_cap": 4097025500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21982,7 +21982,7 @@
       "price": 29125.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 4295937500000.0,
+      "market_cap": 4307587500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -21999,7 +21999,7 @@
       "price": 38860.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3967606000000.0,
+      "market_cap": 3955948000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22016,7 +22016,7 @@
       "price": 26635.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3952634000000.0,
+      "market_cap": 3965951500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22033,7 +22033,7 @@
       "price": 30310.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3741769500000.0,
+      "market_cap": 3740254000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22050,7 +22050,7 @@
       "price": 55240.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3485644000000.0,
+      "market_cap": 3482882000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22067,7 +22067,7 @@
       "price": 110865.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3577835280000.0,
+      "market_cap": 3575617980000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22101,7 +22101,7 @@
       "price": 30780.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3416580000000.0,
+      "market_cap": 3431970000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22118,7 +22118,7 @@
       "price": 25650.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3316545000000.0,
+      "market_cap": 3319110000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22135,7 +22135,7 @@
       "price": 109800.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3364162200000.0,
+      "market_cap": 3353621400000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22152,7 +22152,7 @@
       "price": 7220.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3474986000000.0,
+      "market_cap": 3661262000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22169,7 +22169,7 @@
       "price": 55435.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3027970570000.0,
+      "market_cap": 3033846680000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22186,7 +22186,7 @@
       "price": 103450.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3291882450000.0,
+      "market_cap": 3273778700000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22203,7 +22203,7 @@
       "price": 34090.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 2999920000000.0,
+      "market_cap": 2993102000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22271,7 +22271,7 @@
       "price": 10085.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 2337198750000.0,
+      "market_cap": 2319297875000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22288,7 +22288,7 @@
       "price": 111680.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 2436969280000.0,
+      "market_cap": 2434959040000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22305,7 +22305,7 @@
       "price": 20450.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 2398989500000.0,
+      "market_cap": 2396740000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22339,7 +22339,7 @@
       "price": 25165.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 2402250900000.0,
+      "market_cap": 2403760800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22356,7 +22356,7 @@
       "price": 10560.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 2340096000000.0,
+      "market_cap": 2353824000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22373,7 +22373,7 @@
       "price": 56800.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 2092512000000.0,
+      "market_cap": 2087968000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22390,7 +22390,7 @@
       "price": 37620.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 2027718000000.0,
+      "market_cap": 2031480000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22424,7 +22424,7 @@
       "price": 102840.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1905933720000.0,
+      "market_cap": 1896986640000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22441,7 +22441,7 @@
       "price": 106955.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1738018750000.0,
+      "market_cap": 1721975500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22475,7 +22475,7 @@
       "price": 114555.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1836431205000.0,
+      "market_cap": 1833681885000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22492,7 +22492,7 @@
       "price": 11650.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1492365000000.0,
+      "market_cap": 1486831250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22509,7 +22509,7 @@
       "price": 99180.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1706887800000.0,
+      "market_cap": 1694986200000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22526,7 +22526,7 @@
       "price": 12790.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1691477500000.0,
+      "market_cap": 1698512000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22560,7 +22560,7 @@
       "price": 14465.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1675047000000.0,
+      "market_cap": 1672154000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22611,7 +22611,7 @@
       "price": 14065.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1521833000000.0,
+      "market_cap": 1513394000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22628,7 +22628,7 @@
       "price": 4120.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1552828000000.0,
+      "market_cap": 1556330000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22645,7 +22645,7 @@
       "price": 29865.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1535061000000.0,
+      "market_cap": 1541034000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22679,7 +22679,7 @@
       "price": 7180.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1508518000000.0,
+      "market_cap": 1507800000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22696,7 +22696,7 @@
       "price": 8485.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1416358625000.0,
+      "market_cap": 1402782625000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22713,7 +22713,7 @@
       "price": 23035.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1478847000000.0,
+      "market_cap": 1483454000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22764,7 +22764,7 @@
       "price": 27855.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1480493250000.0,
+      "market_cap": 1479100500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22798,7 +22798,7 @@
       "price": 106065.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1362404925000.0,
+      "market_cap": 1343631420000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22815,7 +22815,7 @@
       "price": 14595.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1359378300000.0,
+      "market_cap": 1359670200000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22832,7 +22832,7 @@
       "price": 112485.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1265006310000.0,
+      "market_cap": 1262531640000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22849,7 +22849,7 @@
       "price": 17315.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1265726500000.0,
+      "market_cap": 1267458000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22900,7 +22900,7 @@
       "price": 13885.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1285056750000.0,
+      "market_cap": 1286445250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22917,7 +22917,7 @@
       "price": 69330.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1334602500000.0,
+      "market_cap": 1400466000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22934,7 +22934,7 @@
       "price": 14100.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1230930000000.0,
+      "market_cap": 1235160000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -22951,7 +22951,7 @@
       "price": 7870.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1152561500000.0,
+      "market_cap": 1152955000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23002,7 +23002,7 @@
       "price": 21110.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1067110500000.0,
+      "market_cap": 1071332500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23036,7 +23036,7 @@
       "price": 10600.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 893315000000.0,
+      "market_cap": 884570000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23087,7 +23087,7 @@
       "price": 14150.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1065495000000.0,
+      "market_cap": 1068325000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23138,7 +23138,7 @@
       "price": 74890.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 981059000000.0,
+      "market_cap": 969825500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23155,7 +23155,7 @@
       "price": 53640.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1045443600000.0,
+      "market_cap": 1048662000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23189,7 +23189,7 @@
       "price": 17120.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1017784000000.0,
+      "market_cap": 1018640000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23206,7 +23206,7 @@
       "price": 54340.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1009528520000.0,
+      "market_cap": 1009419840000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23223,7 +23223,7 @@
       "price": 101150.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1030516200000.0,
+      "market_cap": 1028392050000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23291,7 +23291,7 @@
       "price": 52760.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1020906000000.0,
+      "market_cap": 1015946560000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23308,7 +23308,7 @@
       "price": 15690.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 983763000000.0,
+      "market_cap": 988470000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23325,7 +23325,7 @@
       "price": 9115.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 983508500000.0,
+      "market_cap": 991712000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23359,7 +23359,7 @@
       "price": 53730.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 969826500000.0,
+      "market_cap": 969719040000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23376,7 +23376,7 @@
       "price": 24080.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 1017380000000.0,
+      "market_cap": 1016176000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23410,7 +23410,7 @@
       "price": 17770.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 946252500000.0,
+      "market_cap": 948918000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23444,7 +23444,7 @@
       "price": 105780.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 867290220000.0,
+      "market_cap": 828468960000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23461,7 +23461,7 @@
       "price": 18280.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 909430000000.0,
+      "market_cap": 910344000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23512,7 +23512,7 @@
       "price": 10990.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 793478000000.0,
+      "market_cap": 790181000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23529,7 +23529,7 @@
       "price": 113245.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 813099100000.0,
+      "market_cap": 802680560000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23546,7 +23546,7 @@
       "price": 28505.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 781607100000.0,
+      "market_cap": 781037000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23563,7 +23563,7 @@
       "price": 11665.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 821216000000.0,
+      "market_cap": 828215000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23597,7 +23597,7 @@
       "price": 6860.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 782726000000.0,
+      "market_cap": 781697000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23614,7 +23614,7 @@
       "price": 12045.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 779913750000.0,
+      "market_cap": 781118250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23631,7 +23631,7 @@
       "price": 13865.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 815539300000.0,
+      "market_cap": 816925800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23648,7 +23648,7 @@
       "price": 106600.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 730210000000.0,
+      "market_cap": 740870000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23665,7 +23665,7 @@
       "price": 10400.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 753792000000.0,
+      "market_cap": 753376000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23699,7 +23699,7 @@
       "price": 14075.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 762161250000.0,
+      "market_cap": 764272500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23716,7 +23716,7 @@
       "price": 18525.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 763230000000.0,
+      "market_cap": 764156250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23750,7 +23750,7 @@
       "price": 1032.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 781636800000.0,
+      "market_cap": 764608800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23767,7 +23767,7 @@
       "price": 50965.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 717892990000.0,
+      "market_cap": 718708430000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23784,7 +23784,7 @@
       "price": 57060.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 734133960000.0,
+      "market_cap": 745545960000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23801,7 +23801,7 @@
       "price": 11360.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 720224000000.0,
+      "market_cap": 724200000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23818,7 +23818,7 @@
       "price": 18475.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 715906250000.0,
+      "market_cap": 711287500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23903,7 +23903,7 @@
       "price": 51185.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 656601180000.0,
+      "market_cap": 631366975000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -23937,7 +23937,7 @@
       "price": 78.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 726827400000.0,
+      "market_cap": 772239000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24005,7 +24005,7 @@
       "price": 61275.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 650740500000.0,
+      "market_cap": 650127750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24022,7 +24022,7 @@
       "price": 10125.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 673818750000.0,
+      "market_cap": 672806250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24039,7 +24039,7 @@
       "price": 1009.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 708822500000.0,
+      "market_cap": 711244100000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24056,7 +24056,7 @@
       "price": 11925.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 648720000000.0,
+      "market_cap": 651105000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24090,7 +24090,7 @@
       "price": 39530.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 628527000000.0,
+      "market_cap": 632480000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24107,7 +24107,7 @@
       "price": 24515.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 619003750000.0,
+      "market_cap": 618513450000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24124,7 +24124,7 @@
       "price": 16770.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 628875000000.0,
+      "market_cap": 629713500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24158,7 +24158,7 @@
       "price": 13090.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 625702000000.0,
+      "market_cap": 626094700000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24175,7 +24175,7 @@
       "price": 8450.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 655720000000.0,
+      "market_cap": 659945000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24209,7 +24209,7 @@
       "price": 17910.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 590134500000.0,
+      "market_cap": 584761500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24226,7 +24226,7 @@
       "price": 8285.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 600331100000.0,
+      "market_cap": 600662500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24243,7 +24243,7 @@
       "price": 13270.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 611747000000.0,
+      "market_cap": 617055000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24260,7 +24260,7 @@
       "price": 32305.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 573413750000.0,
+      "market_cap": 568568000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24294,7 +24294,7 @@
       "price": 6970.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 569100500000.0,
+      "market_cap": 568752000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24311,7 +24311,7 @@
       "price": 80410.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 565282300000.0,
+      "market_cap": 564478200000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24328,7 +24328,7 @@
       "price": 29935.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 560981900000.0,
+      "market_cap": 560083850000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24362,7 +24362,7 @@
       "price": 13405.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 553358400000.0,
+      "market_cap": 552822200000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24396,7 +24396,7 @@
       "price": 13135.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 559551000000.0,
+      "market_cap": 560207750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24430,7 +24430,7 @@
       "price": 10175.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 550671000000.0,
+      "market_cap": 546397500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24447,7 +24447,7 @@
       "price": 22060.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 568045000000.0,
+      "market_cap": 570251000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24464,7 +24464,7 @@
       "price": 10595.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 542993750000.0,
+      "market_cap": 547231750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24515,7 +24515,7 @@
       "price": 82560.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 528136320000.0,
+      "market_cap": 525576960000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24532,7 +24532,7 @@
       "price": 12945.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 537217500000.0,
+      "market_cap": 538512000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24617,7 +24617,7 @@
       "price": 8730.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 525982500000.0,
+      "market_cap": 524673000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24634,7 +24634,7 @@
       "price": 70350.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 566317500000.0,
+      "market_cap": 580387500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24668,7 +24668,7 @@
       "price": 34390.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 519289000000.0,
+      "market_cap": 521008500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24702,7 +24702,7 @@
       "price": 315495.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 481129875000.0,
+      "market_cap": 449580375000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24736,7 +24736,7 @@
       "price": 14000.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 494200000000.0,
+      "market_cap": 496300000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24753,7 +24753,7 @@
       "price": 4780.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 517196000000.0,
+      "market_cap": 517674000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24804,7 +24804,7 @@
       "price": 11300.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 479120000000.0,
+      "market_cap": 484770000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24835,10 +24835,10 @@
     {
       "ticker": "0162M0",
       "name": "KODEX 금융채1~2년(AA-이상)PLUS액티브",
-      "price": 10060.0,
+      "price": 10055.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 392742400000.0,
+      "market_cap": 372638300000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24855,7 +24855,7 @@
       "price": 17750.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 458837500000.0,
+      "market_cap": 459725000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24889,7 +24889,7 @@
       "price": 107055.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 438925500000.0,
+      "market_cap": 433572750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24903,10 +24903,10 @@
     {
       "ticker": "473290",
       "name": "KODEX 26-12 회사채(AA-이상)액티브",
-      "price": 10872.0,
+      "price": 10875.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 451079280000.0,
+      "market_cap": 450007500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24923,7 +24923,7 @@
       "price": 107165.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 451271815000.0,
+      "market_cap": 449771505000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24957,7 +24957,7 @@
       "price": 8920.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 459380000000.0,
+      "market_cap": 458042000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -24991,7 +24991,7 @@
       "price": 51470.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 425039260000.0,
+      "market_cap": 422671640000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25025,7 +25025,7 @@
       "price": 14730.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 414649500000.0,
+      "market_cap": 413913000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25042,7 +25042,7 @@
       "price": 29335.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 415090250000.0,
+      "market_cap": 416557000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25059,7 +25059,7 @@
       "price": 24270.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 406522500000.0,
+      "market_cap": 407736000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25127,7 +25127,7 @@
       "price": 12785.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 396335000000.0,
+      "market_cap": 397613500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25161,7 +25161,7 @@
       "price": 34650.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 394317000000.0,
+      "market_cap": 395010000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25178,7 +25178,7 @@
       "price": 31750.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 392430000000.0,
+      "market_cap": 393700000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25212,7 +25212,7 @@
       "price": 34480.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 384865760000.0,
+      "market_cap": 383486560000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25314,7 +25314,7 @@
       "price": 86400.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 374630400000.0,
+      "market_cap": 359942400000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25331,7 +25331,7 @@
       "price": 7935.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 361042500000.0,
+      "market_cap": 360645750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25348,7 +25348,7 @@
       "price": 22035.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 370188000000.0,
+      "market_cap": 372391500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25365,7 +25365,7 @@
       "price": 26095.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 370549000000.0,
+      "market_cap": 373158500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25382,7 +25382,7 @@
       "price": 113645.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 365936900000.0,
+      "market_cap": 368437090000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25433,7 +25433,7 @@
       "price": 8230.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 359651000000.0,
+      "market_cap": 360885500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25450,7 +25450,7 @@
       "price": 8980.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 359200000000.0,
+      "market_cap": 360098000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25484,7 +25484,7 @@
       "price": 22680.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 347004000000.0,
+      "market_cap": 344736000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25501,7 +25501,7 @@
       "price": 114080.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 344407520000.0,
+      "market_cap": 345434240000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25518,7 +25518,7 @@
       "price": 9570.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 345477000000.0,
+      "market_cap": 346434000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25535,7 +25535,7 @@
       "price": 10275.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 334965000000.0,
+      "market_cap": 333937500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25552,7 +25552,7 @@
       "price": 9595.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 347243050000.0,
+      "market_cap": 348298500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25569,7 +25569,7 @@
       "price": 10450.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 350075000000.0,
+      "market_cap": 353210000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25637,7 +25637,7 @@
       "price": 12880.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 337456000000.0,
+      "market_cap": 336168000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25671,7 +25671,7 @@
       "price": 17490.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 337557000000.0,
+      "market_cap": 340180500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25756,7 +25756,7 @@
       "price": 14220.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 324784800000.0,
+      "market_cap": 325069200000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25773,7 +25773,7 @@
       "price": 7005.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 303666750000.0,
+      "market_cap": 303316500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25824,7 +25824,7 @@
       "price": 10185.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 295365000000.0,
+      "market_cap": 331012500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25841,7 +25841,7 @@
       "price": 10245.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 298129500000.0,
+      "market_cap": 298641750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25858,7 +25858,7 @@
       "price": 101945.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 295130775000.0,
+      "market_cap": 295946335000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25892,7 +25892,7 @@
       "price": 6530.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 301686000000.0,
+      "market_cap": 302012500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -25943,7 +25943,7 @@
       "price": 23750.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 286187500000.0,
+      "market_cap": 287375000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26011,7 +26011,7 @@
       "price": 69785.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 341946500000.0,
+      "market_cap": 376839000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26062,7 +26062,7 @@
       "price": 7605.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 275681250000.0,
+      "market_cap": 276061500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26096,7 +26096,7 @@
       "price": 14805.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 284996250000.0,
+      "market_cap": 285736500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26113,7 +26113,7 @@
       "price": 16455.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 278912250000.0,
+      "market_cap": 278089500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26130,7 +26130,7 @@
       "price": 21430.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 292519500000.0,
+      "market_cap": 282876000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26161,10 +26161,10 @@
     {
       "ticker": "273140",
       "name": "KODEX 단기변동금리부채권액티브",
-      "price": 114607.0,
+      "price": 114610.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 280443329000.0,
+      "market_cap": 280336060000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26181,7 +26181,7 @@
       "price": 99670.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 277580950000.0,
+      "market_cap": 278378310000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26215,7 +26215,7 @@
       "price": 15835.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 277904250000.0,
+      "market_cap": 279487750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26232,7 +26232,7 @@
       "price": 21640.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 273746000000.0,
+      "market_cap": 276992000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26300,7 +26300,7 @@
       "price": 116865.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 258037920000.0,
+      "market_cap": 257570460000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26317,7 +26317,7 @@
       "price": 34585.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 264921100000.0,
+      "market_cap": 265958650000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26351,7 +26351,7 @@
       "price": 9665.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 257089000000.0,
+      "market_cap": 259022000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26368,7 +26368,7 @@
       "price": 27900.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 253890000000.0,
+      "market_cap": 252495000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26419,7 +26419,7 @@
       "price": 19735.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 250634500000.0,
+      "market_cap": 251621250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26470,7 +26470,7 @@
       "price": 11690.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 244321000000.0,
+      "market_cap": 245490000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26572,7 +26572,7 @@
       "price": 5305.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 238990250000.0,
+      "market_cap": 237770100000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26657,7 +26657,7 @@
       "price": 11225.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 234602500000.0,
+      "market_cap": 235163750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26674,7 +26674,7 @@
       "price": 86075.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 234984750000.0,
+      "market_cap": 235845500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26708,7 +26708,7 @@
       "price": 4860.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 257482800000.0,
+      "market_cap": 254566800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26742,7 +26742,7 @@
       "price": 18400.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 229080000000.0,
+      "market_cap": 222640000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26776,7 +26776,7 @@
       "price": 52090.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 226487320000.0,
+      "market_cap": 223466100000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26827,7 +26827,7 @@
       "price": 19585.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 222289750000.0,
+      "market_cap": 220331250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26844,7 +26844,7 @@
       "price": 50255.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 228157700000.0,
+      "market_cap": 228660250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26861,7 +26861,7 @@
       "price": 13810.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 232008000000.0,
+      "market_cap": 233389000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26878,7 +26878,7 @@
       "price": 46405.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 224600200000.0,
+      "market_cap": 223672100000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26912,7 +26912,7 @@
       "price": 14595.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 218195250000.0,
+      "market_cap": 217465500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -26929,7 +26929,7 @@
       "price": 12325.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 218152500000.0,
+      "market_cap": 216920000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27031,7 +27031,7 @@
       "price": 13125.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 220500000000.0,
+      "market_cap": 221812500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27082,7 +27082,7 @@
       "price": 13115.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 221643500000.0,
+      "market_cap": 222299250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27099,7 +27099,7 @@
       "price": 6700.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 218085000000.0,
+      "market_cap": 218420000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27167,7 +27167,7 @@
       "price": 15630.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 207097500000.0,
+      "market_cap": 206316000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27184,7 +27184,7 @@
       "price": 14410.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 196696500000.0,
+      "market_cap": 195976000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27218,7 +27218,7 @@
       "price": 11600.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 205552000000.0,
+      "market_cap": 195344000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27252,7 +27252,7 @@
       "price": 6555.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 210939900000.0,
+      "market_cap": 211857600000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27286,7 +27286,7 @@
       "price": 9540.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 195570000000.0,
+      "market_cap": 196524000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27320,7 +27320,7 @@
       "price": 50120.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 194465600000.0,
+      "market_cap": 193463200000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27388,7 +27388,7 @@
       "price": 13880.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 193626000000.0,
+      "market_cap": 195014000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27439,7 +27439,7 @@
       "price": 13395.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 190209000000.0,
+      "market_cap": 192888000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27490,7 +27490,7 @@
       "price": 15870.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 188853000000.0,
+      "market_cap": 189646500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27524,7 +27524,7 @@
       "price": 11250.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 185062500000.0,
+      "market_cap": 186187500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27541,7 +27541,7 @@
       "price": 10660.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 183352000000.0,
+      "market_cap": 184418000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27558,7 +27558,7 @@
       "price": 109200.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 180726000000.0,
+      "market_cap": 180616800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27575,7 +27575,7 @@
       "price": 23040.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 177408000000.0,
+      "market_cap": 176256000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27609,7 +27609,7 @@
       "price": 6705.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 189751500000.0,
+      "market_cap": 190422000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27643,7 +27643,7 @@
       "price": 32705.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 174971750000.0,
+      "market_cap": 176607000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27762,7 +27762,7 @@
       "price": 9330.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 170739000000.0,
+      "market_cap": 170272500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27847,7 +27847,7 @@
       "price": 7995.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 175890000000.0,
+      "market_cap": 181086750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27898,7 +27898,7 @@
       "price": 13595.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 166538750000.0,
+      "market_cap": 167218500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27932,7 +27932,7 @@
       "price": 45815.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 162643250000.0,
+      "market_cap": 160352500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -27949,7 +27949,7 @@
       "price": 4920.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 171708000000.0,
+      "market_cap": 174414000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28068,7 +28068,7 @@
       "price": 8080.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 151904000000.0,
+      "market_cap": 151096000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28119,7 +28119,7 @@
       "price": 1211.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 170872100000.0,
+      "market_cap": 171840900000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28170,7 +28170,7 @@
       "price": 36015.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 144780300000.0,
+      "market_cap": 145500600000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28187,7 +28187,7 @@
       "price": 14405.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 145490500000.0,
+      "market_cap": 144050000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28306,7 +28306,7 @@
       "price": 12445.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 149340000000.0,
+      "market_cap": 148095500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28357,7 +28357,7 @@
       "price": 36135.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 144540000000.0,
+      "market_cap": 145262700000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28425,7 +28425,7 @@
       "price": 34215.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 144045150000.0,
+      "market_cap": 143566140000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28473,10 +28473,10 @@
     {
       "ticker": "700023",
       "name": "하나 Solactive 2X US Tech Top 10 ETN(H)",
-      "price": 132310.0,
+      "price": 132915.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 132310000000.0,
+      "market_cap": 132915000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28544,7 +28544,7 @@
       "price": 100610.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 134314350000.0,
+      "market_cap": 133308250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28595,7 +28595,7 @@
       "price": 7275.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 133860000000.0,
+      "market_cap": 133132500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28646,7 +28646,7 @@
       "price": 2005.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 136239750000.0,
+      "market_cap": 138796125000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28663,7 +28663,7 @@
       "price": 16970.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 129820500000.0,
+      "market_cap": 134063000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28697,7 +28697,7 @@
       "price": 6480.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 134200800000.0,
+      "market_cap": 134006400000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28748,7 +28748,7 @@
       "price": 9270.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 131634000000.0,
+      "market_cap": 133024500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28782,7 +28782,7 @@
       "price": 8300.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 128235000000.0,
+      "market_cap": 128650000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28864,10 +28864,10 @@
     {
       "ticker": "570106",
       "name": "한투 레버리지일본니케이225선물 ETN(H)",
-      "price": 49880.0,
+      "price": 50365.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 124700000000.0,
+      "market_cap": 125912500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28901,7 +28901,7 @@
       "price": 2375.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 109962500000.0,
+      "market_cap": 98562500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -28986,7 +28986,7 @@
       "price": 14135.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 128628500000.0,
+      "market_cap": 129335250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29017,10 +29017,10 @@
     {
       "ticker": "0191W0",
       "name": "HANARO 중기종합채권(A-이상)액티브",
-      "price": 100905.0,
+      "price": 100930.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 121086000000.0,
+      "market_cap": 121116000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29139,7 +29139,7 @@
       "price": 93100.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 125405700000.0,
+      "market_cap": 126895300000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29360,7 +29360,7 @@
       "price": 52485.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 111793050000.0,
+      "market_cap": 113892450000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29428,7 +29428,7 @@
       "price": 32160.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 110952000000.0,
+      "market_cap": 109344000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29479,7 +29479,7 @@
       "price": 7955.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 108585750000.0,
+      "market_cap": 106597000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29513,7 +29513,7 @@
       "price": 5750.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 115287500000.0,
+      "market_cap": 116437500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29530,7 +29530,7 @@
       "price": 28455.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 118088250000.0,
+      "market_cap": 119511000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29547,7 +29547,7 @@
       "price": 98205.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 113426775000.0,
+      "market_cap": 113819595000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29615,7 +29615,7 @@
       "price": 10125.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 106818750000.0,
+      "market_cap": 105806250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29700,7 +29700,7 @@
       "price": 8065.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 103232000000.0,
+      "market_cap": 102022250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29782,10 +29782,10 @@
     {
       "ticker": "465780",
       "name": "마이티 26-09 특수채(AAA)액티브",
-      "price": 106335.0,
+      "price": 106340.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 102400605000.0,
+      "market_cap": 102405420000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29802,7 +29802,7 @@
       "price": 7945.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 111230000000.0,
+      "market_cap": 110832750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29816,10 +29816,10 @@
     {
       "ticker": "610037",
       "name": "메리츠 미국채30년 ETN(H)",
-      "price": 7270.0,
+      "price": 7300.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 101780000000.0,
+      "market_cap": 102200000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29836,7 +29836,7 @@
       "price": 21465.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 100885500000.0,
+      "market_cap": 101958750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -29938,7 +29938,7 @@
       "price": 4475.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 106505000000.0,
+      "market_cap": 106952500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30108,7 +30108,7 @@
       "price": 11595.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 93919500000.0,
+      "market_cap": 95079000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30210,7 +30210,7 @@
       "price": 77270.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 90792250000.0,
+      "market_cap": 88860500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30227,7 +30227,7 @@
       "price": 28295.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 90544000000.0,
+      "market_cap": 87714500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30244,7 +30244,7 @@
       "price": 11025.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 91397250000.0,
+      "market_cap": 91948500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30329,7 +30329,7 @@
       "price": 19830.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 98158500000.0,
+      "market_cap": 100141500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30363,7 +30363,7 @@
       "price": 7045.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 85244500000.0,
+      "market_cap": 85420625000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30482,7 +30482,7 @@
       "price": 12970.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 82359500000.0,
+      "market_cap": 80414000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30533,7 +30533,7 @@
       "price": 11180.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 86086000000.0,
+      "market_cap": 86645000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30703,7 +30703,7 @@
       "price": 21090.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 82251000000.0,
+      "market_cap": 80142000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -30992,7 +30992,7 @@
       "price": 12260.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 74050400000.0,
+      "market_cap": 73805200000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31009,7 +31009,7 @@
       "price": 3055.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 73961550000.0,
+      "market_cap": 74144850000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31040,10 +31040,10 @@
     {
       "ticker": "272910",
       "name": "ACE 중장기국공채액티브",
-      "price": 106045.0,
+      "price": 106125.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 72958960000.0,
+      "market_cap": 73014000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31060,7 +31060,7 @@
       "price": 12060.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 72963000000.0,
+      "market_cap": 71757000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31111,7 +31111,7 @@
       "price": 8560.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 71476000000.0,
+      "market_cap": 71048000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31315,7 +31315,7 @@
       "price": 26345.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 73766000000.0,
+      "market_cap": 72448750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31553,7 +31553,7 @@
       "price": 2610.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 67494600000.0,
+      "market_cap": 67338000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31584,10 +31584,10 @@
     {
       "ticker": "610066",
       "name": "메리츠 KAP 통안채 3개월 ETN",
-      "price": 55070.0,
+      "price": 55075.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 66084000000.0,
+      "market_cap": 66090000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31655,7 +31655,7 @@
       "price": 56560.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 65609600000.0,
+      "market_cap": 66740800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31856,10 +31856,10 @@
     {
       "ticker": "700022",
       "name": "하나 Solactive US Tech Top 10 ETN(H)",
-      "price": 30435.0,
+      "price": 30445.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 60870000000.0,
+      "market_cap": 60890000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31893,7 +31893,7 @@
       "price": 11095.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 64351000000.0,
+      "market_cap": 65737875000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -31978,7 +31978,7 @@
       "price": 8520.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 55593000000.0,
+      "market_cap": 54315000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -32046,7 +32046,7 @@
       "price": 13055.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 60575200000.0,
+      "market_cap": 60836300000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -32179,10 +32179,10 @@
     {
       "ticker": "520089",
       "name": "미래에셋 CAPE 실러 US Core Sector ETN",
-      "price": 11625.0,
+      "price": 11705.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 58125000000.0,
+      "market_cap": 58525000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -32216,7 +32216,7 @@
       "price": 10670.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 45614250000.0,
+      "market_cap": 44547250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -32335,7 +32335,7 @@
       "price": 9045.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 56983500000.0,
+      "market_cap": 59697000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -32488,7 +32488,7 @@
       "price": 23690.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 53302500000.0,
+      "market_cap": 52118000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -32522,7 +32522,7 @@
       "price": 23515.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 51733000000.0,
+      "market_cap": 39975500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -32553,10 +32553,10 @@
     {
       "ticker": "520095",
       "name": "미래에셋 레버리지 WTI원유 선물 ETN",
-      "price": 21230.0,
+      "price": 21055.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 53075000000.0,
+      "market_cap": 52637500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -32845,7 +32845,7 @@
       "price": 10700.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 49755000000.0,
+      "market_cap": 49220000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -33134,7 +33134,7 @@
       "price": 18590.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 46475000000.0,
+      "market_cap": 44616000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -33219,7 +33219,7 @@
       "price": 1148.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 49019600000.0,
+      "market_cap": 50052800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -33389,7 +33389,7 @@
       "price": 7150.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 47190000000.0,
+      "market_cap": 47905000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -33862,10 +33862,10 @@
     {
       "ticker": "0141T0",
       "name": "SOL 중기종합채권(AA-이상)액티브",
-      "price": 50270.0,
+      "price": 50300.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 41724100000.0,
+      "market_cap": 42050800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -34032,10 +34032,10 @@
     {
       "ticker": "0191M0",
       "name": "마이티 5월만기자동연장특수채(AAA)액티브",
-      "price": 100660.0,
+      "price": 100665.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 41673240000.0,
+      "market_cap": 41675310000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -34103,7 +34103,7 @@
       "price": 19610.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 41181000000.0,
+      "market_cap": 45103000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -34545,7 +34545,7 @@
       "price": 3700.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 37185000000.0,
+      "market_cap": 37370000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -34647,7 +34647,7 @@
       "price": 8055.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 37053000000.0,
+      "market_cap": 37858500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -34664,7 +34664,7 @@
       "price": 16600.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 36520000000.0,
+      "market_cap": 35690000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -34715,7 +34715,7 @@
       "price": 10815.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 30011625000.0,
+      "market_cap": 29470875000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -34885,7 +34885,7 @@
       "price": 12005.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 35414750000.0,
+      "market_cap": 34814500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -35222,10 +35222,10 @@
     {
       "ticker": "510045",
       "name": "대신 인버스 2X 미국달러 선물 ETN",
-      "price": 22535.0,
+      "price": 22480.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 33802500000.0,
+      "market_cap": 33720000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -35378,7 +35378,7 @@
       "price": 18135.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 32643000000.0,
+      "market_cap": 33549750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -35582,7 +35582,7 @@
       "price": 9500.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 31350000000.0,
+      "market_cap": 32300000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -35769,7 +35769,7 @@
       "price": 8670.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 30951900000.0,
+      "market_cap": 30691800000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -35783,10 +35783,10 @@
     {
       "ticker": "610075",
       "name": "메리츠 3X 레버리지 미국채10년 ETN",
-      "price": 51555.0,
+      "price": 51885.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 30933000000.0,
+      "market_cap": 31131000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -36106,10 +36106,10 @@
     {
       "ticker": "520065",
       "name": "미래에셋 -2X 미국채울트라30년 선물 ETN",
-      "price": 14585.0,
+      "price": 14560.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 29170000000.0,
+      "market_cap": 29120000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -36143,7 +36143,7 @@
       "price": 10980.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 23497200000.0,
+      "market_cap": 23058000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -36313,7 +36313,7 @@
       "price": 8775.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 26149500000.0,
+      "market_cap": 25798500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -36364,7 +36364,7 @@
       "price": 85.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 29801000000.0,
+      "market_cap": 30447000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -36449,7 +36449,7 @@
       "price": 16015.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 28506700000.0,
+      "market_cap": 30108200000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -36755,7 +36755,7 @@
       "price": 11405.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 26801750000.0,
+      "market_cap": 26231500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -36837,10 +36837,10 @@
     {
       "ticker": "510044",
       "name": "대신 레버리지 미국달러 선물 ETN",
-      "price": 17175.0,
+      "price": 17360.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 25762500000.0,
+      "market_cap": 26040000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -37282,7 +37282,7 @@
       "price": 17330.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 24262000000.0,
+      "market_cap": 23395500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -37350,7 +37350,7 @@
       "price": 17500.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 24500000000.0,
+      "market_cap": 24850000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -37908,10 +37908,10 @@
     {
       "ticker": "550088",
       "name": "N2 월간 레버리지 선진국 1등주 ETN",
-      "price": 22685.0,
+      "price": 22845.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 22685000000.0,
+      "market_cap": 22845000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -37962,7 +37962,7 @@
       "price": 11625.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 22668750000.0,
+      "market_cap": 22087500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -38452,10 +38452,10 @@
     {
       "ticker": "500091",
       "name": "신한 33-12 국고채 플러스 ETN",
-      "price": 10340.0,
+      "price": 10345.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 20680000000.0,
+      "market_cap": 20690000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -38540,7 +38540,7 @@
       "price": 1270.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 21526500000.0,
+      "market_cap": 21971000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -38710,7 +38710,7 @@
       "price": 9395.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 19729500000.0,
+      "market_cap": 20669000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -39135,7 +39135,7 @@
       "price": 17375.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 20850000000.0,
+      "market_cap": 21718750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -39370,10 +39370,10 @@
     {
       "ticker": "610040",
       "name": "메리츠 인버스 2X 미국채30년 ETN(H)",
-      "price": 17770.0,
+      "price": 17715.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 17770000000.0,
+      "market_cap": 17715000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -39676,10 +39676,10 @@
     {
       "ticker": "530123",
       "name": "삼성 일본니케이225선물 ETN(H)",
-      "price": 17265.0,
+      "price": 17285.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 17265000000.0,
+      "market_cap": 17285000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -40339,10 +40339,10 @@
     {
       "ticker": "570099",
       "name": "한투 인버스2X엔달러 선물 ETN(H)",
-      "price": 14855.0,
+      "price": 14940.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 14855000000.0,
+      "market_cap": 14940000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -40458,10 +40458,10 @@
     {
       "ticker": "610039",
       "name": "메리츠 인버스 미국채30년 ETN(H)",
-      "price": 14740.0,
+      "price": 14685.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 14740000000.0,
+      "market_cap": 14685000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -40611,10 +40611,10 @@
     {
       "ticker": "570126",
       "name": "한투 솔랙티브인버스2X금선물 ETN",
-      "price": 13325.0,
+      "price": 13320.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 13325000000.0,
+      "market_cap": 13320000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -40801,7 +40801,7 @@
       "price": 9555.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 14332500000.0,
+      "market_cap": 16243500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -41243,7 +41243,7 @@
       "price": 5370.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 12888000000.0,
+      "market_cap": 13156500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -41498,7 +41498,7 @@
       "price": 3335.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 13340000000.0,
+      "market_cap": 26680000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -41563,10 +41563,10 @@
     {
       "ticker": "363510",
       "name": "SOL KIS단기통안채",
-      "price": 112090.0,
+      "price": 112095.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 12441990000.0,
+      "market_cap": 12442545000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -41920,10 +41920,10 @@
     {
       "ticker": "530127",
       "name": "삼성 미국다우존스 TR ETN",
-      "price": 12045.0,
+      "price": 12095.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 12045000000.0,
+      "market_cap": 12095000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -41988,10 +41988,10 @@
     {
       "ticker": "610030",
       "name": "메리츠 S&P 유럽탄소배출권 선물 ETN(H)",
-      "price": 11865.0,
+      "price": 12065.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 11865000000.0,
+      "market_cap": 12065000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42076,7 +42076,7 @@
       "price": 5580.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 11997000000.0,
+      "market_cap": 12834000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42107,10 +42107,10 @@
     {
       "ticker": "570074",
       "name": "한투 유럽탄소배출권선물 ETN(H)",
-      "price": 11785.0,
+      "price": 11965.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 11785000000.0,
+      "market_cap": 11965000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42175,10 +42175,10 @@
     {
       "ticker": "610049",
       "name": "메리츠 국채5년 ETN",
-      "price": 11490.0,
+      "price": 11500.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 11490000000.0,
+      "market_cap": 11500000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42209,10 +42209,10 @@
     {
       "ticker": "610045",
       "name": "메리츠 국채3년 ETN",
-      "price": 11410.0,
+      "price": 11415.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 11410000000.0,
+      "market_cap": 11415000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42685,10 +42685,10 @@
     {
       "ticker": "700014",
       "name": "하나 인버스 2X 콩 선물 ETN(H)",
-      "price": 10850.0,
+      "price": 10940.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10850000000.0,
+      "market_cap": 10940000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42804,10 +42804,10 @@
     {
       "ticker": "610051",
       "name": "메리츠 인버스 국채5년 ETN",
-      "price": 10595.0,
+      "price": 10590.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10595000000.0,
+      "market_cap": 10590000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42872,10 +42872,10 @@
     {
       "ticker": "610058",
       "name": "메리츠 인버스 3X 국채5년 ETN",
-      "price": 20950.0,
+      "price": 20900.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10475000000.0,
+      "market_cap": 10450000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42889,10 +42889,10 @@
     {
       "ticker": "610057",
       "name": "메리츠 3X 레버리지 국채5년 ETN",
-      "price": 20825.0,
+      "price": 20885.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10412500000.0,
+      "market_cap": 10442500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42991,10 +42991,10 @@
     {
       "ticker": "610106",
       "name": "메리츠 인버스 국채30년 ETN B",
-      "price": 10330.0,
+      "price": 10260.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10330000000.0,
+      "market_cap": 10260000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -43042,10 +43042,10 @@
     {
       "ticker": "580064",
       "name": "KB 인버스 2X 미국채 10년 선물 ETN",
-      "price": 20575.0,
+      "price": 20585.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10287500000.0,
+      "market_cap": 10292500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -43212,10 +43212,10 @@
     {
       "ticker": "580060",
       "name": "KB 레버리지 미국채 10년 ETN",
-      "price": 20135.0,
+      "price": 20145.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 10067500000.0,
+      "market_cap": 10072500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -43467,10 +43467,10 @@
     {
       "ticker": "610076",
       "name": "메리츠 인버스 3X 미국채10년 ETN",
-      "price": 48405.0,
+      "price": 48495.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 9681000000.0,
+      "market_cap": 9699000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -43501,10 +43501,10 @@
     {
       "ticker": "580063",
       "name": "KB 레버리지 미국채 10년 선물 ETN",
-      "price": 18925.0,
+      "price": 18940.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 9462500000.0,
+      "market_cap": 9470000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -43620,10 +43620,10 @@
     {
       "ticker": "610105",
       "name": "메리츠 레버리지 국채30년 ETN B",
-      "price": 9385.0,
+      "price": 9515.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 9385000000.0,
+      "market_cap": 9515000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -43977,10 +43977,10 @@
     {
       "ticker": "610083",
       "name": "메리츠 레버리지 인도 루피화 ETN",
-      "price": 17935.0,
+      "price": 18015.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 8967500000.0,
+      "market_cap": 9007500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -43994,10 +43994,10 @@
     {
       "ticker": "580035",
       "name": "KB S&P 유럽탄소배출권 선물 ETN(H)",
-      "price": 8925.0,
+      "price": 9065.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 8925000000.0,
+      "market_cap": 9065000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -44045,10 +44045,10 @@
     {
       "ticker": "610059",
       "name": "메리츠 3X 레버리지 국채10년 ETN",
-      "price": 17310.0,
+      "price": 17475.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 8655000000.0,
+      "market_cap": 8737500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -44130,10 +44130,10 @@
     {
       "ticker": "550095",
       "name": "N2 레버리지 국채10년 ETN",
-      "price": 17310.0,
+      "price": 17350.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 8655000000.0,
+      "market_cap": 8675000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -44759,10 +44759,10 @@
     {
       "ticker": "580062",
       "name": "KB 레버리지 미국채 30년 ETN",
-      "price": 15895.0,
+      "price": 16010.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 7947500000.0,
+      "market_cap": 8005000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -44793,10 +44793,10 @@
     {
       "ticker": "570109",
       "name": "한투 레버리지미국채30년 ETN",
-      "price": 15365.0,
+      "price": 15500.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 7682500000.0,
+      "market_cap": 7750000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -45184,10 +45184,10 @@
     {
       "ticker": "570111",
       "name": "한투 3X레버리지미국채30년 ETN",
-      "price": 35685.0,
+      "price": 35945.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 7137000000.0,
+      "market_cap": 7189000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -45303,10 +45303,10 @@
     {
       "ticker": "139660",
       "name": "KIWOOM 미국달러선물인버스",
-      "price": 8372.0,
+      "price": 8375.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 7283640000.0,
+      "market_cap": 7286250000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -45320,10 +45320,10 @@
     {
       "ticker": "438740",
       "name": "MIDAS 중소형액티브",
-      "price": 32815.0,
+      "price": 33295.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 7383375000.0,
+      "market_cap": 7491375000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -45612,7 +45612,7 @@
       "price": 2400.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 6600000000.0,
+      "market_cap": 6360000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -45762,10 +45762,10 @@
     {
       "ticker": "530060",
       "name": "삼성 코스피 양매도 5% OTM ETN",
-      "price": 6525.0,
+      "price": 6490.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 6525000000.0,
+      "market_cap": 6490000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -46544,10 +46544,10 @@
     {
       "ticker": "570108",
       "name": "한투 레버리지국채30년 ETN",
-      "price": 10615.0,
+      "price": 10725.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 5307500000.0,
+      "market_cap": 5362500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -46850,10 +46850,10 @@
     {
       "ticker": "550070",
       "name": "N2 인버스 레버리지 구리 선물 ETN(H)",
-      "price": 4805.0,
+      "price": 4775.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 4805000000.0,
+      "market_cap": 4775000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -47142,7 +47142,7 @@
       "price": 7595.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3797500000.0,
+      "market_cap": 34177500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -47275,10 +47275,10 @@
     {
       "ticker": "570110",
       "name": "한투 3X레버리지국채30년 ETN",
-      "price": 15945.0,
+      "price": 16190.0,
       "change_pct": 0.0,
       "market": "KOSPI",
-      "market_cap": 3189000000.0,
+      "market_cap": 3238000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -57359,7 +57359,7 @@
       "price": 6920.0,
       "change_pct": 0.0,
       "market": "KOSDAQ",
-      "market_cap": 291192209080.0,
+      "market_cap": 292058129440.0,
       "engine_scores": {
         "valuation": 25.69,
         "momentum": 50.0,
@@ -60181,7 +60181,7 @@
       "price": 21050.0,
       "change_pct": 0.0,
       "market": "KOSDAQ",
-      "market_cap": 801157527000.0,
+      "market_cap": 807169870100.0,
       "engine_scores": {
         "valuation": 16.47,
         "momentum": 50.0,
@@ -60742,7 +60742,7 @@
       "price": 305500.0,
       "change_pct": 0.0,
       "market": "KOSDAQ",
-      "market_cap": 16370627786500.0,
+      "market_cap": 21279643131500.0,
       "engine_scores": {
         "valuation": 1.19,
         "momentum": 50.0,
@@ -69987,10 +69987,10 @@
     {
       "ticker": "473050",
       "name": "유안타제15호스팩",
-      "price": 2102.0,
+      "price": 2105.0,
       "change_pct": 0.0,
       "market": "KOSDAQ",
-      "market_cap": 14735020000.0,
+      "market_cap": 14756050000.0,
       "engine_scores": {
         "valuation": 23.25,
         "momentum": 50.0,
@@ -71180,7 +71180,7 @@
       "price": 25050.0,
       "change_pct": 0.0,
       "market": "KOSDAQ",
-      "market_cap": 939685645050.0,
+      "market_cap": 940230482550.0,
       "engine_scores": {
         "valuation": 0.38,
         "momentum": 50.0,
@@ -72234,7 +72234,7 @@
       "price": 10330.0,
       "change_pct": 0.0,
       "market": "KOSDAQ",
-      "market_cap": 185392974850.0,
+      "market_cap": 186080167770.0,
       "engine_scores": {
         "valuation": 3.41,
         "momentum": 50.0,
