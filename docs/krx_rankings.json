@@ -1,5 +1,5 @@
 {
-  "index_value": 28590.63925667828,
+  "index_value": 28590.635772357724,
   "date": "2026-09-01",
   "universe_size": 4305,
   "source": "full_stock_data.json",
@@ -1205,10 +1205,10 @@
     {
       "ticker": "005725",
       "name": "넥센우",
-      "price": 4310.0,
-      "change_pct": 0.0,
+      "price": 4340.0,
+      "change_pct": 0.7,
       "market": "KOSPI",
-      "market_cap": 15518586000.0,
+      "market_cap": 15626604000.0,
       "engine_scores": {
         "valuation": 88.2,
         "momentum": 50.0,
@@ -27470,10 +27470,10 @@
     {
       "ticker": "0192Z0",
       "name": "TIGER 중기종합채권(A-이상)액티브",
-      "price": 100975.0,
-      "change_pct": 0.0,
+      "price": 100930.0,
+      "change_pct": -0.04,
       "market": "KOSPI",
-      "market_cap": 192862250000.0,
+      "market_cap": 192776300000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
