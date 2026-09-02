@@ -100,6 +100,28 @@ function translate(key) {
 function applyLanguage(language) {
   currentLanguage = language;
   const dictionary = translations[language];
+  const strategyText = language === 'ko'
+    ? {
+        title: 'NOW Score는 어떻게 작동하나요?',
+        description: 'NOW Score는 6개 팩터를 기준으로 각 종목을 0점부터 100점까지 상대평가합니다. 점수가 높을수록 현재 KOSPI/KOSDAQ 전체 종목에서 순위가 높다는 뜻이며, 수익을 보장하는 예측치는 아닙니다.',
+        buy: '75점 이상일 때 진입', hold: '매도 기준점보다 점수가 높은 동안 보유', sell: '점수가 약 28점까지 하락하면 매도',
+        backtest: '이 전략으로 수익을 냈을까요?', status: '과거 데이터 필요', emptyTitle: '실제 수익률 그래프를 아직 계산할 수 없습니다',
+        emptyText: '현재 피드는 오늘의 가격과 점수만 제공합니다. 신뢰할 수 있는 수익률을 계산하려면 매수·매도 신호 시점의 날짜별 점수와 가격이 필요합니다.', end: '과거 스냅샷 수집 대기',
+        note: '필요한 과거 관측값이 쌓일 때까지 수익 금액을 표시하지 않습니다. 오늘의 점수를 과거 가격에 적용하면 룩어헤드 편향으로 결과가 왜곡되기 때문입니다.',
+      }
+    : {
+        title: 'How NOW Score works',
+        description: 'NOW Score ranks each stock from 0 to 100 across six factors. A higher score means the stock ranks better against the current KOSPI/KOSDAQ universe; it is not a guaranteed return forecast.',
+        buy: 'Enter when score reaches 75 or higher', hold: 'Hold while the signal remains above the exit level', sell: 'Exit when score falls to around 28',
+        backtest: 'Would this strategy have made money?', status: 'Historical data required', emptyTitle: 'Real profit chart is not available yet',
+        emptyText: 'The current feed contains only today’s price and score. We need dated score snapshots plus prices at each buy and sell signal before calculating a trustworthy return.', end: 'Historical snapshots pending',
+        note: 'No profit number is shown until the required historical observations exist. This avoids look-ahead bias: applying today’s score to old prices would make the result misleading.',
+      };
+  const strategyTargets = { scoreStoryTitle: 'title', scoreStoryDescription: 'description', buyRule: 'buy', holdRule: 'hold', sellRule: 'sell', backtestTitle: 'backtest', backtestStatus: 'status', chartEmptyTitle: 'emptyTitle', chartEmptyText: 'emptyText', chartEndLabel: 'end', backtestNote: 'note' };
+  Object.entries(strategyTargets).forEach(([id, key]) => {
+    const element = document.getElementById(id);
+    if (element) element.textContent = strategyText[key];
+  });
   Object.entries(translationTargets).forEach(([key, selector]) => {
     const element = document.querySelector(selector);
     if (!element || !dictionary[key]) return;
