@@ -113,14 +113,63 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
     }
 
 
+def make_point_in_time_backtest(snapshots: list[dict]) -> dict:
+    cash = {}
+    shares = {}
+    curve = []
+    trades = 0
+    for snapshot in sorted(snapshots, key=lambda item: item.get("date", "")):
+        daily = {str(stock["ticker"]): stock for stock in snapshot.get("stocks", [])}
+        for ticker, stock in daily.items():
+            price = float(stock["price"])
+            score = float(stock.get("score", 0))
+            if ticker not in cash:
+                cash[ticker] = 100.0
+                shares[ticker] = 0.0
+            if shares[ticker] == 0 and score >= 75:
+                shares[ticker] = cash[ticker] / price
+                cash[ticker] = 0.0
+                trades += 1
+            elif shares[ticker] > 0 and score <= 28:
+                cash[ticker] += shares[ticker] * price
+                shares[ticker] = 0.0
+                trades += 1
+        total = sum(cash[ticker] + shares[ticker] * float(stock["price"]) for ticker, stock in daily.items())
+        curve.append({"date": snapshot["date"], "value": round(total / max(len(cash), 1), 4)})
+    final_value = curve[-1]["value"] if curve else 100.0
+    return {
+        "strategy": {"buy_score": 75, "sell_score": 28},
+        "basis": "Point-in-time daily score and price snapshots",
+        "start_value": 100.0,
+        "final_value": final_value,
+        "return_pct": round(final_value - 100.0, 2),
+        "trades": trades,
+        "stocks": len(cash),
+        "generated_at": date.today().isoformat(),
+        "equity_curve": curve,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", default="data/full_stock_data.json")
+    parser.add_argument("--snapshots", default="data/score_history.json")
     parser.add_argument("--output", default="docs/backtest.json")
     parser.add_argument("--last-count", type=int, default=130)
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--sleep", type=float, default=0.08)
     args = parser.parse_args()
+
+    snapshot_path = Path(args.snapshots)
+    snapshots = json.loads(snapshot_path.read_text(encoding="utf-8")) if snapshot_path.exists() else []
+    if len(snapshots) >= 2:
+        result = make_point_in_time_backtest(snapshots)
+        output = Path(args.output)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"Wrote point-in-time backtest from {len(snapshots)} snapshots to {output}")
+        print(f"Return: {result['return_pct']:.2f}%")
+        return
 
     stocks = json.loads(Path(args.input).read_text(encoding="utf-8"))
     if args.limit:

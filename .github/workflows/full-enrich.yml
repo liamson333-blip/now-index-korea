@@ -38,6 +38,9 @@ jobs:
       - name: Generate site rankings
         run: python scripts/generate_site_data.py
 
+      - name: Record point-in-time score snapshot
+        run: python scripts/record_score_snapshot.py
+
       - name: Build strategy backtest
         run: python scripts/build_backtest.py --limit 200 --last-count 130 --sleep 0.08
 
@@ -48,10 +51,10 @@ jobs:
 
       - name: Commit and push refreshed fundamentals
         run: |
-          if git diff --quiet docs/krx_rankings.json docs/backtest.json data/full_stock_data.json; then
+          if git diff --quiet docs/krx_rankings.json docs/backtest.json data/full_stock_data.json data/score_history.json; then
             echo "No changes — skipping commit."
           else
-            git add docs/krx_rankings.json docs/backtest.json data/full_stock_data.json
+            git add docs/krx_rankings.json docs/backtest.json data/full_stock_data.json data/score_history.json
             git commit -m "Daily fundamental enrichment ($(TZ='Asia/Seoul' date '+%Y-%m-%d'))"
             git push origin main
             echo "Pushed refreshed fundamentals to main."
