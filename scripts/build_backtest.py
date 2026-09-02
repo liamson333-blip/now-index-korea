@@ -67,6 +67,7 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
     dates = sorted({day for series in history.values() for day in series})
     cash = {str(stock["ticker"]): 100.0 for stock in stocks if str(stock["ticker"]) in history}
     shares = {ticker: 0.0 for ticker in cash}
+    initial_prices = {}
     equity_curve = []
     trades = 0
 
@@ -86,6 +87,7 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
         scored = {str(row["ticker"]): row for row in compute_scores(daily)}
         for ticker, row in scored.items():
             price = float(row["price"])
+            initial_prices.setdefault(ticker, price)
             score = float(row.get("score", 0))
             if shares[ticker] == 0 and score >= 75:
                 shares[ticker] = cash[ticker] / price
@@ -97,7 +99,8 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
                 trades += 1
 
         total = sum(cash[ticker] + shares[ticker] * float(row["price"]) for ticker, row in scored.items())
-        equity_curve.append({"date": day, "value": round(total / max(len(cash), 1), 4)})
+        benchmark = sum(float(row["price"]) / initial_prices[ticker] * 100 for ticker, row in scored.items()) / max(len(scored), 1)
+        equity_curve.append({"date": day, "value": round(total / max(len(cash), 1), 4), "benchmark": round(benchmark, 4)})
 
     final_value = equity_curve[-1]["value"] if equity_curve else 100.0
     return {
@@ -116,12 +119,14 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
 def make_point_in_time_backtest(snapshots: list[dict]) -> dict:
     cash = {}
     shares = {}
+    initial_prices = {}
     curve = []
     trades = 0
     for snapshot in sorted(snapshots, key=lambda item: item.get("date", "")):
         daily = {str(stock["ticker"]): stock for stock in snapshot.get("stocks", [])}
         for ticker, stock in daily.items():
             price = float(stock["price"])
+            initial_prices.setdefault(ticker, price)
             score = float(stock.get("score", 0))
             if ticker not in cash:
                 cash[ticker] = 100.0
@@ -135,7 +140,8 @@ def make_point_in_time_backtest(snapshots: list[dict]) -> dict:
                 shares[ticker] = 0.0
                 trades += 1
         total = sum(cash[ticker] + shares[ticker] * float(stock["price"]) for ticker, stock in daily.items())
-        curve.append({"date": snapshot["date"], "value": round(total / max(len(cash), 1), 4)})
+        benchmark = sum(float(stock["price"]) / initial_prices[ticker] * 100 for ticker, stock in daily.items()) / max(len(daily), 1)
+        curve.append({"date": snapshot["date"], "value": round(total / max(len(cash), 1), 4), "benchmark": round(benchmark, 4)})
     final_value = curve[-1]["value"] if curve else 100.0
     return {
         "strategy": {"buy_score": 75, "sell_score": 28},
