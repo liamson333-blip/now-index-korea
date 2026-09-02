@@ -11,7 +11,7 @@ permissions:
 
 concurrency:
   group: krx-refresh
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   refresh:
@@ -22,6 +22,14 @@ jobs:
         with:
           persist-credentials: true
 
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -30,20 +38,69 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install requests
+          fi
 
       - name: Ensure enriched dataset exists
         run: |
+          retry() {
+            local n=0
+            local max=3
+            until [ $n -ge $max ]; do
+              "$@" && break
+              n=$((n+1))
+              echo "Retry $n/$max..."
+              sleep $((n * 2))
+            done
+            if [ $n -ge $max ]; then
+              echo "Command failed after $max attempts" >&2
+              exit 1
+            fi
+          }
+
           if [ ! -f data/full_stock_data.json ]; then
             echo "Enriched dataset missing — running full crawl (fundamentals)."
-            python scripts/fetch_full_data.py
+            retry python scripts/fetch_full_data.py
           fi
 
       - name: Refresh live prices (fast)
-        run: python scripts/refresh_prices.py
+        run: |
+          retry() {
+            local n=0
+            local max=3
+            until [ $n -ge $max ]; do
+              "$@" && break
+              n=$((n+1))
+              echo "Retry $n/$max..."
+              sleep $((n * 2))
+            done
+            if [ $n -ge $max ]; then
+              echo "Command failed after $max attempts" >&2
+              exit 1
+            fi
+          }
+          retry python scripts/refresh_prices.py
 
       - name: Generate site rankings
-        run: python scripts/generate_site_data.py
+        run: |
+          retry() {
+            local n=0
+            local max=3
+            until [ $n -ge $max ]; do
+              "$@" && break
+              n=$((n+1))
+              echo "Retry $n/$max..."
+              sleep $((n * 2))
+            done
+            if [ $n -ge $max ]; then
+              echo "Command failed after $max attempts" >&2
+              exit 1
+            fi
+          }
+          retry python scripts/generate_site_data.py
 
       - name: Configure git
         run: |
