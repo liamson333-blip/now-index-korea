@@ -349,6 +349,9 @@ button:focus-visible,
 .chart-area { position: relative; overflow: hidden; border-left: 1px solid #526176; border-bottom: 1px solid #526176; }
 .chart-gridline { position: relative; height: 33.33%; border-top: 1px dashed rgba(148, 163, 184, 0.18); }
 .chart-baseline { position: absolute; right: 0; bottom: 0; left: 0; border-top: 1px solid #94a3b8; }
+.backtest-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.backtest-line polyline { fill: none; stroke: #fbbf24; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.data-badge.data-ready { border-color: rgba(74, 222, 128, 0.45); color: #86efac; }
 .chart-empty { position: absolute; top: 50%; left: 50%; width: min(430px, 85%); transform: translate(-50%, -50%); text-align: center; }
 .chart-empty strong, .chart-empty span { display: block; }
 .chart-empty strong { color: #e2e8f0; font-size: 0.95rem; }

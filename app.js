@@ -146,6 +146,39 @@ function applyLanguage(language) {
   document.querySelector('#pageSize')?.setAttribute('aria-label', dictionary.rowsPerPage);
 }
 
+function renderBacktest(data) {
+  if (!data || !Array.isArray(data.equity_curve) || data.equity_curve.length < 2) return;
+  const area = document.getElementById('backtestChartArea');
+  const status = document.getElementById('backtestStatus');
+  if (!area) return;
+  const values = data.equity_curve.map((point) => Number(point.value));
+  const min = Math.min(...values, 100);
+  const max = Math.max(...values, 100);
+  const spread = Math.max(max - min, 1);
+  const points = values.map((value, index) => {
+    const x = (index / (values.length - 1)) * 100;
+    const y = 92 - ((value - min) / spread) * 82;
+    return `${x.toFixed(2)},${y.toFixed(2)}`;
+  }).join(' ');
+  area.querySelector('.chart-empty')?.remove();
+  area.insertAdjacentHTML('afterbegin', `<svg class="backtest-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="${points}" /></svg>`);
+  if (status) {
+    status.textContent = `${data.stocks} stocks · ${data.return_pct >= 0 ? '+' : ''}${data.return_pct.toFixed(2)}%`;
+    status.classList.add('data-ready');
+  }
+  const endLabel = document.getElementById('chartEndLabel');
+  if (endLabel) endLabel.textContent = data.equity_curve[data.equity_curve.length - 1].date;
+}
+
+async function loadBacktest() {
+  try {
+    const response = await fetch(`backtest.json?cache=${Date.now()}`, { cache: 'reload' });
+    if (response.ok) renderBacktest(await response.json());
+  } catch (error) {
+    // The explanatory empty state remains visible until history is available.
+  }
+}
+
 function marketBadge(stock) {
   const market = stock && stock.market;
   if (market) {
@@ -526,4 +559,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   loadSiteData();
+  loadBacktest();
 });
