@@ -107,7 +107,7 @@ function applyLanguage(language) {
         buy: '75점 이상일 때 진입', hold: '매도 기준점보다 점수가 높은 동안 보유', sell: '점수가 약 28점까지 하락하면 매도',
         backtest: '이 전략으로 수익을 냈을까요?', status: '과거 데이터 필요', emptyTitle: '실제 수익률 그래프를 아직 계산할 수 없습니다',
         emptyText: '현재 피드는 오늘의 가격과 점수만 제공합니다. 신뢰할 수 있는 수익률을 계산하려면 매수·매도 신호 시점의 날짜별 점수와 가격이 필요합니다.', end: '과거 스냅샷 수집 대기',
-        note: '필요한 과거 관측값이 쌓일 때까지 수익 금액을 표시하지 않습니다. 오늘의 점수를 과거 가격에 적용하면 룩어헤드 편향으로 결과가 왜곡되기 때문입니다.',
+        note: '필요한 과거 관측값이 쌓일 때까지 수익 금액을 표시하지 않습니다. 오늘의 점수를 과거 가격에 적용하면 룩어헤드 편향으로 결과가 왜곡되기 때문입니다.', benchmark: '단순 지수투자', strategy: 'NOW 75/28 전략',
       }
     : {
         title: 'How NOW Score works',
@@ -115,9 +115,9 @@ function applyLanguage(language) {
         buy: 'Enter when score reaches 75 or higher', hold: 'Hold while the signal remains above the exit level', sell: 'Exit when score falls to around 28',
         backtest: 'Would this strategy have made money?', status: 'Historical data required', emptyTitle: 'Real profit chart is not available yet',
         emptyText: 'The current feed contains only today’s price and score. We need dated score snapshots plus prices at each buy and sell signal before calculating a trustworthy return.', end: 'Historical snapshots pending',
-        note: 'No profit number is shown until the required historical observations exist. This avoids look-ahead bias: applying today’s score to old prices would make the result misleading.',
+        note: 'No profit number is shown until the required historical observations exist. This avoids look-ahead bias: applying today’s score to old prices would make the result misleading.', benchmark: 'Simple index investment', strategy: 'NOW 75/28 strategy',
       };
-  const strategyTargets = { scoreStoryTitle: 'title', scoreStoryDescription: 'description', buyRule: 'buy', holdRule: 'hold', sellRule: 'sell', backtestTitle: 'backtest', backtestStatus: 'status', chartEmptyTitle: 'emptyTitle', chartEmptyText: 'emptyText', chartEndLabel: 'end', backtestNote: 'note' };
+  const strategyTargets = { scoreStoryTitle: 'title', scoreStoryDescription: 'description', buyRule: 'buy', holdRule: 'hold', sellRule: 'sell', backtestTitle: 'backtest', backtestStatus: 'status', chartEmptyTitle: 'emptyTitle', chartEmptyText: 'emptyText', chartEndLabel: 'end', backtestNote: 'note', benchmarkLegend: 'benchmark', strategyLegend: 'strategy' };
   Object.entries(strategyTargets).forEach(([id, key]) => {
     const element = document.getElementById(id);
     if (element) element.textContent = strategyText[key];
@@ -152,18 +152,22 @@ function renderBacktest(data) {
   const status = document.getElementById('backtestStatus');
   if (!area) return;
   const values = data.equity_curve.map((point) => Number(point.value));
-  const min = Math.min(...values, 100);
-  const max = Math.max(...values, 100);
+  const benchmarkValues = data.equity_curve.map((point) => Number(point.benchmark ?? 100));
+  const min = Math.min(...values, ...benchmarkValues, 100);
+  const max = Math.max(...values, ...benchmarkValues, 100);
   const spread = Math.max(max - min, 1);
-  const points = values.map((value, index) => {
+  const makePoints = (series) => series.map((value, index) => {
     const x = (index / (values.length - 1)) * 100;
     const y = 92 - ((value - min) / spread) * 82;
     return `${x.toFixed(2)},${y.toFixed(2)}`;
   }).join(' ');
+  const points = makePoints(values);
+  const benchmarkPoints = makePoints(benchmarkValues);
   area.querySelector('.chart-empty')?.remove();
-  area.insertAdjacentHTML('afterbegin', `<svg class="backtest-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="${points}" /></svg>`);
+  area.insertAdjacentHTML('afterbegin', `<svg class="backtest-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline class="strategy-line" points="${points}" /><polyline class="benchmark-line" points="${benchmarkPoints}" /></svg>`);
   if (status) {
-    status.textContent = `${data.stocks} stocks · ${data.return_pct >= 0 ? '+' : ''}${data.return_pct.toFixed(2)}%`;
+    const benchmarkReturn = benchmarkValues[benchmarkValues.length - 1] - 100;
+    status.textContent = `${data.stocks} stocks · NOW ${data.return_pct >= 0 ? '+' : ''}${data.return_pct.toFixed(2)}% · Index ${benchmarkReturn >= 0 ? '+' : ''}${benchmarkReturn.toFixed(2)}%`;
     status.classList.add('data-ready');
   }
   const endLabel = document.getElementById('chartEndLabel');
