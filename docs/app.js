@@ -76,6 +76,54 @@ const ENGINE_LABELS = {
   sentiment: 'Sentiment',
 };
 
+let currentLanguage = localStorage.getItem('now-index-language') || 'en';
+
+const translations = {
+  en: {
+    languageToggle: '한국어', languageLabel: 'Switch to Korean', asOf: 'As of', unavailable: 'Live data unavailable', noMatches: 'No stocks match your search.', showing: 'Showing {start}–{end} of {total} stocks', dataLoadError: 'Live data could not be loaded', retry: 'Refresh to retry.', eyebrow: 'NOW Index Korea',
+    heroTitle: 'Transparent Korean market indexing for <span class="accent">KRX stocks</span>',
+    heroDescription: 'Explore a lightweight, open-source index built from KRX stock data with a clear, reproducible methodology. Live rankings, transparent scores, and a live preview.', github: 'View GitHub Repo', liveSite: 'Open Live Site', indexPreview: 'Now-style index value', loading: 'Loading market data…', refresh: 'Refresh preview', refreshing: 'Refreshing…', stocksTracked: 'Stocks tracked', topPerformer: 'Top performer', averagePrice: 'Average price', dataSource: 'Data source', dataUpdated: 'Data updated', rankingTitle: 'Korean stocks ranked by NOW index score', rankingDescription: 'Live rankings are generated from KRX data and updated from the site data feed.', searchPlaceholder: 'Search ticker or name…', searchLabel: 'Search stocks', allMarkets: 'All markets', rowsPerPage: 'Rows per page', exportCsv: '↓ Export CSV', methodology: 'NOW score methodology', methodologyDescription: 'A Wall Street–grade composite built from six independent factor engines. Each engine answers a distinct question about a stock; the engines are weighted and combined into a single, transparent NOW score.', universe: 'Universe', avgPrice: 'Avg price', indexValue: 'Index value', composite: 'Composite NOW score', valuation: 'Valuation', momentum: 'Momentum', quality: 'Quality', risk: 'Risk', macro: 'Macro', sentiment: 'Sentiment', valuationQuestion: 'Is this asset cheap relative to its peers?', momentumQuestion: 'Is the market rewarding this asset?', qualityQuestion: 'Is this a fundamentally strong business?', riskQuestion: 'How risky is this investment?', macroQuestion: 'Is the ownership base supportive?', sentimentQuestion: 'What do analysts expect?', liveComposite: 'Live composite.', about: 'About the project', how: 'How it works', dataSourceTitle: 'Data source', openSource: 'Open source', reference: 'Reference', footer: 'NOW Index Korea • Open source Korean market index starter project', disclaimer: 'Data is for demonstration purposes and not investment advice.',
+  },
+  ko: {
+    languageToggle: 'English', languageLabel: '영어로 전환', asOf: '기준일', unavailable: '실시간 데이터를 사용할 수 없습니다', noMatches: '검색 결과가 없습니다.', showing: '{total}개 종목 중 {start}–{end} 표시', dataLoadError: '실시간 데이터를 불러오지 못했습니다', retry: '새로고침하여 다시 시도하세요.', eyebrow: 'NOW Index Korea', heroTitle: '투명한 한국 시장 지수 <span class="accent">KRX 종목</span>', heroDescription: 'KRX 주식 데이터로 만든 오픈소스 지수를 살펴보세요. 명확하고 재현 가능한 방법론, 실시간 순위와 투명한 점수를 제공합니다.', github: 'GitHub 저장소 보기', liveSite: '라이브 사이트 열기', indexPreview: 'NOW 스타일 지수', loading: '시장 데이터 불러오는 중…', refresh: '지수 새로고침', refreshing: '새로고침 중…', stocksTracked: '추적 종목 수', topPerformer: '최고 점수 종목', averagePrice: '평균 가격', dataSource: '데이터 출처', dataUpdated: '데이터 기준일', rankingTitle: 'NOW 지수 점수별 한국 주식 순위', rankingDescription: 'KRX 데이터를 기반으로 생성된 실시간 순위입니다.', searchPlaceholder: '종목코드 또는 종목명 검색…', searchLabel: '종목 검색', allMarkets: '전체 시장', rowsPerPage: '페이지당 행 수', exportCsv: '↓ CSV 내보내기', methodology: 'NOW 점수 방법론', methodologyDescription: '6개의 독립적인 팩터 엔진으로 구성된 투명한 종합 지수입니다. 각 엔진은 서로 다른 질문에 답하고 가중치에 따라 하나의 NOW 점수로 결합됩니다.', universe: '전체 종목', avgPrice: '평균 가격', indexValue: '지수 값', composite: '종합 NOW 점수', valuation: '밸류에이션', momentum: '모멘텀', quality: '퀄리티', risk: '리스크', macro: '매크로', sentiment: '센티먼트', valuationQuestion: '동종 종목보다 저평가되어 있는가?', momentumQuestion: '시장이 이 종목을 긍정적으로 평가하는가?', qualityQuestion: '기초체력이 강한 기업인가?', riskQuestion: '투자 위험은 어느 정도인가?', macroQuestion: '주주 구성이 우호적인가?', sentimentQuestion: '애널리스트의 전망은 어떠한가?', liveComposite: '실시간 종합 점수.', about: '프로젝트 소개', how: '작동 방식', dataSourceTitle: '데이터 출처', openSource: '오픈소스', reference: '참고', footer: 'NOW Index Korea • 오픈소스 한국 시장 지수 프로젝트', disclaimer: '본 데이터는 시연 목적이며 투자 조언이 아닙니다.',
+  },
+};
+
+const translationTargets = {
+  eyebrow: '.eyebrow', heroTitle: '.hero h1', heroDescription: '.hero-content > div:first-child > p', github: '.hero-actions .button:first-child', liveSite: '.hero-actions .button-secondary', indexPreview: '.panel-label', loading: '#indexMeta', refresh: '#refreshButton .btn-label', stocksTracked: '.stat-card:nth-child(1) .stat-label', topPerformer: '.stat-card:nth-child(2) .stat-label', averagePrice: '.stat-card:nth-child(3) .stat-label', dataSource: '.stat-card:nth-child(4) .stat-label', dataUpdated: '.stat-card:nth-child(5) .stat-label', rankingTitle: '.ranking-section h2', rankingDescription: '.ranking-section .section-head p', searchPlaceholder: '#searchInput', allMarkets: '#marketFilter option[value="all"]', rowsPerPage: '#pageSize', exportCsv: '#exportBtn', methodology: '.methodology h2', methodologyDescription: '.methodology .method-head p', universe: '.method-metric:nth-child(1) .method-metric-label', avgPrice: '.method-metric:nth-child(2) .method-metric-label', indexValue: '.method-metric:nth-child(3) .method-metric-label', composite: '.method-formula-label', about: '.grid article:first-child h2', how: '.grid article:nth-child(2) h2', dataSourceTitle: '.card:nth-child(1) h3', openSource: '.card:nth-child(2) h3', reference: '.card:nth-child(3) h3', footer: 'footer p:first-child', disclaimer: 'footer .footer-note',
+};
+
+function translate(key) {
+  return translations[currentLanguage][key] || translations.en[key] || key;
+}
+
+function applyLanguage(language) {
+  currentLanguage = language;
+  const dictionary = translations[language];
+  Object.entries(translationTargets).forEach(([key, selector]) => {
+    const element = document.querySelector(selector);
+    if (!element || !dictionary[key]) return;
+    if (key === 'heroTitle') element.innerHTML = dictionary[key];
+    else if (key === 'searchPlaceholder') element.placeholder = dictionary[key];
+    else element.textContent = dictionary[key];
+  });
+  const toggle = document.getElementById('languageToggle');
+  toggle.textContent = dictionary.languageToggle;
+  toggle.setAttribute('aria-label', dictionary.languageLabel);
+  document.documentElement.lang = language;
+  localStorage.setItem('now-index-language', language);
+  document.querySelectorAll('.engine-card').forEach((card, index) => {
+    const keys = ['valuation', 'momentum', 'quality', 'risk', 'macro', 'sentiment'];
+    const heading = card.querySelector('h3');
+    const question = card.querySelector('.engine-question');
+    if (heading) heading.textContent = `${index + 1} · ${dictionary[keys[index]]}`;
+    if (question) question.textContent = dictionary[`${keys[index]}Question`];
+  });
+  document.querySelector('#searchInput')?.setAttribute('aria-label', dictionary.searchLabel);
+  document.querySelector('#marketFilter')?.setAttribute('aria-label', dictionary.market);
+  document.querySelector('#pageSize')?.setAttribute('aria-label', dictionary.rowsPerPage);
+}
+
 function marketBadge(stock) {
   const market = stock && stock.market;
   if (market) {
@@ -121,7 +169,7 @@ function renderRankings(stocks, filtered = false) {
   if (loadingRow) loadingRow.remove();
 
   if (!stocks.length) {
-    body.innerHTML = `<tr><td colspan="8" class="empty-state">No stocks match your search.</td></tr>`;
+    body.innerHTML = `<tr><td colspan="8" class="empty-state">${translate('noMatches')}</td></tr>`;
     return;
   }
 
@@ -158,7 +206,10 @@ function renderRankings(stocks, filtered = false) {
   const resultCount = document.getElementById('resultCount');
   if (filtered || total > PAGE_SIZE) {
     resultCount.hidden = false;
-    resultCount.textContent = `Showing ${start + 1}–${Math.min(start + PAGE_SIZE, total)} of ${total} stocks`;
+    resultCount.textContent = translate('showing')
+      .replace('{start}', start + 1)
+      .replace('{end}', Math.min(start + PAGE_SIZE, total))
+      .replace('{total}', total);
   } else {
     resultCount.hidden = true;
   }
@@ -244,11 +295,11 @@ function setLoading(isLoading) {
   const label = document.querySelector('#refreshButton .btn-label');
   if (isLoading) {
     spinner.hidden = false;
-    label.textContent = 'Refreshing…';
+    label.textContent = translate('refreshing');
     document.getElementById('refreshButton').disabled = true;
   } else {
     spinner.hidden = true;
-    label.textContent = 'Refresh preview';
+    label.textContent = translate('refresh');
     document.getElementById('refreshButton').disabled = false;
   }
 }
@@ -369,7 +420,7 @@ async function loadSiteData() {
 
     const indexElement = document.getElementById('indexValue');
     indexElement.textContent = formatValue(data.index_value);
-    document.getElementById('indexMeta').textContent = `As of ${formatDate(data.date)}`;
+    document.getElementById('indexMeta').textContent = `${translate('asOf')} ${formatDate(data.date)}`;
 
     renderStats(data);
     renderCurrent();
@@ -382,15 +433,14 @@ async function loadSiteData() {
 
     const indexElement = document.getElementById('indexValue');
     indexElement.textContent = '—';
-    document.getElementById('indexMeta').textContent = 'Live data unavailable';
+    document.getElementById('indexMeta').textContent = translate('unavailable');
 
     const body = document.getElementById('rankingBody');
     const loadingRow = document.getElementById('loadingRow');
     if (loadingRow) loadingRow.remove();
     body.innerHTML =
       `<tr><td colspan="8" class="empty-state">` +
-      `⚠ Live market data could not be loaded (${error.message}). ` +
-      `Please refresh to retry.</td></tr>`;
+      `${translate('dataLoadError')} (${error.message}). ${translate('retry')}</td></tr>`;
 
     const pagination = document.getElementById('pagination');
     if (pagination) pagination.innerHTML = '';
@@ -398,7 +448,7 @@ async function loadSiteData() {
     if (resultCount) resultCount.hidden = true;
 
     showError(
-      `⚠ Live data could not be loaded (${error.message}). Refresh to retry.`,
+      `${translate('dataLoadError')} (${error.message}). ${translate('retry')}`,
     );
   } finally {
     setLoading(false);
@@ -406,6 +456,13 @@ async function loadSiteData() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const languageToggle = document.getElementById('languageToggle');
+  if (languageToggle) {
+    languageToggle.addEventListener('click', () => {
+      applyLanguage(currentLanguage === 'en' ? 'ko' : 'en');
+    });
+  }
+  applyLanguage(currentLanguage);
   document.getElementById('refreshButton').addEventListener('click', loadSiteData);
   document.getElementById('searchInput').addEventListener('input', applyFilter);
   const marketFilter = document.getElementById('marketFilter');
