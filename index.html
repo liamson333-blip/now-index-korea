@@ -110,6 +110,44 @@
         </div>
       </section>
 
+      <section class="content score-story" aria-label="NOW Score strategy explanation">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Strategy lab</span>
+            <h2 id="scoreStoryTitle">How NOW Score works</h2>
+            <p id="scoreStoryDescription">
+              NOW Score ranks each stock from 0 to 100 across six factors. A higher score means the stock ranks better against the current KOSPI/KOSDAQ universe; it is not a guaranteed return forecast.
+            </p>
+          </div>
+        </div>
+        <div class="score-flow" aria-label="NOW Score trading rule">
+          <div class="score-step buy-step"><span class="score-step-label">BUY</span><strong>75+</strong><p id="buyRule">Enter when score reaches 75 or higher</p></div>
+          <div class="score-arrow" aria-hidden="true">→</div>
+          <div class="score-step hold-step"><span class="score-step-label">HOLD</span><strong>75 → 28</strong><p id="holdRule">Hold while the signal remains above the exit level</p></div>
+          <div class="score-arrow" aria-hidden="true">→</div>
+          <div class="score-step sell-step"><span class="score-step-label">SELL</span><strong>28</strong><p id="sellRule">Exit when score falls to around 28</p></div>
+        </div>
+        <div class="backtest-panel">
+          <div class="backtest-heading">
+            <div>
+              <span class="section-kicker">Backtest</span>
+              <h3 id="backtestTitle">Would this strategy have made money?</h3>
+            </div>
+            <span class="data-badge" id="backtestStatus">Historical data required</span>
+          </div>
+          <div class="backtest-chart" role="img" aria-label="Backtest chart awaiting historical score snapshots">
+            <div class="chart-y-axis"><span>Profit %</span><b>—</b><b>—</b><b>—</b><b>—</b></div>
+            <div class="chart-area">
+              <div class="chart-gridline"></div><div class="chart-gridline"></div><div class="chart-gridline"></div>
+              <div class="chart-empty"><strong id="chartEmptyTitle">Real profit chart is not available yet</strong><span id="chartEmptyText">The current feed contains only today’s price and score. We need dated score snapshots plus prices at each buy and sell signal before calculating a trustworthy return.</span></div>
+              <div class="chart-baseline"></div>
+            </div>
+            <div class="chart-x-axis"><span>Start</span><span id="chartEndLabel">Historical snapshots pending</span></div>
+          </div>
+          <p class="backtest-note" id="backtestNote">No profit number is shown until the required historical observations exist. This avoids look-ahead bias: applying today’s score to old prices would make the result misleading.</p>
+        </div>
+      </section>
+
       <section class="content ranking-section">
         <div class="section-head">
           <div>
@@ -357,6 +395,6 @@
         <p class="footer-note">Data is for demonstration purposes and not investment advice.</p>
       </footer>
     </div>
-<script src="app.js?cache=12"></script>
+<script src="app.js?cache=13"></script>
   </body>
 </html>
