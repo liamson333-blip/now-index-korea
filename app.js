@@ -176,6 +176,26 @@ function renderBacktest(data) {
   }
   const endLabel = document.getElementById('chartEndLabel');
   if (endLabel) endLabel.textContent = data.equity_curve[data.equity_curve.length - 1].date;
+  const metrics = [
+    [values, 'perfNowReturn', 'perfNowDrawdown', 'perfNowVolatility'],
+    [kospiValues, 'perfKospiReturn', 'perfKospiDrawdown', 'perfKospiVolatility'],
+    [kosdaqValues, 'perfKosdaqReturn', 'perfKosdaqDrawdown', 'perfKosdaqVolatility'],
+  ];
+  metrics.forEach(([series, returnId, drawdownId, volatilityId]) => {
+    let peak = series[0];
+    let maxDrawdown = 0;
+    const dailyReturns = [];
+    series.forEach((value, index) => {
+      if (index) dailyReturns.push((value / series[index - 1] - 1) * 100);
+      peak = Math.max(peak, value);
+      maxDrawdown = Math.min(maxDrawdown, (value / peak - 1) * 100);
+    });
+    const average = dailyReturns.reduce((sum, value) => sum + value, 0) / Math.max(dailyReturns.length, 1);
+    const variance = dailyReturns.reduce((sum, value) => sum + (value - average) ** 2, 0) / Math.max(dailyReturns.length, 1);
+    document.getElementById(returnId).textContent = `${(series.at(-1) - 100).toFixed(2)}%`;
+    document.getElementById(drawdownId).textContent = `${maxDrawdown.toFixed(2)}%`;
+    document.getElementById(volatilityId).textContent = `${(Math.sqrt(variance) * Math.sqrt(252)).toFixed(2)}%`;
+  });
 }
 
 async function loadBacktest() {

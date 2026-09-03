@@ -366,6 +366,12 @@ button:focus-visible,
 .kosdaq-legend { background: #f472b6; }
 .kospi-legend { background: #60a5fa; }
 .strategy-legend { background: #fbbf24; }
+.performance-table { margin-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.12); color: #cbd5e1; font-size: 0.78rem; }
+.performance-row { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); align-items: center; }
+.performance-row > :not(:first-child) { text-align: right; }
+.performance-head { color: #8190a5; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.performance-row strong { color: #fbbf24; }
+.performance-row b { color: #e2e8f0; }
 .backtest-note { margin: 18px 0 0 !important; font-size: 0.8rem; }
 
 @media (max-width: 720px) {

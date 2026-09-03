@@ -145,6 +145,12 @@
             <div class="chart-x-axis"><span>Start</span><span id="chartEndLabel">Historical snapshots pending</span></div>
           </div>
           <div class="chart-legend"><span><i class="legend-line kosdaq-legend"></i><b id="kosdaqLegend">P&amp;L investing in KOSDAQ</b></span><span><i class="legend-line kospi-legend"></i><b id="kospiLegend">P&amp;L investing in KOSPI</b></span><span><i class="legend-line strategy-legend"></i><b id="strategyLegend">P&amp;L with NOW strategy</b></span></div>
+          <div class="performance-table" aria-label="Performance and risk comparison">
+            <div class="performance-row performance-head"><span>Strategy</span><span>Return</span><span>Max drawdown</span><span>Volatility</span></div>
+            <div class="performance-row"><b>NOW strategy</b><strong id="perfNowReturn">—</strong><span id="perfNowDrawdown">—</span><span id="perfNowVolatility">—</span></div>
+            <div class="performance-row"><b>KOSPI investment</b><strong id="perfKospiReturn">—</strong><span id="perfKospiDrawdown">—</span><span id="perfKospiVolatility">—</span></div>
+            <div class="performance-row"><b>KOSDAQ investment</b><strong id="perfKosdaqReturn">—</strong><span id="perfKosdaqDrawdown">—</span><span id="perfKosdaqVolatility">—</span></div>
+          </div>
           <p class="backtest-note" id="backtestNote">No profit number is shown until the required historical observations exist. This avoids look-ahead bias: applying today’s score to old prices would make the result misleading.</p>
         </div>
       </section>
