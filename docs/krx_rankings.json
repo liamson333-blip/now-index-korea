@@ -1,6 +1,6 @@
 {
-  "index_value": 27869.011614401858,
-  "date": "2026-09-02",
+  "index_value": 27869.75656213705,
+  "date": "2026-09-03",
   "universe_size": 4305,
   "source": "full_stock_data.json",
   "methodology": {
@@ -15,10 +15,10 @@
     {
       "ticker": "900270",
       "name": "헝셩그룹",
-      "price": 3760.0,
-      "change_pct": 0.0,
+      "price": 3855.0,
+      "change_pct": 2.53,
       "market": "KOSDAQ",
-      "market_cap": 19222202880.0,
+      "market_cap": 19707870240.0,
       "engine_scores": {
         "valuation": 99.93,
         "momentum": 50.0,
@@ -746,10 +746,10 @@
     {
       "ticker": "900340",
       "name": "윙입푸드",
-      "price": 1507.0,
-      "change_pct": 0.0,
+      "price": 1494.0,
+      "change_pct": -0.86,
       "market": "KOSDAQ",
-      "market_cap": 18962177124.0,
+      "market_cap": 18798601608.0,
       "engine_scores": {
         "valuation": 97.86,
         "momentum": 50.0,
@@ -2038,10 +2038,10 @@
     {
       "ticker": "006200",
       "name": "한국전자홀딩스",
-      "price": 1919.0,
-      "change_pct": 0.0,
+      "price": 1910.0,
+      "change_pct": -0.47,
       "market": "KOSPI",
-      "market_cap": 17963043213.0,
+      "market_cap": 17878797570.0,
       "engine_scores": {
         "valuation": 90.14,
         "momentum": 50.0,
@@ -2106,10 +2106,10 @@
     {
       "ticker": "006050",
       "name": "국영지앤엠",
-      "price": 4805.0,
-      "change_pct": 0.0,
+      "price": 4695.0,
+      "change_pct": -2.29,
       "market": "KOSDAQ",
-      "market_cap": 16767162820.0,
+      "market_cap": 16383315180.0,
       "engine_scores": {
         "valuation": 86.13,
         "momentum": 50.0,
@@ -3347,10 +3347,10 @@
     {
       "ticker": "065130",
       "name": "탑엔지니어링",
-      "price": 2905.0,
-      "change_pct": 0.0,
+      "price": 2885.0,
+      "change_pct": -0.69,
       "market": "KOSDAQ",
-      "market_cap": 46491620000.0,
+      "market_cap": 46171540000.0,
       "engine_scores": {
         "valuation": 91.7,
         "momentum": 50.0,
@@ -3874,10 +3874,10 @@
     {
       "ticker": "003800",
       "name": "에이스침대",
-      "price": 32950.0,
-      "change_pct": 0.0,
+      "price": 32150.0,
+      "change_pct": -2.43,
       "market": "KOSDAQ",
-      "market_cap": 365415500000.0,
+      "market_cap": 356543500000.0,
       "engine_scores": {
         "valuation": 80.11,
         "momentum": 50.0,
@@ -4078,10 +4078,10 @@
     {
       "ticker": "000760",
       "name": "이화산업",
-      "price": 13790.0,
-      "change_pct": 0.0,
+      "price": 13730.0,
+      "change_pct": -0.44,
       "market": "KOSPI",
-      "market_cap": 38612000000.0,
+      "market_cap": 38444000000.0,
       "engine_scores": {
         "valuation": 89.8,
         "momentum": 50.0,
@@ -5455,10 +5455,10 @@
     {
       "ticker": "094840",
       "name": "슈프리마에이치큐",
-      "price": 13090.0,
-      "change_pct": 0.0,
+      "price": 13100.0,
+      "change_pct": 0.08,
       "market": "KOSDAQ",
-      "market_cap": 128361966810.0,
+      "market_cap": 128460027900.0,
       "engine_scores": {
         "valuation": 64.32,
         "momentum": 50.0,
@@ -5795,10 +5795,10 @@
     {
       "ticker": "028080",
       "name": "휴맥스홀딩스",
-      "price": 4980.0,
-      "change_pct": 0.0,
+      "price": 4710.0,
+      "change_pct": -5.42,
       "market": "KOSDAQ",
-      "market_cap": 12601123080.0,
+      "market_cap": 11917929660.0,
       "engine_scores": {
         "valuation": 95.03,
         "momentum": 50.0,
@@ -7002,10 +7002,10 @@
     {
       "ticker": "004590",
       "name": "한국가구",
-      "price": 5050.0,
-      "change_pct": 0.0,
+      "price": 4965.0,
+      "change_pct": -1.68,
       "market": "KOSDAQ",
-      "market_cap": 75750000000.0,
+      "market_cap": 74475000000.0,
       "engine_scores": {
         "valuation": 77.77,
         "momentum": 50.0,
@@ -8413,10 +8413,10 @@
     {
       "ticker": "084180",
       "name": "수성웹툰",
-      "price": 540.0,
-      "change_pct": 0.0,
+      "price": 526.0,
+      "change_pct": -2.59,
       "market": "KOSDAQ",
-      "market_cap": 9760112820.0,
+      "market_cap": 9507072858.0,
       "engine_scores": {
         "valuation": 99.09,
         "momentum": 50.0,
@@ -8753,10 +8753,10 @@
     {
       "ticker": "070960",
       "name": "모나용평",
-      "price": 2065.0,
-      "change_pct": 0.0,
+      "price": 2075.0,
+      "change_pct": 0.48,
       "market": "KOSPI",
-      "market_cap": 99395332645.0,
+      "market_cap": 99876665975.0,
       "engine_scores": {
         "valuation": 90.8,
         "momentum": 50.0,
@@ -9960,10 +9960,10 @@
     {
       "ticker": "014100",
       "name": "메디앙스",
-      "price": 1671.0,
-      "change_pct": 0.0,
+      "price": 1705.0,
+      "change_pct": 2.03,
       "market": "KOSDAQ",
-      "market_cap": 19717800000.0,
+      "market_cap": 20119000000.0,
       "engine_scores": {
         "valuation": 91.7,
         "momentum": 50.0,
@@ -10963,10 +10963,10 @@
     {
       "ticker": "032680",
       "name": "소프트센",
-      "price": 928.0,
-      "change_pct": 0.0,
+      "price": 927.0,
+      "change_pct": -0.11,
       "market": "KOSDAQ",
-      "market_cap": 19354257568.0,
+      "market_cap": 19333401687.0,
       "engine_scores": {
         "valuation": 82.61,
         "momentum": 50.0,
@@ -11303,10 +11303,10 @@
     {
       "ticker": "011080",
       "name": "형지I&C",
-      "price": 904.0,
-      "change_pct": 0.0,
+      "price": 884.0,
+      "change_pct": -2.21,
       "market": "KOSDAQ",
-      "market_cap": 6415020848.0,
+      "market_cap": 6273095608.0,
       "engine_scores": {
         "valuation": 99.24,
         "momentum": 50.0,
@@ -15383,10 +15383,10 @@
     {
       "ticker": "101000",
       "name": "KS인더스트리",
-      "price": 776.0,
-      "change_pct": 0.0,
+      "price": 775.0,
+      "change_pct": -0.13,
       "market": "KOSDAQ",
-      "market_cap": 7690537912.0,
+      "market_cap": 7680627425.0,
       "engine_scores": {
         "valuation": 96.81,
         "momentum": 50.0,
@@ -16097,10 +16097,10 @@
     {
       "ticker": "035620",
       "name": "바른손이앤에이",
-      "price": 693.0,
-      "change_pct": 0.0,
+      "price": 674.0,
+      "change_pct": -2.74,
       "market": "KOSDAQ",
-      "market_cap": 12896673174.0,
+      "market_cap": 12543084732.0,
       "engine_scores": {
         "valuation": 95.27,
         "momentum": 50.0,
@@ -18630,10 +18630,10 @@
     {
       "ticker": "071280",
       "name": "로체시스템즈",
-      "price": 6620.0,
-      "change_pct": 0.0,
+      "price": 6840.0,
+      "change_pct": 3.32,
       "market": "KOSDAQ",
-      "market_cap": 101263511860.0,
+      "market_cap": 104628764520.0,
       "engine_scores": {
         "valuation": 44.99,
         "momentum": 50.0,
@@ -18902,10 +18902,10 @@
     {
       "ticker": "058450",
       "name": "한주에이알티",
-      "price": 1645.0,
-      "change_pct": 0.0,
+      "price": 1569.0,
+      "change_pct": -4.62,
       "market": "KOSDAQ",
-      "market_cap": 8879663940.0,
+      "market_cap": 8469418068.0,
       "engine_scores": {
         "valuation": 68.63,
         "momentum": 50.0,
@@ -20602,10 +20602,10 @@
     {
       "ticker": "024940",
       "name": "PN풍년",
-      "price": 1935.0,
-      "change_pct": 0.0,
+      "price": 1934.0,
+      "change_pct": -0.05,
       "market": "KOSDAQ",
-      "market_cap": 19350000000.0,
+      "market_cap": 19340000000.0,
       "engine_scores": {
         "valuation": 57.77,
         "momentum": 50.0,
@@ -21656,10 +21656,10 @@
     {
       "ticker": "009730",
       "name": "이렘",
-      "price": 1991.0,
-      "change_pct": 0.0,
+      "price": 2065.0,
+      "change_pct": 3.72,
       "market": "KOSDAQ",
-      "market_cap": 15879226473.0,
+      "market_cap": 16469413695.0,
       "engine_scores": {
         "valuation": 76.88,
         "momentum": 50.0,
@@ -34287,10 +34287,10 @@
     {
       "ticker": "0209Z0",
       "name": "ACE 코리아AI전력TOP10",
-      "price": 6715.0,
-      "change_pct": 0.0,
+      "price": 6825.0,
+      "change_pct": 1.64,
       "market": "KOSPI",
-      "market_cap": 35925250000.0,
+      "market_cap": 36513750000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -34899,10 +34899,10 @@
     {
       "ticker": "0154F0",
       "name": "WON 초대형IB&금융지주",
-      "price": 12210.0,
-      "change_pct": 0.0,
+      "price": 12335.0,
+      "change_pct": 1.02,
       "market": "KOSPI",
-      "market_cap": 35409000000.0,
+      "market_cap": 35771500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -35715,10 +35715,10 @@
     {
       "ticker": "266360",
       "name": "KODEX K콘텐츠",
-      "price": 9730.0,
-      "change_pct": 0.0,
+      "price": 9790.0,
+      "change_pct": 0.62,
       "market": "KOSPI",
-      "market_cap": 31136000000.0,
+      "market_cap": 31328000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -36361,10 +36361,10 @@
     {
       "ticker": "289480",
       "name": "TIGER 200커버드콜",
-      "price": 12465.0,
-      "change_pct": 0.0,
+      "price": 12510.0,
+      "change_pct": 0.36,
       "market": "KOSPI",
-      "market_cap": 28669500000.0,
+      "market_cap": 28773000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -37279,10 +37279,10 @@
     {
       "ticker": "530106",
       "name": "삼성 레버리지 코스닥150 선물 ETN",
-      "price": 22290.0,
-      "change_pct": 0.0,
+      "price": 22895.0,
+      "change_pct": 2.71,
       "market": "KOSPI",
-      "market_cap": 22290000000.0,
+      "market_cap": 22895000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -38928,10 +38928,10 @@
     {
       "ticker": "610085",
       "name": "메리츠 레버리지 미국채30년 스트립 ETN(H)",
-      "price": 32275.0,
-      "change_pct": 0.0,
+      "price": 32975.0,
+      "change_pct": 2.17,
       "market": "KOSPI",
-      "market_cap": 19365000000.0,
+      "market_cap": 19785000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -39574,10 +39574,10 @@
     {
       "ticker": "461910",
       "name": "PLUS 미국테크TOP10레버리지(합성)",
-      "price": 34950.0,
-      "change_pct": 0.0,
+      "price": 36800.0,
+      "change_pct": 5.29,
       "market": "KOSPI",
-      "market_cap": 17475000000.0,
+      "market_cap": 18400000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -40203,10 +40203,10 @@
     {
       "ticker": "530120",
       "name": "삼성 나스닥 100 TR ETN",
-      "price": 15410.0,
-      "change_pct": 0.0,
+      "price": 15415.0,
+      "change_pct": 0.03,
       "market": "KOSPI",
-      "market_cap": 15410000000.0,
+      "market_cap": 15415000000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -42447,10 +42447,10 @@
     {
       "ticker": "446700",
       "name": "RISE 배터리 리사이클링",
-      "price": 10370.0,
-      "change_pct": 0.0,
+      "price": 10585.0,
+      "change_pct": 2.07,
       "market": "KOSPI",
-      "market_cap": 10784800000.0,
+      "market_cap": 11008400000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -43654,10 +43654,10 @@
     {
       "ticker": "227570",
       "name": "TIGER 우량가치",
-      "price": 21310.0,
-      "change_pct": 0.0,
+      "price": 21390.0,
+      "change_pct": 0.38,
       "market": "KOSPI",
-      "market_cap": 9589500000.0,
+      "market_cap": 9625500000.0,
       "engine_scores": {
         "valuation": 50.0,
         "momentum": 50.0,
@@ -48533,10 +48533,10 @@
     {
       "ticker": "027580",
       "name": "상보",
-      "price": 1626.0,
-      "change_pct": 0.0,
+      "price": 1611.0,
+      "change_pct": -0.92,
       "market": "KOSDAQ",
-      "market_cap": 19245750630.0,
+      "market_cap": 19068206805.0,
       "engine_scores": {
         "valuation": 73.87,
         "momentum": 50.0,
@@ -49247,10 +49247,10 @@
     {
       "ticker": "179290",
       "name": "엠아이텍",
-      "price": 5130.0,
-      "change_pct": 0.0,
+      "price": 5120.0,
+      "change_pct": -0.19,
       "market": "KOSDAQ",
-      "market_cap": 166035928140.0,
+      "market_cap": 165712271360.0,
       "engine_scores": {
         "valuation": 44.74,
         "momentum": 50.0,
@@ -50879,10 +50879,10 @@
     {
       "ticker": "018620",
       "name": "우진비앤지",
-      "price": 2795.0,
-      "change_pct": 0.0,
+      "price": 2840.0,
+      "change_pct": 1.61,
       "market": "KOSDAQ",
-      "market_cap": 19377684690.0,
+      "market_cap": 19689668880.0,
       "engine_scores": {
         "valuation": 59.27,
         "momentum": 50.0,
@@ -54823,10 +54823,10 @@
     {
       "ticker": "020400",
       "name": "대동금속",
-      "price": 2825.0,
-      "change_pct": 0.0,
+      "price": 2860.0,
+      "change_pct": 1.24,
       "market": "KOSDAQ",
-      "market_cap": 17157727900.0,
+      "market_cap": 17370301520.0,
       "engine_scores": {
         "valuation": 47.43,
         "momentum": 50.0,
@@ -55163,10 +55163,10 @@
     {
       "ticker": "025870",
       "name": "신라에스지",
-      "price": 1460.0,
-      "change_pct": 0.0,
+      "price": 1515.0,
+      "change_pct": 3.77,
       "market": "KOSDAQ",
-      "market_cap": 5840000000.0,
+      "market_cap": 6060000000.0,
       "engine_scores": {
         "valuation": 59.27,
         "momentum": 50.0,
@@ -55316,10 +55316,10 @@
     {
       "ticker": "045520",
       "name": "크린앤사이언스",
-      "price": 2350.0,
-      "change_pct": 0.0,
+      "price": 2410.0,
+      "change_pct": 2.55,
       "market": "KOSDAQ",
-      "market_cap": 15275000000.0,
+      "market_cap": 15665000000.0,
       "engine_scores": {
         "valuation": 51.64,
         "momentum": 50.0,
@@ -55401,10 +55401,10 @@
     {
       "ticker": "017250",
       "name": "인터엠",
-      "price": 999.0,
-      "change_pct": 0.0,
+      "price": 1016.0,
+      "change_pct": 1.7,
       "market": "KOSDAQ",
-      "market_cap": 21024421533.0,
+      "market_cap": 21382194472.0,
       "engine_scores": {
         "valuation": 73.2,
         "momentum": 50.0,
@@ -55673,10 +55673,10 @@
     {
       "ticker": "012340",
       "name": "뉴인텍",
-      "price": 564.0,
-      "change_pct": 0.0,
+      "price": 573.0,
+      "change_pct": 1.6,
       "market": "KOSDAQ",
-      "market_cap": 12433263252.0,
+      "market_cap": 12631666389.0,
       "engine_scores": {
         "valuation": 71.92,
         "momentum": 50.0,
@@ -55928,10 +55928,10 @@
     {
       "ticker": "021040",
       "name": "대호특수강",
-      "price": 970.0,
-      "change_pct": 0.0,
+      "price": 989.0,
+      "change_pct": 1.96,
       "market": "KOSDAQ",
-      "market_cap": 21053630780.0,
+      "market_cap": 21466021486.0,
       "engine_scores": {
         "valuation": 70.05,
         "momentum": 50.0,
@@ -56846,10 +56846,10 @@
     {
       "ticker": "018680",
       "name": "서울제약",
-      "price": 1969.0,
-      "change_pct": 0.0,
+      "price": 1953.0,
+      "change_pct": -0.81,
       "market": "KOSDAQ",
-      "market_cap": 22957199111.0,
+      "market_cap": 22770650007.0,
       "engine_scores": {
         "valuation": 52.44,
         "momentum": 50.0,
@@ -57305,10 +57305,10 @@
     {
       "ticker": "051780",
       "name": "큐로홀딩스",
-      "price": 2530.0,
-      "change_pct": 0.0,
+      "price": 2565.0,
+      "change_pct": 1.38,
       "market": "KOSDAQ",
-      "market_cap": 19228060720.0,
+      "market_cap": 19494061560.0,
       "engine_scores": {
         "valuation": 56.32,
         "momentum": 50.0,
@@ -57764,10 +57764,10 @@
     {
       "ticker": "023770",
       "name": "플레이위드",
-      "price": 2640.0,
-      "change_pct": 0.0,
+      "price": 2585.0,
+      "change_pct": -2.08,
       "market": "KOSDAQ",
-      "market_cap": 23618746800.0,
+      "market_cap": 23126689575.0,
       "engine_scores": {
         "valuation": 35.21,
         "momentum": 50.0,
@@ -59022,10 +59022,10 @@
     {
       "ticker": "034940",
       "name": "조아제약",
-      "price": 2900.0,
-      "change_pct": 0.0,
+      "price": 2950.0,
+      "change_pct": 1.72,
       "market": "KOSDAQ",
-      "market_cap": 17968298500.0,
+      "market_cap": 18278096750.0,
       "engine_scores": {
         "valuation": 49.62,
         "momentum": 50.0,
@@ -59039,10 +59039,10 @@
     {
       "ticker": "079190",
       "name": "케스피온",
-      "price": 1109.0,
-      "change_pct": 0.0,
+      "price": 1099.0,
+      "change_pct": -0.9,
       "market": "KOSDAQ",
-      "market_cap": 10634065702.0,
+      "market_cap": 10538176922.0,
       "engine_scores": {
         "valuation": 54.57,
         "momentum": 50.0,
@@ -59158,10 +59158,10 @@
     {
       "ticker": "090470",
       "name": "제이스로보틱스",
-      "price": 4950.0,
-      "change_pct": 0.0,
+      "price": 4935.0,
+      "change_pct": -0.3,
       "market": "KOSDAQ",
-      "market_cap": 86509140300.0,
+      "market_cap": 86246991390.0,
       "engine_scores": {
         "valuation": 37.74,
         "momentum": 50.0,
@@ -60076,10 +60076,10 @@
     {
       "ticker": "065770",
       "name": "CS",
-      "price": 1218.0,
-      "change_pct": 0.0,
+      "price": 1201.0,
+      "change_pct": -1.4,
       "market": "KOSDAQ",
-      "market_cap": 12807347952.0,
+      "market_cap": 12628591864.0,
       "engine_scores": {
         "valuation": 54.57,
         "momentum": 50.0,
@@ -62082,10 +62082,10 @@
     {
       "ticker": "008290",
       "name": "원풍물산",
-      "price": 663.0,
-      "change_pct": 0.0,
+      "price": 676.0,
+      "change_pct": 1.96,
       "market": "KOSDAQ",
-      "market_cap": 13489954257.0,
+      "market_cap": 13754463164.0,
       "engine_scores": {
         "valuation": 42.7,
         "momentum": 50.0,
@@ -63000,10 +63000,10 @@
     {
       "ticker": "314130",
       "name": "지놈앤컴퍼니",
-      "price": 3480.0,
-      "change_pct": 0.0,
+      "price": 3525.0,
+      "change_pct": 1.29,
       "market": "KOSDAQ",
-      "market_cap": 182001999000.0,
+      "market_cap": 184355473125.0,
       "engine_scores": {
         "valuation": 24.82,
         "momentum": 50.0,
@@ -64309,10 +64309,10 @@
     {
       "ticker": "021045",
       "name": "대호특수강우",
-      "price": 2570.0,
-      "change_pct": 0.0,
+      "price": 2635.0,
+      "change_pct": 2.53,
       "market": "KOSDAQ",
-      "market_cap": 2180624440.0,
+      "market_cap": 2235776420.0,
       "engine_scores": {
         "valuation": 29.66,
         "momentum": 50.0,
@@ -64870,10 +64870,10 @@
     {
       "ticker": "0130D0",
       "name": "신한제17호스팩",
-      "price": 1972.0,
-      "change_pct": 0.0,
+      "price": 1971.0,
+      "change_pct": -0.05,
       "market": "KOSDAQ",
-      "market_cap": 10530480000.0,
+      "market_cap": 10525140000.0,
       "engine_scores": {
         "valuation": 40.22,
         "momentum": 50.0,
@@ -65057,10 +65057,10 @@
     {
       "ticker": "0044K0",
       "name": "삼성스팩10호",
-      "price": 1993.0,
-      "change_pct": 0.0,
+      "price": 1997.0,
+      "change_pct": 0.2,
       "market": "KOSDAQ",
-      "market_cap": 14987360000.0,
+      "market_cap": 15017440000.0,
       "engine_scores": {
         "valuation": 39.58,
         "momentum": 50.0,
@@ -66077,10 +66077,10 @@
     {
       "ticker": "049080",
       "name": "기가레인",
-      "price": 7830.0,
-      "change_pct": 0.0,
+      "price": 7780.0,
+      "change_pct": -0.64,
       "market": "KOSDAQ",
-      "market_cap": 66463655220.0,
+      "market_cap": 66039238520.0,
       "engine_scores": {
         "valuation": 21.56,
         "momentum": 50.0,
@@ -66094,10 +66094,10 @@
     {
       "ticker": "0130H0",
       "name": "엔에이치스팩33호",
-      "price": 2005.0,
-      "change_pct": 0.0,
+      "price": 2000.0,
+      "change_pct": -0.25,
       "market": "KOSDAQ",
-      "market_cap": 15438500000.0,
+      "market_cap": 15400000000.0,
       "engine_scores": {
         "valuation": 36.22,
         "momentum": 50.0,
@@ -66247,10 +66247,10 @@
     {
       "ticker": "023790",
       "name": "동일스틸럭스",
-      "price": 1280.0,
-      "change_pct": 0.0,
+      "price": 1300.0,
+      "change_pct": 1.56,
       "market": "KOSDAQ",
-      "market_cap": 16729354240.0,
+      "market_cap": 16990750400.0,
       "engine_scores": {
         "valuation": 43.14,
         "momentum": 50.0,
@@ -66315,10 +66315,10 @@
     {
       "ticker": "0105P0",
       "name": "유진스팩12호",
-      "price": 2005.0,
-      "change_pct": 0.0,
+      "price": 2000.0,
+      "change_pct": -0.25,
       "market": "KOSDAQ",
-      "market_cap": 11348300000.0,
+      "market_cap": 11320000000.0,
       "engine_scores": {
         "valuation": 37.78,
         "momentum": 50.0,
@@ -67250,10 +67250,10 @@
     {
       "ticker": "059120",
       "name": "아진엑스텍",
-      "price": 6160.0,
-      "change_pct": 0.0,
+      "price": 6270.0,
+      "change_pct": 1.79,
       "market": "KOSDAQ",
-      "market_cap": 112790006560.0,
+      "market_cap": 114804113820.0,
       "engine_scores": {
         "valuation": 19.25,
         "momentum": 50.0,
@@ -69715,10 +69715,10 @@
     {
       "ticker": "032685",
       "name": "소프트센우",
-      "price": 8680.0,
-      "change_pct": 0.0,
+      "price": 8540.0,
+      "change_pct": -1.61,
       "market": "KOSDAQ",
-      "market_cap": 619422160.0,
+      "market_cap": 609431480.0,
       "engine_scores": {
         "valuation": 10.69,
         "momentum": 50.0,
@@ -70667,10 +70667,10 @@
     {
       "ticker": "215600",
       "name": "신라젠",
-      "price": 2465.0,
-      "change_pct": 0.0,
+      "price": 2500.0,
+      "change_pct": 1.42,
       "market": "KOSDAQ",
-      "market_cap": 341534535260.0,
+      "market_cap": 346383910000.0,
       "engine_scores": {
         "valuation": 11.05,
         "momentum": 50.0,
@@ -71534,10 +71534,10 @@
     {
       "ticker": "417010",
       "name": "나노팀",
-      "price": 6620.0,
-      "change_pct": 0.0,
+      "price": 6810.0,
+      "change_pct": 2.87,
       "market": "KOSDAQ",
-      "market_cap": 133543459360.0,
+      "market_cap": 137376277680.0,
       "engine_scores": {
         "valuation": 9.17,
         "momentum": 50.0,
