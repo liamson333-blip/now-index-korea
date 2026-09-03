@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import time
 from datetime import date
 from pathlib import Path
@@ -23,6 +24,51 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36",
     "Referer": "https://finance.naver.com/",
 }
+
+
+def load_git_snapshots() -> list[dict]:
+    """Load the latest published ranking snapshot for each historical day."""
+    log = subprocess.run(
+        ["git", "log", "--all", "--format=%H|%aI", "--", "docs/krx_rankings.json"],
+        check=True,
+        capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+    )
+    latest_by_day = {}
+    for line in log.stdout.splitlines():
+        commit, timestamp = line.split("|", 1)
+        day = timestamp[:10]
+        latest_by_day.setdefault(day, commit)
+
+    snapshots = []
+    for day, commit in sorted(latest_by_day.items()):
+        try:
+            raw = subprocess.run(
+                ["git", "show", f"{commit}:docs/krx_rankings.json"],
+                check=True,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+            ).stdout
+            data = json.loads(raw)
+        except (subprocess.CalledProcessError, json.JSONDecodeError):
+            continue
+        stocks = [
+            {
+                "ticker": str(stock["ticker"]),
+                "price": float(stock["price"]),
+                "score": float(stock.get("score", 0)),
+                "market": stock.get("market", ""),
+            }
+            for stock in data.get("rankings", [])
+            if stock.get("ticker") and stock.get("price")
+        ]
+        if stocks:
+            snapshots.append({"date": day, "stocks": stocks})
+    return snapshots
 
 
 def fetch_series(ticker: str, last_count: int) -> list[tuple[str, float]]:
@@ -68,12 +114,18 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
     cash = {str(stock["ticker"]): 100.0 for stock in stocks if str(stock["ticker"]) in history}
     shares = {ticker: 0.0 for ticker in cash}
     initial_prices = {}
+    last_prices = {}
     market_by_ticker = {
         str(stock["ticker"]): stock.get("market", "")
         for stock in stocks
     }
     equity_curve = []
     trades = 0
+
+    for ticker, prices in history.items():
+        first_day = min(prices)
+        initial_prices[ticker] = float(prices[first_day])
+        last_prices[ticker] = initial_prices[ticker]
 
     for day in dates:
         daily = []
@@ -91,7 +143,7 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
         scored = {str(row["ticker"]): row for row in compute_scores(daily)}
         for ticker, row in scored.items():
             price = float(row["price"])
-            initial_prices.setdefault(ticker, price)
+            last_prices[ticker] = price
             score = float(row.get("score", 0))
             if shares[ticker] == 0 and score >= 75:
                 shares[ticker] = cash[ticker] / price
@@ -102,15 +154,19 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
                 shares[ticker] = 0.0
                 trades += 1
 
-        total = sum(cash[ticker] + shares[ticker] * float(row["price"]) for ticker, row in scored.items())
+        total = sum(
+            cash[ticker] + shares[ticker] * last_prices[ticker]
+            for ticker in cash
+            if ticker in last_prices
+        )
         benchmarks = {}
         for market in ("KOSPI", "KOSDAQ"):
             market_rows = [
-                (ticker, row) for ticker, row in scored.items()
-                if market_by_ticker.get(ticker) == market and ticker in initial_prices
+                (ticker, last_prices[ticker]) for ticker in cash
+                if market_by_ticker.get(ticker) == market and ticker in initial_prices and ticker in last_prices
             ]
             benchmarks[market] = round(
-                sum(float(row["price"]) / initial_prices[ticker] * 100 for ticker, row in market_rows)
+                sum(price / initial_prices[ticker] * 100 for ticker, price in market_rows)
                 / len(market_rows),
                 4,
             ) if market_rows else None
@@ -200,11 +256,25 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", default="data/full_stock_data.json")
     parser.add_argument("--snapshots", default="data/score_history.json")
+    parser.add_argument("--git-history", action="store_true", help="Use published ranking commits as point-in-time data.")
     parser.add_argument("--output", default="docs/backtest.json")
     parser.add_argument("--last-count", type=int, default=130)
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--sleep", type=float, default=0.08)
     args = parser.parse_args()
+
+    if args.git_history:
+        snapshots = load_git_snapshots()
+        if len(snapshots) >= 2:
+            result = make_point_in_time_backtest(snapshots)
+            output = Path(args.output)
+            output.parent.mkdir(parents=True, exist_ok=True)
+            result["basis"] = "Published Git ranking snapshots (point-in-time scores and prices)"
+            result["snapshots"] = len(snapshots)
+            output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"Wrote point-in-time backtest from {len(snapshots)} Git snapshots to {output}")
+            print(f"Return: {result['return_pct']:.2f}%")
+            return
 
     snapshot_path = Path(args.snapshots)
     snapshots = json.loads(snapshot_path.read_text(encoding="utf-8")) if snapshot_path.exists() else []
