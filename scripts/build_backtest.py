@@ -68,6 +68,10 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
     cash = {str(stock["ticker"]): 100.0 for stock in stocks if str(stock["ticker"]) in history}
     shares = {ticker: 0.0 for ticker in cash}
     initial_prices = {}
+    market_by_ticker = {
+        str(stock["ticker"]): stock.get("market", "")
+        for stock in stocks
+    }
     equity_curve = []
     trades = 0
 
@@ -99,8 +103,23 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
                 trades += 1
 
         total = sum(cash[ticker] + shares[ticker] * float(row["price"]) for ticker, row in scored.items())
-        benchmark = sum(float(row["price"]) / initial_prices[ticker] * 100 for ticker, row in scored.items()) / max(len(scored), 1)
-        equity_curve.append({"date": day, "value": round(total / max(len(cash), 1), 4), "benchmark": round(benchmark, 4)})
+        benchmarks = {}
+        for market in ("KOSPI", "KOSDAQ"):
+            market_rows = [
+                (ticker, row) for ticker, row in scored.items()
+                if market_by_ticker.get(ticker) == market and ticker in initial_prices
+            ]
+            benchmarks[market] = round(
+                sum(float(row["price"]) / initial_prices[ticker] * 100 for ticker, row in market_rows)
+                / len(market_rows),
+                4,
+            ) if market_rows else None
+        equity_curve.append({
+            "date": day,
+            "value": round(total / max(len(cash), 1), 4),
+            "kospi": benchmarks["KOSPI"],
+            "kosdaq": benchmarks["KOSDAQ"],
+        })
 
     final_value = equity_curve[-1]["value"] if equity_curve else 100.0
     return {
@@ -109,6 +128,8 @@ def make_backtest(stocks: list[dict], history: dict[str, dict[str, float]]) -> d
         "start_value": 100.0,
         "final_value": final_value,
         "return_pct": round(final_value - 100.0, 2),
+        "kospi_return_pct": round(equity_curve[-1]["kospi"] - 100.0, 2) if equity_curve and equity_curve[-1]["kospi"] is not None else None,
+        "kosdaq_return_pct": round(equity_curve[-1]["kosdaq"] - 100.0, 2) if equity_curve and equity_curve[-1]["kosdaq"] is not None else None,
         "trades": trades,
         "stocks": len(cash),
         "generated_at": date.today().isoformat(),
@@ -120,6 +141,7 @@ def make_point_in_time_backtest(snapshots: list[dict]) -> dict:
     cash = {}
     shares = {}
     initial_prices = {}
+    market_by_ticker = {}
     curve = []
     trades = 0
     for snapshot in sorted(snapshots, key=lambda item: item.get("date", "")):
@@ -127,6 +149,7 @@ def make_point_in_time_backtest(snapshots: list[dict]) -> dict:
         for ticker, stock in daily.items():
             price = float(stock["price"])
             initial_prices.setdefault(ticker, price)
+            market_by_ticker.setdefault(ticker, stock.get("market", ""))
             score = float(stock.get("score", 0))
             if ticker not in cash:
                 cash[ticker] = 100.0
@@ -140,8 +163,23 @@ def make_point_in_time_backtest(snapshots: list[dict]) -> dict:
                 shares[ticker] = 0.0
                 trades += 1
         total = sum(cash[ticker] + shares[ticker] * float(stock["price"]) for ticker, stock in daily.items())
-        benchmark = sum(float(stock["price"]) / initial_prices[ticker] * 100 for ticker, stock in daily.items()) / max(len(daily), 1)
-        curve.append({"date": snapshot["date"], "value": round(total / max(len(cash), 1), 4), "benchmark": round(benchmark, 4)})
+        benchmarks = {}
+        for market in ("KOSPI", "KOSDAQ"):
+            market_rows = [
+                (ticker, stock) for ticker, stock in daily.items()
+                if market_by_ticker.get(ticker) == market and ticker in initial_prices
+            ]
+            benchmarks[market] = round(
+                sum(float(stock["price"]) / initial_prices[ticker] * 100 for ticker, stock in market_rows)
+                / len(market_rows),
+                4,
+            ) if market_rows else None
+        curve.append({
+            "date": snapshot["date"],
+            "value": round(total / max(len(cash), 1), 4),
+            "kospi": benchmarks["KOSPI"],
+            "kosdaq": benchmarks["KOSDAQ"],
+        })
     final_value = curve[-1]["value"] if curve else 100.0
     return {
         "strategy": {"buy_score": 75, "sell_score": 28},
@@ -149,6 +187,8 @@ def make_point_in_time_backtest(snapshots: list[dict]) -> dict:
         "start_value": 100.0,
         "final_value": final_value,
         "return_pct": round(final_value - 100.0, 2),
+        "kospi_return_pct": round(curve[-1]["kospi"] - 100.0, 2) if curve and curve[-1]["kospi"] is not None else None,
+        "kosdaq_return_pct": round(curve[-1]["kosdaq"] - 100.0, 2) if curve and curve[-1]["kosdaq"] is not None else None,
         "trades": trades,
         "stocks": len(cash),
         "generated_at": date.today().isoformat(),
@@ -179,7 +219,10 @@ def main() -> None:
 
     stocks = json.loads(Path(args.input).read_text(encoding="utf-8"))
     if args.limit:
-        stocks = stocks[: args.limit]
+        per_market = max(args.limit // 2, 1)
+        kospi = [stock for stock in stocks if stock.get("market") == "KOSPI"][:per_market]
+        kosdaq = [stock for stock in stocks if stock.get("market") == "KOSDAQ"][:per_market]
+        stocks = kospi + kosdaq
     print(f"Fetching {args.last_count} daily prices for {len(stocks)} stocks...")
     history = build_history(stocks, args.last_count, args.sleep)
     result = make_backtest(stocks, history)
