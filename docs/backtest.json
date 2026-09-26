@@ -11,7 +11,7 @@
   "kosdaq_return_pct": 17.13,
   "trades": 4,
   "stocks": 4338,
-  "generated_at": "2026-09-25",
+  "generated_at": "2026-09-26",
   "equity_curve": [
     {
       "date": "2026-08-05",
@@ -312,7 +312,19 @@
       "value": 99.2386,
       "kospi": 103.6127,
       "kosdaq": 117.1288
+    },
+    {
+      "date": "2026-09-25",
+      "value": 99.2386,
+      "kospi": 103.6127,
+      "kosdaq": 117.1288
+    },
+    {
+      "date": "2026-09-26",
+      "value": 99.2386,
+      "kospi": 103.6127,
+      "kosdaq": 117.1288
     }
   ],
-  "snapshots": 50
+  "snapshots": 52
 }
