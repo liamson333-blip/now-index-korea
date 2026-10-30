@@ -5,13 +5,13 @@
   },
   "basis": "Published Git ranking snapshots (point-in-time scores and prices)",
   "start_value": 100.0,
-  "final_value": 98.6754,
-  "return_pct": -1.32,
-  "kospi_return_pct": -2.68,
-  "kosdaq_return_pct": 13.5,
+  "final_value": 98.7894,
+  "return_pct": -1.21,
+  "kospi_return_pct": -4.48,
+  "kosdaq_return_pct": 11.73,
   "trades": 4,
-  "stocks": 4351,
-  "generated_at": "2026-10-16",
+  "stocks": 4353,
+  "generated_at": "2026-10-30",
   "equity_curve": [
     {
       "date": "2026-08-05",
@@ -438,7 +438,97 @@
       "value": 98.6754,
       "kospi": 97.3173,
       "kosdaq": 113.4951
+    },
+    {
+      "date": "2026-10-16",
+      "value": 98.7934,
+      "kospi": 98.5558,
+      "kosdaq": 116.908
+    },
+    {
+      "date": "2026-10-17",
+      "value": 98.7934,
+      "kospi": 98.5558,
+      "kosdaq": 116.908
+    },
+    {
+      "date": "2026-10-18",
+      "value": 98.7924,
+      "kospi": 98.4545,
+      "kosdaq": 116.5944
+    },
+    {
+      "date": "2026-10-19",
+      "value": 98.7941,
+      "kospi": 99.3346,
+      "kosdaq": 118.8492
+    },
+    {
+      "date": "2026-10-20",
+      "value": 98.7914,
+      "kospi": 97.5219,
+      "kosdaq": 115.8186
+    },
+    {
+      "date": "2026-10-21",
+      "value": 98.7915,
+      "kospi": 98.1046,
+      "kosdaq": 117.3837
+    },
+    {
+      "date": "2026-10-22",
+      "value": 98.7916,
+      "kospi": 96.6286,
+      "kosdaq": 114.7538
+    },
+    {
+      "date": "2026-10-23",
+      "value": 98.7902,
+      "kospi": 95.9499,
+      "kosdaq": 113.6597
+    },
+    {
+      "date": "2026-10-24",
+      "value": 98.7902,
+      "kospi": 95.9499,
+      "kosdaq": 113.6597
+    },
+    {
+      "date": "2026-10-25",
+      "value": 98.7904,
+      "kospi": 96.002,
+      "kosdaq": 113.6108
+    },
+    {
+      "date": "2026-10-26",
+      "value": 98.7893,
+      "kospi": 94.776,
+      "kosdaq": 112.2545
+    },
+    {
+      "date": "2026-10-27",
+      "value": 98.7894,
+      "kospi": 95.7244,
+      "kosdaq": 114.1021
+    },
+    {
+      "date": "2026-10-28",
+      "value": 98.7908,
+      "kospi": 97.0501,
+      "kosdaq": 115.209
+    },
+    {
+      "date": "2026-10-29",
+      "value": 98.7897,
+      "kospi": 96.3334,
+      "kosdaq": 113.1385
+    },
+    {
+      "date": "2026-10-30",
+      "value": 98.7894,
+      "kospi": 95.5233,
+      "kosdaq": 111.7324
     }
   ],
-  "snapshots": 71
+  "snapshots": 86
 }
