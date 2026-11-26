@@ -5,13 +5,13 @@
   },
   "basis": "Published Git ranking snapshots (point-in-time scores and prices)",
   "start_value": 100.0,
-  "final_value": 97.8743,
-  "return_pct": -2.13,
-  "kospi_return_pct": -10.09,
-  "kosdaq_return_pct": 2.4,
+  "final_value": 98.0346,
+  "return_pct": -1.97,
+  "kospi_return_pct": -10.21,
+  "kosdaq_return_pct": 2.59,
   "trades": 5,
-  "stocks": 4415,
-  "generated_at": "2026-11-25",
+  "stocks": 4418,
+  "generated_at": "2026-11-26",
   "equity_curve": [
     {
       "date": "2026-08-05",
@@ -681,10 +681,16 @@
     },
     {
       "date": "2026-11-25",
-      "value": 97.8743,
-      "kospi": 89.9108,
-      "kosdaq": 102.3953
+      "value": 98.0332,
+      "kospi": 89.437,
+      "kosdaq": 101.2761
+    },
+    {
+      "date": "2026-11-26",
+      "value": 98.0346,
+      "kospi": 89.792,
+      "kosdaq": 102.59
     }
   ],
-  "snapshots": 112
+  "snapshots": 113
 }
